@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  frontend:
+    build:
+      context: ./portfolio
+    volumes:
+      - ./portfolio:/home/node/app
+    tty: true
+    ports:
+      - "5173:5173"
+    environment:
+      - NODE_ENV=dev
+      - SET_ALL_ENVIRONMENT_VARIABLES_IN_DOT_ENV_FILE=true
+    command: ["npm", "run", "dev"]
+
+  nginx:
+    build:
+      context: nginx
+    logging:
+      driver: none
+    restart: always
+    tty: true
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend

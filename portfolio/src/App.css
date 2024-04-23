@@ -1,0 +1,93 @@
+css
+/* ./portfolio/src/App.css */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 10px;
+  margin-bottom: 5em;
+}
+
+div.tiles {
+  text-align: center;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  text-align: center;
+  display: inline-flex;
+  max-width: 20vw;
+  margin: 0.5em;
+}
+
+.card:hover {
+  transform: scale(1.2);
+  z-index: 999;
+}
+
+.card:hover span {
+  transform: scale(1.2);
+  margin-left: 0;
+  box-shadow: 8px 8px 8px 8px rgba(255, 255, 255, 0.5);
+  background-color: #242424;
+  border-radius: 10px;
+  padding: 0.2em;
+  left: -10%;
+  top: 40%;
+}
+
+.card img {
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+}
+
+.card span {
+  text-align: center;
+  color: rgb(248, 161, 0);
+  font-size: 3.5em;
+  position: absolute;
+  top: 78%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 998;
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+
+.card:empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  color: white;
+}
+
+.fullname {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.quickPdf {
+  font-size: 12px;
+  background: white;
+  border-radius: 10px;
+  padding: 1em;
+  position: absolute;
+  top: 4%;
+  margin-left: 1em;
+}
+
+.tagline {
+  text-align: center;
+  margin-top: 0;
+}
