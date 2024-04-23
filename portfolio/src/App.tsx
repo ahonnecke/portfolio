@@ -33,7 +33,7 @@ const imageMap = {
   jolly_brancher: "jolly_brancher_card.png",
   github: "github_card.png",
   home: "home_card.jpg",
-  devops: "devops_card.png",
+  devops: "devops_card.jpg",
 };
 
 const textMap = {
@@ -55,7 +55,7 @@ const textColorMap = {
   big_wheel: "#FDDBA5",
   fire_table: "#FF4820",
   cv: "#FDF4EB",
-  quadricycle: "#FC5835",
+  quadricycle: "#5B92A6",
   cleaning_up: "#5CE6ED",
   linting: "#EDCCB8",
   consolo: "#EA5C48",
@@ -63,6 +63,7 @@ const textColorMap = {
   jolly_brancher: "#9DC043",
   github: "#CED1FC",
   home: "#FDFDFF",
+  devops: "#E2725C",
 };
 
 function App() {
@@ -78,7 +79,7 @@ function App() {
             PDF
           </a>
         </h1>
-        <h3 className="tagline">DevOps + Backend + Frontend</h3>
+        <h3 className="tagline">DevOps / Backend / Frontend</h3>
       </div>
 
       <div className="tiles">
