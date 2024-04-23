@@ -1,0 +1,25 @@
+name: Lint, build and publish container
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  npmci:
+    name: npmci
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: ["21.x"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Run ci
+        run: npm ci
+        working-directory: ./portfolio

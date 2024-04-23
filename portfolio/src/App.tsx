@@ -2,7 +2,11 @@ import { Routes, Route } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
 
-const linkMap = {
+interface LinkMap {
+  [key: string]: string;
+}
+
+const linkMap: LinkMap = {
   cv: "https://pixelstub.com/cv/ashton_honnecke_cv.pdf",
   home: "/",
   cleaning_up: "https://www.youtube.com/watch?v=cpseEHA_haA",
@@ -61,19 +65,6 @@ const textColorMap = {
   home: "#FDFDFF",
 };
 
-const textShadowMap = {
-  big_wheel: "#FDDBA5",
-  fire_table: "#FF4820",
-  cv: "rgb(248, 161, 0);",
-  quadricycle: "#FC5835",
-  cleaning_up: "#5CE6ED",
-  linting: "#EDCCB8",
-  consolo: "#EA5C48",
-  snifter: "#FEA11C",
-  jolly_brancher: "#9DC043",
-  github: "#CED1FC",
-};
-
 function App() {
   return (
     <Router>
@@ -125,15 +116,17 @@ function Main() {
   return <div></div>;
 }
 
-function Tile({ tile }) {
-  const titleColor = textColorMap[tile];
+function Tile({ tile }: { tile: string }) {
+  const titleColor = textColorMap[tile as keyof typeof textColorMap];
   const tileLink = linkMap[tile];
+  const tileImage = imageMap[tile as keyof typeof imageMap]; // Add index signature to imageMap
+  const tileText = textMap[tile as keyof typeof textMap]; // Add index signature to textMap
   return (
     <a href={tileLink}>
       <span className="card">
-        <img src={imageMap[tile]} alt={textMap[tile]} />
+        <img src={tileImage} alt={tileText} />
         <span className="cardTitle" style={{ color: titleColor }}>
-          {textMap[tile]}
+          {tileText}
         </span>
       </span>
     </a>

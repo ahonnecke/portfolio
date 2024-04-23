@@ -1,10 +1,40 @@
-Your task is to fix web application.
+Your task is to fix a web application.
 You are to add functionality
 do not return explanation
 do not return suggestions
 only
 
-move the fullname element to the top of the page
+errors:
+src/App.tsx:115:17 - error TS7031: Binding element 'tile' implicitly has an 'any' type.
+
+115 function Tile({ tile }) {
+                    ~~~~
+
+src/App.tsx:116:22 - error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ big_wheel: string; fire_table: string; cv: string; quadricycle: string; cleaning_up: string; linting: string; consolo: string; snifter: string; jolly_brancher: string; github: string; home: string; }'.
+
+116   const titleColor = textColorMap[tile];
+                         ~~~~~~~~~~~~~~~~~~
+
+src/App.tsx:117:20 - error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ cv: string; home: string; cleaning_up: string; github: string; consolo: string; snifter: string; jolly_brancher: string; linting: string; big_wheel: string; fire_table: string; quadricycle: string; }'.
+
+117   const tileLink = linkMap[tile];
+                       ~~~~~~~~~~~~~
+
+src/App.tsx:121:19 - error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ big_wheel: string; fire_table: string; cv: string; quadricycle: string; cleaning_up: string; linting: string; consolo: string; snifter: string; jolly_brancher: string; github: string; home: string; devops: string; }'.
+
+121         <img src={imageMap[tile]} alt={textMap[tile]} />
+                      ~~~~~~~~~~~~~~
+
+src/App.tsx:121:40 - error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ big_wheel: string; fire_table: string; cv: string; quadricycle: string; cleaning_up: string; linting: string; consolo: string; snifter: string; jolly_brancher: string; github: string; home: string; devops: string; }'.
+
+121         <img src={imageMap[tile]} alt={textMap[tile]} />
+                                           ~~~~~~~~~~~~~
+
+src/App.tsx:123:12 - error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ big_wheel: string; fire_table: string; cv: string; quadricycle: string; cleaning_up: string; linting: string; consolo: string; snifter: string; jolly_brancher: string; github: string; home: string; devops: string; }'.
+
+123           {textMap[tile]}
+               ~~~~~~~~~~~~~
+
 
 output instructions:
  * Put the filename in the codeblock inside the codeblock as a comment
