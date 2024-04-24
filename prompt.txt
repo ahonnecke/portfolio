@@ -1,6 +1,10 @@
-Your task is to fix a web application.
+Your task is to beautify a web application
 
-the Main component is not displaying, make it display
+The blocks of text in the components are large and hard to read, they need to be
+formatted, add html as needed to make it prettier and easier to read
 
  * Put the filename in the codeblock inside the codeblock as a comment
  * use a different codeblock for each file
+
+PRINT THE ENTIRE RESPONSE, THE WHOLE FILE, DO NOT return a comment that
+instructs implementaion
