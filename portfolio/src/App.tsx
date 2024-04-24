@@ -4,68 +4,114 @@ import "./App.css";
 import myVideo from "../public/fire_table.mov";
 import quadLit from "../public/quad_lit.jpg";
 
-interface LinkMap {
-  [key: string]: string;
+interface NavMap {
+  [key: string]: {
+    link: string;
+    image: string;
+    text: string;
+    color: string;
+    category: string;
+    detail_component: string;
+  };
 }
 
-const linkMap: LinkMap = {
-  cv: "https://pixelstub.com/cv/ashton_honnecke_cv.pdf",
-  home: "/",
-  cleaning_up: "https://www.youtube.com/watch?v=cpseEHA_haA",
-  github: "https://github.com/ahonnecke/",
-  consolo: "https://pypi.org/project/consolo/",
-  snifter: "https://pypi.org/project/snifter/",
-  jolly_brancher: "https://pypi.org/project/jolly-brancher/",
-  linting: "https://github.com/ahonnecke/linting-talk",
-  big_wheel:
-    "https://drive.google.com/file/d/0B2sPu-smnJTpX2hCc2JLWTNSN3M/view?resourcekey=0-76YjSJXAvs0IlX1lH6tkmw",
-  fire_table: "/fire_table/",
-  quadricycle: "/quadricycle/",
-};
-
-const imageMap = {
-  big_wheel: "big_wheel_card.png",
-  fire_table: "fire_table.png",
-  cv: "cv_card.png",
-  quadricycle: "quadricycle_card.png",
-  cleaning_up: "docker_card.png",
-  linting: "linting_card.png",
-  consolo: "consolo_card.png",
-  snifter: "snifter_card.png",
-  jolly_brancher: "jolly_brancher_card.png",
-  github: "github_card.png",
-  home: "home_card.jpg",
-  devops: "devops_card.jpg",
-};
-
-const textMap = {
-  big_wheel: "Big Wheel",
-  fire_table: "Fire Table",
-  cv: "CV PDF",
-  quadricycle: "Quadricycle",
-  cleaning_up: "Containers",
-  linting: "Linting",
-  consolo: "Consolo",
-  snifter: "Snifter",
-  jolly_brancher: "Jolly Brancher",
-  github: "Github",
-  home: "Home",
-  devops: "DevOps",
-};
-
-const textColorMap = {
-  big_wheel: "#FDDBA5",
-  fire_table: "#FF4820",
-  cv: "#FDF4EB",
-  quadricycle: "#5B92A6",
-  cleaning_up: "#5CE6ED",
-  linting: "#EDCCB8",
-  consolo: "#EA5C48",
-  snifter: "#FEA11C",
-  jolly_brancher: "#9DC043",
-  github: "#CED1FC",
-  home: "#FDFDFF",
-  devops: "#E2725C",
+const navMap: NavMap = {
+  big_wheel: {
+    link: "https://drive.google.com/file/d/0B2sPu-smnJTpX2hCc2JLWTNSN3M/view?resourcekey=0-76YjSJXAvs0IlX1lH6tkmw",
+    image: "big_wheel_card.png",
+    text: "Big Wheel",
+    color: "#FDDBA5",
+    category: "Art",
+    detail_component: "placeholder_detail_component",
+  },
+  fire_table: {
+    link: "/fire_table/",
+    image: "fire_table.png",
+    text: "Fire Table",
+    color: "#FF4820",
+    category: "Art",
+    detail_component: "placeholder_detail_component",
+  },
+  cv: {
+    link: "https://pixelstub.com/cv/ashton_honnecke_cv.pdf",
+    image: "cv_card.png",
+    text: "CV PDF",
+    color: "#FDF4EB",
+    category: "Doc",
+    detail_component: "placeholder_detail_component",
+  },
+  quadricycle: {
+    link: "/quadricycle/",
+    image: "quadricycle_card.png",
+    text: "Quadricycle",
+    color: "#5B92A6",
+    category: "Art",
+    detail_component: "placeholder_detail_component",
+  },
+  cleaning_up: {
+    link: "https://www.youtube.com/watch?v=cpseEHA_haA",
+    image: "docker_card.png",
+    text: "Containers",
+    color: "#5CE6ED",
+    category: "Speaking",
+    detail_component: "placeholder_detail_component",
+  },
+  linting: {
+    link: "https://github.com/ahonnecke/linting-talk",
+    image: "linting_card.png",
+    text: "Linting",
+    color: "#EDCCB8",
+    category: "Speaking",
+    detail_component: "placeholder_detail_component",
+  },
+  consolo: {
+    link: "https://pypi.org/project/consolo/",
+    image: "consolo_card.png",
+    text: "Consolo",
+    color: "#EA5C48",
+    category: "FOSS",
+    detail_component: "placeholder_detail_component",
+  },
+  snifter: {
+    link: "https://pypi.org/project/snifter/",
+    image: "snifter_card.png",
+    text: "Snifter",
+    color: "#FEA11C",
+    category: "FOSS",
+    detail_component: "placeholder_detail_component",
+  },
+  jolly_brancher: {
+    link: "https://pypi.org/project/jolly-brancher/",
+    image: "jolly_brancher_card.png",
+    text: "Jolly Brancher",
+    color: "#9DC043",
+    category: "FOSS",
+    detail_component: "placeholder_detail_component",
+  },
+  github: {
+    link: "https://github.com/ahonnecke/",
+    image: "github_card.png",
+    text: "Github",
+    color: "#CED1FC",
+    category: "Link",
+    detail_component: "placeholder_detail_component",
+  },
+  home: {
+    link: "/",
+    image: "home_card.jpg",
+    text: "Home",
+    color: "#FDFDFF",
+    category: "placeholder_category",
+    detail_component: "placeholder_detail_component",
+  },
+  devops: {
+    link: "/devops/",
+    image: "devops_card.jpg",
+    text: "DevOps",
+    color: "#E2725C",
+    category: "Link",
+    detail_component: "placeholder_detail_component",
+  },
 };
 
 function App() {
@@ -120,16 +166,18 @@ function Main() {
 }
 
 function Tile({ tile }: { tile: string }) {
-  const titleColor = textColorMap[tile as keyof typeof textColorMap];
-  const tileLink = linkMap[tile];
-  const tileImage = imageMap[tile as keyof typeof imageMap]; // Add index signature to imageMap
-  const tileText = textMap[tile as keyof typeof textMap]; // Add index signature to textMap
+  const navData = navMap[tile];
   return (
-    <a href={tileLink}>
+    <a href={navData.link}>
       <span className="card">
-        <img src={tileImage} alt={tileText} />
-        <span className="cardTitle" style={{ color: titleColor }}>
-          {tileText}
+        <img src={navData.image} alt={navData.text} />
+        <span className="bubbles">
+          <span className="cardCategory" style={{ color: navData.color }}>
+            {navData.category}
+          </span>
+          <span className="cardTitle" style={{ color: navData.color }}>
+            {navData.text}
+          </span>
         </span>
       </span>
     </a>
