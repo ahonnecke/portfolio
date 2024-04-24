@@ -14,6 +14,7 @@ import {
   Github,
   Linting,
 } from "./Details.tsx";
+import { navMap } from "./NavMap.tsx";
 
 function App() {
   return (
