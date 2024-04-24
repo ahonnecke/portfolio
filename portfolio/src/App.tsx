@@ -1,6 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
+import myVideo from "../public/fire_table.mov";
+import quadLit from "../public/quad_lit.jpg";
 
 interface LinkMap {
   [key: string]: string;
@@ -17,8 +19,8 @@ const linkMap: LinkMap = {
   linting: "https://github.com/ahonnecke/linting-talk",
   big_wheel:
     "https://drive.google.com/file/d/0B2sPu-smnJTpX2hCc2JLWTNSN3M/view?resourcekey=0-76YjSJXAvs0IlX1lH6tkmw",
-  fire_table: "fire_table.png",
-  quadricycle: "quadricycle_card.png",
+  fire_table: "/fire_table/",
+  quadricycle: "/quadricycle/",
 };
 
 const imageMap = {
@@ -147,7 +149,9 @@ function FireTable() {
   return (
     <span>
       <span>Fire Table Project</span>
-      <p>Details about my fire table project...</p>
+      <video controls autoPlay loop muted>
+        <source src={myVideo} type="video/mp4"></source>
+      </video>
     </span>
   );
 }
@@ -165,7 +169,7 @@ function Quadricycle() {
   return (
     <span>
       <span>Quadricycle Project</span>
-      <p>Details about my quadricycle project...</p>
+      <img src={quadLit} alt="Quadricycle" />
     </span>
   );
 }
