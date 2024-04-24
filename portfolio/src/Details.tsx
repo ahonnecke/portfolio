@@ -2,12 +2,13 @@ import { navMap } from "./NavMap.tsx";
 
 import myVideo from "../public/fire_table.mov";
 import quadLit from "../public/quad_lit.jpg";
+import { Link } from "react-router-dom";
 
 export function BigWheel() {
   const navData = navMap["big_wheel"];
   return (
     <span className="detailPage">
-      <a href={navData.link}>
+      <Link to={navData.link}>
         <img src={navData.image} alt={navData.text} />
         <div className="content">
           <h2>{navData.text}</h2>
@@ -35,7 +36,7 @@ export function BigWheel() {
             the night and the hearts of the Burning Man community.
           </p>
         </div>
-      </a>
+      </Link>
     </span>
   );
 }
@@ -44,7 +45,7 @@ export function FireTable() {
   const navData = navMap["fire_table"];
   return (
     <span className="detailPage">
-      <a href={navData.link}>
+      <Link to={navData.link}>
         <img src={navData.image} alt={navData.text} />
         <div className="content">
           <p>
@@ -79,7 +80,7 @@ export function FireTable() {
             <source src={myVideo} type="video/mp4"></source>
           </video>
         </div>
-      </a>
+      </Link>
     </span>
   );
 }
@@ -88,7 +89,7 @@ export function CV() {
   const navData = navMap["cv"];
   return (
     <span className="detailPage">
-      <a href={navData.link}>
+      <Link to={navData.link}>
         <img src={navData.image} alt={navData.text} />
         <br />
         <br />
@@ -99,12 +100,12 @@ export function CV() {
         <br />
         <br />
         <div className="content">
-          <a href="https://pixelstub.com/">
+          <Link to="https://pixelstub.com/">
             Also available in interactive sphinx format
-          </a>
+          </Link>
           , really though, this is the least interesting page on the site.
         </div>
-      </a>
+      </Link>
     </span>
   );
 }
@@ -113,7 +114,7 @@ export function Quadricycle() {
   const navData = navMap["quadricycle"];
   return (
     <span className="detailPage">
-      <a href={navData.link}>
+      <Link to={navData.link}>
         <img src={navData.image} alt={navData.text} />
         <div className="content">
           <h2>{navData.text}</h2>
@@ -143,7 +144,7 @@ export function Quadricycle() {
             truly embodies the spirit of innovation and creativity.
           </div>
         </div>
-      </a>
+      </Link>
     </span>
   );
 }
@@ -175,14 +176,14 @@ export function CleaningUp() {
           </p>
           <ul>
             <li>
-              <a href="https://www.youtube.com/watch?v=cpseEHA_haA">
+              <Link to="https://www.youtube.com/watch?v=cpseEHA_haA">
                 Watch the presentation
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="https://github.com/ahonnecke/superfund-remediation">
+              <Link to="https://github.com/ahonnecke/superfund-remediation">
                 Included materials
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -195,7 +196,7 @@ export function Consolo() {
   const navData = navMap["consolo"];
   return (
     <span className="detailPage">
-      <a href={navData.link}>
+      <Link to={navData.link}>
         <img src={navData.image} alt={navData.text} />
         <div className="content">
           <h2>{navData.text}</h2>
@@ -222,7 +223,7 @@ export function Consolo() {
             </p>
           </div>
         </div>
-      </a>
+      </Link>
     </span>
   );
 }
@@ -231,7 +232,7 @@ export function Snifter() {
   const navData = navMap["snifter"];
   return (
     <span className="detailPage">
-      <a href={navData.link}>
+      <Link to={navData.link}>
         <img src={navData.image} alt={navData.text} />
         <div className="content">
           <h2>{navData.text}</h2>
@@ -256,7 +257,7 @@ export function Snifter() {
             </p>
           </div>
         </div>
-      </a>
+      </Link>
     </span>
   );
 }
@@ -265,7 +266,7 @@ export function JollyBrancher() {
   const navData = navMap["jolly_brancher"];
   return (
     <span className="detailPage">
-      <a href={navData.link}>
+      <Link to={navData.link}>
         <img src={navData.image} alt={navData.text} />
         <div className="content">
           <h2>{navData.text}</h2>
@@ -296,7 +297,7 @@ export function JollyBrancher() {
             </p>
           </div>
         </div>
-      </a>
+      </Link>
     </span>
   );
 }
@@ -305,7 +306,7 @@ export function Github() {
   const navData = navMap["github"];
   return (
     <span className="detailPage">
-      <a href={navData.link}>
+      <Link to={navData.link}>
         <img src={navData.image} alt={navData.text} />
         <div className="content">
           <h2>Github</h2>
@@ -339,7 +340,7 @@ export function Github() {
             </p>
           </div>
         </div>
-      </a>
+      </Link>
     </span>
   );
 }
@@ -348,16 +349,16 @@ export function Linting() {
   const navData = navMap["linting"];
   return (
     <span className="detailPage">
-      <a href={navData.link}>
+      <Link to={navData.link}>
         <img src={navData.image} alt={navData.text} />
         <div className="content">
           <h2>{navData.text}</h2>
           <div>
             <p>
               I delivered a local talk on linting, which is now only{" "}
-              <a href="https://github.com/ahonnecke/linting">
+              <Link to="https://github.com/ahonnecke/linting">
                 hosted on GitHub
-              </a>{" "}
+              </Link>{" "}
               (the recoding was lost in the fervor of COVID). This talk, which I
               authored and, delved deep into the world of linting, a crucial
               aspect of programming that ensures code quality and readability.
@@ -372,7 +373,7 @@ export function Linting() {
             </p>
           </div>
         </div>
-      </a>
+      </Link>
     </span>
   );
 }

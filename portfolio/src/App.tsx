@@ -1,6 +1,5 @@
-// ./portfolio/src/App.tsx
 import { Routes, Route } from "react-router-dom";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom"; // Import Link from react-router-dom
 import "./App.css";
 import * as React from "react"; // Import React to fix TypeScript error
 import {
@@ -45,12 +44,12 @@ function Main(): JSX.Element {
       <div>
         <h1 className="fullname">
           Ashton Honnecke
-          <a
+          <Link
             className="quickPdf"
-            href="https://pixelstub.com/cv/ashton_honnecke_cv.pdf"
+            to="https://pixelstub.com/cv/ashton_honnecke_cv.pdf" // Change to Link with 'to' attribute
           >
             PDF
-          </a>
+          </Link>
         </h1>
         <h3 className="tagline">Linux / Python / Cloud / DevOps</h3>
       </div>
@@ -93,7 +92,7 @@ function Tile({ tile }: { tile: string }): JSX.Element {
   console.log(tile);
   const AbstractComponent = navData.detail as React.ElementType;
   return (
-    <a href={tile}>
+    <Link to={tile}>
       <span
         className={`card ${toCamelCase(navData.text)}`}
         style={{ backgroundImage: `url(${navData.image})` }}
@@ -106,7 +105,7 @@ function Tile({ tile }: { tile: string }): JSX.Element {
           </span>
         )}
       </span>
-    </a>
+    </Link>
   );
 }
 
