@@ -2,6 +2,7 @@
 import { Routes, Route } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
+import * as React from "react"; // Import React to fix TypeScript error
 import {
   BigWheel,
   FireTable,
@@ -16,7 +17,8 @@ import {
 } from "./Details.tsx";
 import { navMap } from "./NavMap.tsx";
 
-function App() {
+function App(): JSX.Element {
+  // Add explicit return type for function App
   return (
     <Router>
       <Routes>
@@ -36,7 +38,8 @@ function App() {
   );
 }
 
-function Main() {
+function Main(): JSX.Element {
+  // Add explicit return type for function Main
   return (
     <>
       <div>
@@ -69,7 +72,8 @@ function Main() {
   );
 }
 
-function toCamelCase(str) {
+function toCamelCase(str: string): string {
+  // Add type annotations to 'str'
   return str
     .replace(/\s+/g, " ") // Replace multiple spaces with a single space
     .trim() // Remove leading and trailing spaces
@@ -83,10 +87,11 @@ function toCamelCase(str) {
     .join(""); // Join the words without spaces
 }
 
-function Tile({ tile }: { tile: string }) {
+function Tile({ tile }: { tile: string }): JSX.Element {
+  // Add explicit return type for function Tile
   const navData = navMap[tile]; // Fixed to reference navMap
   console.log(tile);
-  const AbstractComponent = navData.detail;
+  const AbstractComponent = navData.detail as React.ElementType;
   return (
     <a href={tile}>
       <span

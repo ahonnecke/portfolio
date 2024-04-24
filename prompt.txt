@@ -1,10 +1,130 @@
-Your task is to beautify a web application
+Your task is to fix a web application
 
-The blocks of text in the components are large and hard to read, they need to be
-formatted, add html as needed to make it prettier and easier to read
+src/App.tsx:90:29 - error TS2352: Conversion of type 'ReactElement<any, string | JSXElementConstructor<any>>' to type 'ElementType<any, keyof IntrinsicElements>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
 
- * Put the filename in the codeblock inside the codeblock as a comment
- * use a different codeblock for each file
+90   const AbstractComponent = navData.detail as React.ElementType;
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/NavMap.tsx:121:13 - error TS2322: Type '() => JSX.Element' is not assignable to type 'ReactElement<any, string | JSXElementConstructor<any>>'.
+
+121     detail: BigWheelAbstract,
+                ~~~~~~~~~~~~~~~~
+
+  src/NavMap.tsx:121:13
+    121     detail: BigWheelAbstract,
+                    ~~~~~~~~~~~~~~~~
+    Did you mean to call this expression?
+
+src/NavMap.tsx:128:13 - error TS2322: Type '() => JSX.Element' is not assignable to type 'ReactElement<any, string | JSXElementConstructor<any>>'.
+
+128     detail: FireTableAbstract,
+                ~~~~~~~~~~~~~~~~~
+
+  src/NavMap.tsx:128:13
+    128     detail: FireTableAbstract,
+                    ~~~~~~~~~~~~~~~~~
+    Did you mean to call this expression?
+
+src/NavMap.tsx:135:13 - error TS2322: Type '() => JSX.Element' is not assignable to type 'ReactElement<any, string | JSXElementConstructor<any>>'.
+
+135     detail: CvAbstract,
+                ~~~~~~~~~~
+
+  src/NavMap.tsx:135:13
+    135     detail: CvAbstract,
+                    ~~~~~~~~~~
+    Did you mean to call this expression?
+
+src/NavMap.tsx:142:13 - error TS2322: Type '() => JSX.Element' is not assignable to type 'ReactElement<any, string | JSXElementConstructor<any>>'.
+
+142     detail: QuadricycleAbstract,
+                ~~~~~~~~~~~~~~~~~~~
+
+  src/NavMap.tsx:142:13
+    142     detail: QuadricycleAbstract,
+                    ~~~~~~~~~~~~~~~~~~~
+    Did you mean to call this expression?
+
+src/NavMap.tsx:149:13 - error TS2322: Type '() => JSX.Element' is not assignable to type 'ReactElement<any, string | JSXElementConstructor<any>>'.
+
+149     detail: DockerAbstract,
+                ~~~~~~~~~~~~~~
+
+  src/NavMap.tsx:149:13
+    149     detail: DockerAbstract,
+                    ~~~~~~~~~~~~~~
+    Did you mean to call this expression?
+
+src/NavMap.tsx:156:13 - error TS2322: Type '() => JSX.Element' is not assignable to type 'ReactElement<any, string | JSXElementConstructor<any>>'.
+
+156     detail: LintingAbstract,
+                ~~~~~~~~~~~~~~~
+
+  src/NavMap.tsx:156:13
+    156     detail: LintingAbstract,
+                    ~~~~~~~~~~~~~~~
+    Did you mean to call this expression?
+
+src/NavMap.tsx:163:13 - error TS2322: Type '() => JSX.Element' is not assignable to type 'ReactElement<any, string | JSXElementConstructor<any>>'.
+
+163     detail: ConsoloAbstract,
+                ~~~~~~~~~~~~~~~
+
+  src/NavMap.tsx:163:13
+    163     detail: ConsoloAbstract,
+                    ~~~~~~~~~~~~~~~
+    Did you mean to call this expression?
+
+src/NavMap.tsx:170:13 - error TS2322: Type '() => JSX.Element' is not assignable to type 'ReactElement<any, string | JSXElementConstructor<any>>'.
+
+170     detail: SnifterAbstract,
+                ~~~~~~~~~~~~~~~
+
+  src/NavMap.tsx:170:13
+    170     detail: SnifterAbstract,
+                    ~~~~~~~~~~~~~~~
+    Did you mean to call this expression?
+
+src/NavMap.tsx:177:13 - error TS2322: Type '() => JSX.Element' is not assignable to type 'ReactElement<any, string | JSXElementConstructor<any>>'.
+
+177     detail: JollyBrancherAbstract,
+                ~~~~~~~~~~~~~~~~~~~~~
+
+  src/NavMap.tsx:177:13
+    177     detail: JollyBrancherAbstract,
+                    ~~~~~~~~~~~~~~~~~~~~~
+    Did you mean to call this expression?
+
+src/NavMap.tsx:184:13 - error TS2322: Type '() => JSX.Element' is not assignable to type 'ReactElement<any, string | JSXElementConstructor<any>>'.
+
+184     detail: GithubAbstract,
+                ~~~~~~~~~~~~~~
+
+  src/NavMap.tsx:184:13
+    184     detail: GithubAbstract,
+                    ~~~~~~~~~~~~~~
+    Did you mean to call this expression?
+
+src/NavMap.tsx:191:13 - error TS2322: Type '() => JSX.Element' is not assignable to type 'ReactElement<any, string | JSXElementConstructor<any>>'.
+
+191     detail: HomeAbstract,
+                ~~~~~~~~~~~~
+
+  src/NavMap.tsx:191:13
+    191     detail: HomeAbstract,
+                    ~~~~~~~~~~~~
+    Did you mean to call this expression?
+
+src/NavMap.tsx:198:13 - error TS2322: Type '() => JSX.Element' is not assignable to type 'ReactElement<any, string | JSXElementConstructor<any>>'.
+
+198     detail: DevopsAbstract,
+                ~~~~~~~~~~~~~~
+
+  src/NavMap.tsx:198:13
+    198     detail: DevopsAbstract,
+                    ~~~~~~~~~~~~~~
+    Did you mean to call this expression?
+
 
 PRINT THE ENTIRE RESPONSE, THE WHOLE FILE, DO NOT return a comment that
 instructs implementaion

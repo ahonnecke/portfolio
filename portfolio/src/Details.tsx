@@ -1,5 +1,8 @@
 import { navMap } from "./NavMap.tsx";
 
+import myVideo from "../public/fire_table.mov";
+import quadLit from "../public/quad_lit.jpg";
+
 export function BigWheel() {
   const navData = navMap["big_wheel"];
   return (

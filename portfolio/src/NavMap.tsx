@@ -1,6 +1,3 @@
-import myVideo from "../public/fire_table.mov";
-import quadLit from "../public/quad_lit.jpg";
-
 import LintingCard from "../public/linting_card.png";
 import BigWheelCard from "../public/big_wheel_card.png";
 import FireTableCard from "../public/fire_table_card.png";
@@ -13,18 +10,9 @@ import HomeCard from "../public/home_card.jpg";
 import JollyBrancherCard from "../public/jolly_brancher_card.png";
 import QuadricycleCard from "../public/quadricycle_card.png";
 import SnifterCard from "../public/snifter_card.png";
+import { NavMap } from "./NavMapInterface.tsx";
 
-interface NavMap {
-  [key: string]: {
-    link: string;
-    image: string;
-    text: string;
-    category: string;
-    detail: string;
-  };
-}
-
-const BigWheelAbstract = () => {
+const BigWheelAbstract: () => JSX.Element = () => {
   return (
     <span>
       3 Arduinos, hundreds of individually addressable RGB LEDs on an 8 foot
@@ -34,7 +22,7 @@ const BigWheelAbstract = () => {
   );
 };
 
-const ConsoloAbstract = () => {
+const ConsoloAbstract: () => JSX.Element = () => {
   return (
     <span>
       Consolo is a Free and Open Source Software (FOSS) utility that provides a
