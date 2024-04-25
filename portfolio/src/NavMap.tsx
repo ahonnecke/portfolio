@@ -141,7 +141,7 @@ export const navMap: NavMap = {
     category: "Art",
     detail: QuadricycleAbstract,
   },
-  cleaning_up: {
+  docker: {
     link: "https://www.youtube.com/watch?v=cpseEHA_haA",
     image: DockerCard,
     text: "Containers",
@@ -194,7 +194,7 @@ export const navMap: NavMap = {
     link: "/devops/",
     image: DevopsCard,
     text: "DevOps",
-    category: "Link",
+    category: "CI/CD",
     detail: DevopsAbstract,
   },
 };

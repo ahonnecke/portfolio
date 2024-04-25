@@ -114,18 +114,25 @@ body {
   color: white;
 }
 
-.fullname {
+#fullname {
   text-align: center;
   margin-bottom: 0;
+  font-size: 4em;
+  color: #fdfdff;
 }
 
-.quickPdf {
+#fullname a {
+  color: #fdfdff;
+}
+
+#fullname .quickPdf {
   font-size: 12px;
   background: white;
   border-radius: 10px;
   padding: 1em;
   top: 4%;
   margin-left: 1em;
+  color: black;
 }
 
 .tagline {
@@ -192,6 +199,9 @@ body {
   width: 30%;
   margin: 50px;
   display: inline;
+  align-self: center;
+  margin-right: 3em;
+  float: left;
 }
 
 .detailPage {
@@ -200,21 +210,27 @@ body {
   align-items: flex-start;
 }
 
-.detailPage img {
-  align-self: center;
-  margin-right: 3em;
-  float: left;
-}
-
 .detailPage p {
-  margin: 0;
   text-align: justify;
+  margin: 50px;
 }
 
 .detailPage .content {
   margin: 50px;
-  margin-top: 100px;
+  margin-top: 60px;
   padding-left: 20px;
   text-align: justify;
   color: #e3e3e3;
+}
+
+.content h2 {
+  font-size: 2em;
+  color: #e3e3e3;
+  margin-top: 0;
+}
+.content {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  font-size: 1.2em;
+  margin: 0;
 }

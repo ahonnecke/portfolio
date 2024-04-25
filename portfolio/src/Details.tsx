@@ -18,22 +18,27 @@ export function BigWheel() {
             tricycle and a golf cart, stood tall at eight feet. It was a sight
             to behold, especially when it lit up the night with hundreds of
             lights, all controlled by two Arduino microcontrollers powered by
-            onboard batteries. The construction of the vehicle was a feat of
-            engineering and creativity. The base was a standard golf cart,
-            chosen for its stability and ease of operation. On top of this, an
-            eight-foot tall tricycle structure was built, transforming the
-            ordinary golf cart into an extraordinary mutant vehicle. The
-            handlebars, a massive 10 feet wide, were wrapped in lights, creating
-            a dazzling display that could be seen from afar. Adding to the
-            spectacle were fifty six-foot ribbon streamers attached to either
-            handle, fluttering in the wind as the vehicle moved, creating a
-            beautiful, flowing light show. The mutant vehicle was not just a
-            means of transportation, but a moving piece of art, embodying the
-            spirit of self-expression and creativity that is at the heart of
-            Burning Man. It was a testament to the power of imagination and the
-            joy of bringing a vision to life. And as it moved through the playa,
-            it brought smiles to the faces of everyone who saw it, lighting up
-            the night and the hearts of the Burning Man community.
+            onboard batteries.
+          </p>
+          <p>
+            The construction of the vehicle was a feat of engineering and
+            creativity. The base was a standard golf cart, chosen for its
+            stability and ease of operation. On top of this, an eight-foot tall
+            tricycle structure was built, transforming the ordinary golf cart
+            into an extraordinary mutant vehicle. The handlebars, a massive 10
+            feet wide, were wrapped in lights, creating a dazzling display that
+            could be seen from afar. Adding to the spectacle were fifty six-foot
+            ribbon streamers attached to either handle, fluttering in the wind
+            as the vehicle moved, creating a beautiful, flowing light show.
+          </p>
+          <p>
+            The mutant vehicle was not just a means of transportation, but a
+            moving piece of art, embodying the spirit of self-expression and
+            creativity that is at the heart of Burning Man. It was a testament
+            to the power of imagination and the joy of bringing a vision to
+            life. And as it moved through the playa, it brought smiles to the
+            faces of everyone who saw it, lighting up the night and the hearts
+            of the Burning Man community.
           </p>
         </div>
       </Link>
@@ -49,10 +54,19 @@ export function FireTable() {
         <img src={navData.image} alt={navData.text} />
         <div className="content">
           <p>
-            I successfully designed and created an interactive fire installation
-            art project, titled "Fire in Earth". This project was placed on
-            playa in 2015.
+            I designed and created an interactive fire installation art project,
+            titled "Fire in Earth". This project was placed on playa in 2015.
           </p>
+
+          <p>
+            The video below shows the Fire Table, in action, the propane burning
+            in the valleys of the sand in which spirals have been drawn.
+          </p>
+
+          <video controls autoPlay loop muted>
+            <source src={myVideo} type="video/mp4"></source>
+          </video>
+
           <p>
             The installation was a testament to the my innovative approach to
             combining technology and art. It featured a custom copper manifold
@@ -76,9 +90,6 @@ export function FireTable() {
             testament to their creativity, technical skills, and their ability
             to create engaging and interactive art installations.
           </p>
-          <video controls autoPlay loop muted>
-            <source src={myVideo} type="video/mp4"></source>
-          </video>
         </div>
       </Link>
     </span>
@@ -120,28 +131,36 @@ export function Quadricycle() {
           <h2>{navData.text}</h2>
           <div>
             <img src={quadLit} alt="Quadricycle" />
-            In a remarkable display of engineering and creativity, I designed
-            and constructed a two-bicycle, serial tandem bicycle, also known as
-            a quadricycle. This unique project showcased the candidate’s
-            problem-solving skills, hands-on fabrication abilities, and passion
-            for cycling. The quadricycle was built with a sturdy yet lightweight
-            frame, using materials such as steel or aluminum. The design ensured
-            stability, even on sandy terrains, preventing the quadricycle from
-            falling over. A self-centering mechanism was ingeniously
-            incorporated into the steering system, enhancing maneuverability and
-            control. The candidate thoughtfully added a trunk for storage,
-            demonstrating their attention to practicality and user experience. A
-            shaded parasol was mounted on aluminum struts, providing comfort for
-            the riders under the sun. In a fusion of technology and art, the
-            quadricycle was adorned with hundreds of lights, creating a dazzling
-            display that added to the joy of riding it. The candidate’s ability
-            to integrate electronic components into the design highlighted their
-            multidisciplinary skills. The successful completion of the
-            quadricycle, followed by a successful test ride, stands as a
-            testament to the candidate’s technical skills, creativity, and
-            dedication to bringing a vision to life. This project is a notable
-            accomplishment and a valuable addition to the candidate’s resume. It
-            truly embodies the spirit of innovation and creativity.
+            <p>
+              In a remarkable display of engineering and creativity, I designed
+              and constructed a two-bicycle, serial tandem bicycle, also known
+              as a quadricycle. This unique project showcased the candidate's
+              problem-solving skills, hands-on fabrication abilities, and
+              passion for cycling.
+            </p>
+            <p>
+              The quadricycle was built with a sturdy yet lightweight frame,
+              using materials such as steel or aluminum. The design ensured
+              stability, even on sandy terrains, preventing the quadricycle from
+              falling over. A self-centering mechanism was ingeniously
+              incorporated into the steering system, enhancing maneuverability
+              and control. The candidate thoughtfully added a trunk for storage,
+              demonstrating their attention to practicality and user experience.
+              A shaded parasol was mounted on aluminum struts, providing comfort
+              for the riders under the sun.
+            </p>
+            <p>
+              In a fusion of technology and art, the quadricycle was adorned
+              with hundreds of lights, creating a dazzling display that added to
+              the joy of riding it. The candidate's ability to integrate
+              electronic components into the design highlighted their
+              multidisciplinary skills. The successful completion of the
+              quadricycle, followed by a successful test ride, stands as a
+              testament to the candidate's technical skills, creativity, and
+              dedication to bringing a vision to life. This project is a notable
+              accomplishment and a valuable addition to the candidate's resume.
+              It truly embodies the spirit of innovation and creativity.
+            </p>
           </div>
         </div>
       </Link>
@@ -149,28 +168,28 @@ export function Quadricycle() {
   );
 }
 
-export function CleaningUp() {
-  const navData = navMap["cleaning_up"];
+export function Docker() {
+  const navData = navMap["docker"];
   return (
     <span className="detailPage">
-      <img src={navData.image} alt={navData.text} />
       <div className="content">
-        <h2>{navData.text}</h2>
         <div>
+          <img src={navData.image} alt={navData.text} />
+          <h2>{navData.text}</h2>
           <p>
             The talk titled “Cleaning Up Your Python Environment” delivered by
             the author is a comprehensive guide on managing Python environments.
             The talk addresses the common challenges faced by developers in
             maintaining their Python environments, drawing a parallel with
-            Randall Munroe’s (of XKCD fame) Python environment superfund site.
+            Randall Munroe's (of XKCD fame) Python environment superfund site.
             Key points from the talk include: The importance of keeping a clean
             and organized Python environment. Practical tips and best practices
             for managing Python environments. Demonstrations of common pitfalls
             and how to avoid them. Use of various tools and techniques to
-            streamline the process. This talk showcases the author’s deep
+            streamline the process. This talk showcases the author's deep
             understanding of Python, their ability to communicate complex
             concepts in an accessible manner, and their commitment to sharing
-            knowledge with the community. It’s a testament to their expertise
+            knowledge with the community. It's a testament to their expertise
             and their passion for continuous learning and improvement. This
             makes it a notable accomplishment to include on a resume.
           </p>
@@ -205,21 +224,41 @@ export function Consolo() {
               Consolo is a Free and Open Source Software (FOSS) utility that
               provides a solution for pseudo-mounting an AWS lambda filesystem
               locally. It supports hot reloading by default, enhancing the
-              development experience. Key features of Consolo include: Hot
-              Syncing: Consolo can start hot syncing with the AWS lambda
-              filesystem. Upload and Download: It allows users to upload from
-              local to cloud and download from cloud to local. Ease of
-              Installation: Consolo can be installed via a single file curl
-              command or pip install. The utility is built with Python and
-              leverages several libraries such as argdantic, requests, watchdog,
-              and boto3. It’s a testament to the author’s skills in Python
-              programming, cloud computing, and software development. Pronounced
-              'Con Solo', like 'Han Solo'. This playful touch shows the author’s
-              creativity and sense of humor. This utility demonstrates the
-              author’s ability to create practical and innovative solutions that
-              streamline and enhance the development process. It’s a valuable
-              addition to any software developer’s toolkit, and a notable
-              accomplishment to include on a resume.
+              development experience.
+            </p>
+            <p>
+              Key features of Consolo include:
+              <ul>
+                <li>
+                  Hot Syncing: Consolo can start hot syncing with the AWS lambda
+                  filesystem.
+                </li>
+                <li>
+                  Upload and Download: It allows users to upload from local to
+                  cloud and download from cloud to local.
+                </li>
+                <li>
+                  Installation: Consolo can be installed via a single file curl
+                  command or pip install.
+                </li>
+              </ul>
+            </p>
+            <p>
+              The utility is built with Python and leverages several libraries
+              such as argdantic, requests, watchdog, and boto3. It's a display
+              of ability in Python programming, cloud computing, and software
+              development.
+            </p>
+            <p>
+              Pronounced 'Con Solo', like 'Han Solo'. This playful touch shows
+              the author's creativity and sense of humor.
+            </p>
+            <p>
+              This utility demonstrates the author's ability to create practical
+              and innovative solutions that streamline and enhance the
+              development process. It's a valuable addition to any software
+              developer's toolkit, and a notable accomplishment to include on a
+              resume.
             </p>
           </div>
         </div>
@@ -243,17 +282,33 @@ export function Snifter() {
               (SNS) topic data. Because SNS data is ephemeral, Snifter creates a
               temporary SQS queue, subscribes the queue to the SNS topic you
               want to inspect, and then watches that queue. This is all done in
-              a single command. Key features of Snifter include: Hot Syncing:
-              Snifter can start hot syncing with the AWS SNS topic. Interactive
-              Debugging: Providing the --debug flag will cause you to drop into
-              a debugger when something is popped from the queue. Ease of Usage:
-              Snifter can be used with a simple command line interface. The
-              utility is built with Python, demonstrating the author’s skills in
-              Python programming, cloud computing, and software development.
-              This utility showcases the author’s ability to create practical
-              solutions that enhance the development process. It’s a valuable
-              addition to any software developer’s toolkit, and a notable
-              accomplishment to include on a resume.
+              a single command.
+            </p>
+            <p>
+              Key features of Snifter include:
+              <ul>
+                <li>
+                  Hot Syncing: Snifter can start hot syncing with the AWS SNS
+                  topic.
+                </li>
+                <li>
+                  Interactive Debugging: Providing the --debug flag will cause
+                  you to drop into a debugger when something is popped from the
+                  queue.
+                </li>
+                <li>
+                  Ease of Usage: Snifter can be used with a simple command line
+                  interface.
+                </li>
+              </ul>
+            </p>
+            <p>
+              The utility is built with Python, demonstrating the author's
+              skills in Python programming, cloud computing, and software
+              development. This utility showcases the author's ability to create
+              practical solutions that enhance the development process. It's a
+              valuable addition to any software developer's toolkit, and a
+              notable accomplishment to include on a resume.
             </p>
           </div>
         </div>
@@ -273,27 +328,44 @@ export function JollyBrancher() {
           <div>
             <p>
               Jolly-Brancher is a Free and Open Source Software (FOSS) utility
-              designed to streamline the developer’s workflow by connecting an
-              arbitrary ticketing system to a git forge. Key features of
-              Jolly-Brancher include: Branch Creation: Given a repository
-              location, Jolly-Brancher creates branches from JIRA tickets that
-              automatically include ticket information in the branch and branch
-              name. Pull Review Creation: It can create a pull review from an
-              existing branch that is well formed. PR Description: It
-              automatically populates the PR description with information from
-              the ticket. Ease of Configuration: JIRA and git credentials are
-              required in ~/.config/jolly_brancher.ini. Currently, only JIRA is
-              supported for the ticketing system and only GitHub is supported
-              for the git forge. The utility is built with Python, demonstrating
-              the author’s skills in Python programming, cloud computing, and
-              software development. This utility showcases the author’s ability
-              to create practical solutions that enhance the development
-              process. It’s a valuable addition to any software developer’s
-              toolkit, and a notable accomplishment to include on a resume.
-              Future features include extracting the contents of the comments in
-              the branch and constructing a description of the changes in the
-              branch, performing in-place analysis of the branch and adding
-              information to the PR, and more.
+              designed to streamline the developer's workflow by connecting an
+              arbitrary ticketing system to a git forge.
+            </p>
+            <p>
+              Key features of Jolly-Brancher include:
+              <ul>
+                <li>
+                  Branch Creation: Given a repository location, Jolly-Brancher
+                  creates branches from JIRA tickets that automatically include
+                  ticket information in the branch and branch name.
+                </li>
+                <li>
+                  Pull Review Creation: It can create a pull review from an
+                  existing branch that is well formed.
+                </li>
+                <li>
+                  PR Description: It automatically populates the PR description
+                  with information from the ticket.
+                </li>
+                <li>
+                  Ease of Configuration: JIRA and git credentials are required
+                  in ~/.config/jolly_brancher.ini. Currently, only JIRA is
+                  supported for the ticketing system and only GitHub is
+                  supported for the git forge.
+                </li>
+              </ul>
+            </p>
+            <p>
+              The utility is built with Python, demonstrating the author's
+              skills in Python programming, cloud computing, and software
+              development. This utility showcases the author's ability to create
+              practical solutions that enhance the development process. It's a
+              valuable addition to any software developer's toolkit, and a
+              notable accomplishment to include on a resume. Future features
+              include extracting the contents of the comments in the branch and
+              constructing a description of the changes in the branch,
+              performing in-place analysis of the branch and adding information
+              to the PR, and more.
             </p>
           </div>
         </div>
@@ -314,18 +386,18 @@ export function Github() {
             <p>
               A GitHub profile serves as a dynamic resume, showcasing their
               coding projects and contributions to the open-source community. It
-              provides a real-time demonstration of the author’s coding skills,
+              provides a real-time demonstration of the author's coding skills,
               problem-solving abilities, and collaboration in team projects.
             </p>
             <p>Key features of the GitHub profile include:</p>
             <p>
-              Repositories: The author’s repositories highlight the projects
+              Repositories: The author's repositories highlight the projects
               they have initiated or contributed to. Each repository includes
               source code, a README to explain the project, and a history of
               commits.
             </p>
             <p>
-              Contributions: The contribution graph shows the author’s activity
+              Contributions: The contribution graph shows the author's activity
               over time, demonstrating consistency and commitment to ongoing
               learning and improvement.
             </p>
@@ -370,6 +442,49 @@ export function Linting() {
               coding, offering valuable insights into the best practices of
               using linting tools in projects. This experience enhanced my
               coding skills and deepened my understanding of linting.
+            </p>
+          </div>
+        </div>
+      </Link>
+    </span>
+  );
+}
+
+export function Devops() {
+  const navData = navMap["devops"];
+  return (
+    <span className="detailPage">
+      <Link to={navData.link}>
+        <img src={navData.image} alt={navData.text} />
+        <div className="content">
+          <h2>Devops</h2>
+          <div>
+            <p>
+              A Devops profile serves as a dynamic resume, showcasing their
+              coding projects and contributions to the open-source community. It
+              provides a real-time demonstration of the author's coding skills,
+              problem-solving abilities, and collaboration in team projects.
+            </p>
+            <p>Key features of the Devops profile include:</p>
+            <p>
+              Repositories: The author's repositories highlight the projects
+              they have initiated or contributed to. Each repository includes
+              source code, a README to explain the project, and a history of
+              commits.
+            </p>
+            <p>
+              Contributions: The contribution graph shows the author's activity
+              over time, demonstrating consistency and commitment to ongoing
+              learning and improvement.
+            </p>
+            <p>
+              Stars: The stars on a repository indicate its popularity within
+              the Devops community and can be seen as a form of peer
+              recognition.
+            </p>
+            <p>
+              Forks: Forks show how many other developers have found the
+              author's work valuable and have built upon it.
             </p>
           </div>
         </div>

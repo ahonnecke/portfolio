@@ -7,33 +7,50 @@ import {
   FireTable,
   CV,
   Quadricycle,
-  CleaningUp,
+  Docker,
   Consolo,
   Snifter,
   JollyBrancher,
   Github,
   Linting,
+  Devops,
 } from "./Details.tsx";
 import { navMap } from "./NavMap.tsx";
 
 function App(): JSX.Element {
   // Add explicit return type for function App
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/big_wheel" element={<BigWheel />} />
-        <Route path="/fire_table" element={<FireTable />} />
-        <Route path="/cv" element={<CV />} />
-        <Route path="/quadricycle" element={<Quadricycle />} />
-        <Route path="/cleaning_up" element={<CleaningUp />} />
-        <Route path="/linting" element={<Linting />} />
-        <Route path="/consolo" element={<Consolo />} />
-        <Route path="/snifter" element={<Snifter />} />
-        <Route path="/jolly_brancher" element={<JollyBrancher />} />
-        <Route path="/github" element={<Github />} />
-      </Routes>
-    </Router>
+    <>
+      <Router>
+        <div>
+          <h1 id="fullname">
+            <Link to="/">Ashton Honnecke</Link>
+            <Link
+              className="quickPdf"
+              to="https://pixelstub.com/cv/ashton_honnecke_cv.pdf" // Change to Link with 'to' attribute
+            >
+              PDF
+            </Link>
+          </h1>
+          <h3 className="tagline">Linux / Python / Cloud / DevOps</h3>
+        </div>
+
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/big_wheel" element={<BigWheel />} />
+          <Route path="/docker" element={<Docker />} />
+          <Route path="/consolo" element={<Consolo />} />
+          <Route path="/cv" element={<CV />} />
+          <Route path="/fire_table" element={<FireTable />} />
+          <Route path="/github" element={<Github />} />
+          <Route path="/jolly_brancher" element={<JollyBrancher />} />
+          <Route path="/linting" element={<Linting />} />
+          <Route path="/quadricycle" element={<Quadricycle />} />
+          <Route path="/snifter" element={<Snifter />} />
+          <Route path="/devops" element={<Devops />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
@@ -41,27 +58,14 @@ function Main(): JSX.Element {
   // Add explicit return type for function Main
   return (
     <>
-      <div>
-        <h1 className="fullname">
-          Ashton Honnecke
-          <Link
-            className="quickPdf"
-            to="https://pixelstub.com/cv/ashton_honnecke_cv.pdf" // Change to Link with 'to' attribute
-          >
-            PDF
-          </Link>
-        </h1>
-        <h3 className="tagline">Linux / Python / Cloud / DevOps</h3>
-      </div>
-
       <div className="tiles">
         <Tile tile="github" />
-        <Tile tile="cleaning_up" />
-        <Tile tile="linting" />
-        <Tile tile="devops" />
         <Tile tile="consolo" />
         <Tile tile="snifter" />
         <Tile tile="jolly_brancher" />
+        <Tile tile="docker" />
+        <Tile tile="linting" />
+        <Tile tile="devops" />
         <Tile tile="big_wheel" />
         <Tile tile="fire_table" />
         <Tile tile="quadricycle" />
