@@ -2,6 +2,8 @@ import { navMap } from "./NavMap.tsx";
 
 import myVideo from "../public/fire_table.mov";
 import quadLit from "../public/quad_lit.jpg";
+import quadFlash from "../public/quad_flashton.jpg";
+
 import { Link } from "react-router-dom";
 
 export function BigWheel() {
@@ -132,23 +134,26 @@ export function Quadricycle() {
           <div>
             <img src={quadLit} alt="Quadricycle" />
             <p>
-              In a remarkable display of engineering and creativity, I designed
-              and constructed a two-bicycle, serial tandem bicycle, also known
-              as a quadricycle. This unique project showcased the candidate's
+              In a combination of engineering and creativity, I designed and
+              constructed a two-bicycle, serial tandem bicycle, also known as a
+              quadricycle. This unique project showcased the candidate's
               problem-solving skills, hands-on fabrication abilities, and
               passion for cycling.
             </p>
+
             <p>
-              The quadricycle was built with a sturdy yet lightweight frame,
-              using materials such as steel or aluminum. The design ensured
-              stability, even on sandy terrains, preventing the quadricycle from
-              falling over. A self-centering mechanism was ingeniously
-              incorporated into the steering system, enhancing maneuverability
-              and control. The candidate thoughtfully added a trunk for storage,
-              demonstrating their attention to practicality and user experience.
-              A shaded parasol was mounted on aluminum struts, providing comfort
-              for the riders under the sun.
+              The quadricycle was built from four scavenged aluminum "La Jolla"
+              frames, and aluminum stock tubing. The frames were welded together
+              in parallel, gincreasing stability, particularly important on
+              sandy terrains preventing the quadricycle from falling over. A
+              self-centering mechanism was ingeniously incorporated into the
+              steering system, enhancing maneuverability and control. The
+              candidate thoughtfully added a trunk for storage, demonstrating
+              their attention to practicality and user experience. A shaded
+              parasol was mounted on aluminum struts, providing comfort for the
+              riders under the sun.
             </p>
+            <img src={quadFlash} alt="Quadricycle" />
             <p>
               In a fusion of technology and art, the quadricycle was adorned
               with hundreds of lights, creating a dazzling display that added to
