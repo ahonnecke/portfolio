@@ -7,7 +7,7 @@ import quadLit from "../public/quad_lit.jpg";
 import { Link } from "react-router-dom";
 
 export function BigWheel() {
-	const navData = navMap["big_wheel"];
+	const navData = navMap.big_wheel;
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
@@ -49,7 +49,7 @@ export function BigWheel() {
 }
 
 export function FireTable() {
-	const navData = navMap["fire_table"];
+	const navData = navMap.fire_table;
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
@@ -66,7 +66,7 @@ export function FireTable() {
 					</p>
 
 					<video controls autoPlay loop muted>
-						<source src={myVideo} type="video/mp4"></source>
+						<source src={myVideo} type="video/mp4" />
 					</video>
 
 					<p>
@@ -99,7 +99,7 @@ export function FireTable() {
 }
 
 export function CV() {
-	const navData = navMap["cv"];
+	const navData = navMap.cv;
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
@@ -124,7 +124,7 @@ export function CV() {
 }
 
 export function Quadricycle() {
-	const navData = navMap["quadricycle"];
+	const navData = navMap.quadricycle;
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
@@ -174,7 +174,7 @@ export function Quadricycle() {
 }
 
 export function Docker() {
-	const navData = navMap["docker"];
+	const navData = navMap.docker;
 	return (
 		<span className="detailPage">
 			<div className="content">
@@ -217,7 +217,7 @@ export function Docker() {
 }
 
 export function Consolo() {
-	const navData = navMap["consolo"];
+	const navData = navMap.consolo;
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
@@ -273,7 +273,7 @@ export function Consolo() {
 }
 
 export function Snifter() {
-	const navData = navMap["snifter"];
+	const navData = navMap.snifter;
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
@@ -323,7 +323,7 @@ export function Snifter() {
 }
 
 export function JollyBrancher() {
-	const navData = navMap["jolly_brancher"];
+	const navData = navMap.jolly_brancher;
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
@@ -380,7 +380,7 @@ export function JollyBrancher() {
 }
 
 export function Github() {
-	const navData = navMap["github"];
+	const navData = navMap.github;
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
@@ -422,7 +422,7 @@ export function Github() {
 }
 
 export function Linting() {
-	const navData = navMap["linting"];
+	const navData = navMap.linting;
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
@@ -455,7 +455,7 @@ export function Linting() {
 }
 
 export function Devops() {
-	const navData = navMap["devops"];
+	const navData = navMap.devops;
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
@@ -485,7 +485,7 @@ export function Devops() {
 }
 
 export function Wayward() {
-	const navData = navMap["wayward"];
+	const navData = navMap.wayward;
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
