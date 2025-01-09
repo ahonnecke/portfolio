@@ -1,8 +1,8 @@
 import { navMap } from "./NavMap.tsx";
 
 import myVideo from "../public/fire_table.mov";
-import quadLit from "../public/quad_lit.jpg";
 import quadFlash from "../public/quad_flashton.jpg";
+import quadLit from "../public/quad_lit.jpg";
 
 import { Link } from "react-router-dom";
 
@@ -89,8 +89,8 @@ export function FireTable() {
           <p>
             This project showcased the artist's skills in design, fabrication,
             and installation of large-scale art projects. It stands as a
-            testament to their creativity, technical skills, and their ability
-            to create engaging and interactive art installations.
+            testament to my creativity, technical skills, and my ability to
+            create engaging and interactive art installations.
           </p>
         </div>
       </Link>
@@ -148,17 +148,17 @@ export function Quadricycle() {
               sandy terrains preventing the quadricycle from falling over. A
               self-centering mechanism was ingeniously incorporated into the
               steering system, enhancing maneuverability and control. The
-              candidate thoughtfully added a trunk for storage, demonstrating
-              their attention to practicality and user experience. A shaded
-              parasol was mounted on aluminum struts, providing comfort for the
-              riders under the sun.
+              candidate thoughtfully added a trunk for storage, demonstrating my
+              attention to practicality and user experience. A shaded parasol
+              was mounted on aluminum struts, providing comfort for the riders
+              under the sun.
             </p>
             <img src={quadFlash} alt="Quadricycle" />
             <p>
               In a fusion of technology and art, the quadricycle was adorned
               with hundreds of lights, creating a dazzling display that added to
               the joy of riding it. The candidate's ability to integrate
-              electronic components into the design highlighted their
+              electronic components into the design highlighted my
               multidisciplinary skills. The successful completion of the
               quadricycle, followed by a successful test ride, stands as a
               testament to the candidate's technical skills, creativity, and
@@ -185,18 +185,18 @@ export function Docker() {
             The talk titled “Cleaning Up Your Python Environment” delivered by
             the author is a comprehensive guide on managing Python environments.
             The talk addresses the common challenges faced by developers in
-            maintaining their Python environments, drawing a parallel with
-            Randall Munroe's (of XKCD fame) Python environment superfund site.
-            Key points from the talk include: The importance of keeping a clean
-            and organized Python environment. Practical tips and best practices
-            for managing Python environments. Demonstrations of common pitfalls
-            and how to avoid them. Use of various tools and techniques to
-            streamline the process. This talk showcases the author's deep
-            understanding of Python, their ability to communicate complex
-            concepts in an accessible manner, and their commitment to sharing
-            knowledge with the community. It's a testament to their expertise
-            and their passion for continuous learning and improvement. This
-            makes it a notable accomplishment to include on a resume.
+            maintaining my Python environments, drawing a parallel with Randall
+            Munroe's (of XKCD fame) Python environment superfund site. Key
+            points from the talk include: The importance of keeping a clean and
+            organized Python environment. Practical tips and best practices for
+            managing Python environments. Demonstrations of common pitfalls and
+            how to avoid them. Use of various tools and techniques to streamline
+            the process. This talk showcases the author's deep understanding of
+            Python, my ability to communicate complex concepts in an accessible
+            manner, and my commitment to sharing knowledge with the community.
+            It's a testament to my expertise and my passion for continuous
+            learning and improvement. This makes it a notable accomplishment to
+            include on a resume.
           </p>
           <ul>
             <li>
@@ -389,17 +389,16 @@ export function Github() {
           <h2>Github</h2>
           <div>
             <p>
-              A GitHub profile serves as a dynamic resume, showcasing their
-              coding projects and contributions to the open-source community. It
+              A GitHub profile serves as a dynamic resume, showcasing my coding
+              projects and contributions to the open-source community. It
               provides a real-time demonstration of the author's coding skills,
               problem-solving abilities, and collaboration in team projects.
             </p>
             <p>Key features of the GitHub profile include:</p>
             <p>
-              Repositories: The author's repositories highlight the projects
-              they have initiated or contributed to. Each repository includes
-              source code, a README to explain the project, and a history of
-              commits.
+              Repositories: My repositories highlight the projects they have
+              initiated or contributed to. Each repository includes source code,
+              a README to explain the project, and a history of commits.
             </p>
             <p>
               Contributions: The contribution graph shows the author's activity
@@ -465,31 +464,42 @@ export function Devops() {
           <h2>Devops</h2>
           <div>
             <p>
-              A Devops profile serves as a dynamic resume, showcasing their
-              coding projects and contributions to the open-source community. It
-              provides a real-time demonstration of the author's coding skills,
-              problem-solving abilities, and collaboration in team projects.
-            </p>
-            <p>Key features of the Devops profile include:</p>
-            <p>
-              Repositories: The author's repositories highlight the projects
-              they have initiated or contributed to. Each repository includes
-              source code, a README to explain the project, and a history of
-              commits.
+              I am a passionate advocate for CI/CD, a firm believer in the power
+              of containers, and someone who loves automating processes to make
+              workflows efficient and reliable. I take pride in promoting clean
+              code practices through effective linting and strive to build
+              systems that are both robust and streamlined.
             </p>
             <p>
-              Contributions: The contribution graph shows the author's activity
-              over time, demonstrating consistency and commitment to ongoing
-              learning and improvement.
+              {" "}
+              My repositories showcase projects I’ve initiated or contributed
+              to, featuring source code, detailed READMEs, and a history of
+              commits that reflect my problem-solving skills and dedication to
+              continuous improvement.
             </p>
+          </div>
+        </div>
+      </Link>
+    </span>
+  );
+}
+
+export function Wayward() {
+  const navData = navMap["wayward"];
+  return (
+    <span className="detailPage">
+      <Link to={navData.link}>
+        <img src={navData.image} alt={navData.text} />
+        <div className="content">
+          <h2>{navData.text}</h2>
+          <div>
             <p>
-              Stars: The stars on a repository indicate its popularity within
-              the Devops community and can be seen as a form of peer
-              recognition.
-            </p>
-            <p>
-              Forks: Forks show how many other developers have found the
-              author's work valuable and have built upon it.
+              The daemon is built with Python, and monitors the downloads folder
+              in the background. When a new file has been downloaded (and the
+              file has finished downloading, as determined by the file not
+              changing for 5 seconds), the daemon will apply the appropriate
+              post processing (as determined by an arbitraty python function),
+              and then move the file to the appropriate folder.
             </p>
           </div>
         </div>

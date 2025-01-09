@@ -1,6 +1,5 @@
 SHELL = /bin/bash
-APICMD=docker exec -it hagglebot_api_1
-COMPOSE=docker-compose -f docker-compose.yml
+COMPOSE=docker compose -f docker-compose.yml
 ##
 # Hagglebot
 ##

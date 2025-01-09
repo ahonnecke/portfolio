@@ -1,16 +1,17 @@
-import LintingCard from "../public/linting_card.png";
 import BigWheelCard from "../public/big_wheel_card.png";
-import FireTableCard from "../public/fire_table_card.png";
 import ConsoloCard from "../public/consolo_card.png";
 import CvCard from "../public/cv_card.png";
 import DevopsCard from "../public/devops_card.jpg";
 import DockerCard from "../public/docker_card.png";
+import FireTableCard from "../public/fire_table_card.png";
 import GithubCard from "../public/github_card.png";
 import HomeCard from "../public/home_card.jpg";
 import JollyBrancherCard from "../public/jolly_brancher_card.png";
+import LintingCard from "../public/linting_card.png";
 import QuadricycleCard from "../public/quadricycle_card.png";
 import SnifterCard from "../public/snifter_card.png";
-import { NavMap } from "./NavMapInterface.tsx";
+import WaywardCard from "../public/wayward_card.png";
+import type { NavMap } from "./NavMapInterface.tsx";
 
 const BigWheelAbstract: () => JSX.Element = () => {
   return (
@@ -82,10 +83,10 @@ const JollyBrancherAbstract = () => {
 const GithubAbstract = () => {
   return (
     <span>
-      The author's GitHub profile serves as a dynamic resume, showcasing their
-      coding projects and contributions to the open-source community. It
-      provides a real-time demonstration of the author’s coding skills,
-      problem-solving abilities, and collaboration in team projects.
+      My GitHub profile serves as a dynamic resume, showcasing my coding
+      projects and contributions to the open-source community. It provides a
+      real-time demonstration of my coding skills, problem-solving abilities,
+      and collaboration in team projects.
     </span>
   );
 };
@@ -93,11 +94,10 @@ const GithubAbstract = () => {
 const HomeAbstract = () => {
   return (
     <span>
-      The author's portfolio website serves as a central hub for their
-      professional information, projects, and contact details. It provides a
-      comprehensive overview of the author’s skills, experience, and
-      accomplishments, making it easy for potential employers or collaborators
-      to learn more about them.
+      My portfolio website serves as a central hub for my professional
+      information, projects, and contact details. It provides a comprehensive
+      overview of my skills, experience, and accomplishments, making it easy for
+      potential employers or collaborators to learn more about them.
     </span>
   );
 };
@@ -105,9 +105,22 @@ const HomeAbstract = () => {
 const DevopsAbstract = () => {
   return (
     <span>
-      DevOps is a set of practices that combines software development (Dev) and
-      IT operations (Ops). It aims to shorten the systems development life cycle
-      and provide continuous delivery with high software quality.
+      Passionate DevOps professional with expertise in CI/CD, automation,
+      containerization, and linting. I specialize in streamlining software
+      delivery pipelines, creating efficient workflows, and ensuring clean,
+      maintainable code. My focus is on leveraging containers for scalability,
+      automating repetitive tasks for consistency, and advocating for robust
+      linting practices to maintain high-quality codebases
+    </span>
+  );
+};
+
+const WaywardAbstract = () => {
+  return (
+    <span>
+      Wayward is a daemon that monitors a folder in the background for new
+      files, and applies post processing and then moves the files to a new
+      location.
     </span>
   );
 };
@@ -161,6 +174,13 @@ export const navMap: NavMap = {
     text: "Consolo",
     category: "FOSS",
     detail: ConsoloAbstract,
+  },
+  wayward: {
+    link: "wayward/",
+    image: WaywardCard,
+    text: "wayward",
+    category: "Tools",
+    detail: WaywardAbstract,
   },
   snifter: {
     link: "https://pypi.org/project/snifter/",

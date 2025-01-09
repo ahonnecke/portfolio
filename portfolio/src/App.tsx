@@ -14,6 +14,7 @@ import {
   Github,
   Linting,
   Devops,
+  Wayward,
 } from "./Details.tsx";
 import { navMap } from "./NavMap.tsx";
 
@@ -44,6 +45,7 @@ function App(): JSX.Element {
           <Route path="/fire_table" element={<FireTable />} />
           <Route path="/github" element={<Github />} />
           <Route path="/jolly_brancher" element={<JollyBrancher />} />
+          <Route path="/wayward" element={<Wayward />} />
           <Route path="/linting" element={<Linting />} />
           <Route path="/quadricycle" element={<Quadricycle />} />
           <Route path="/snifter" element={<Snifter />} />
@@ -63,6 +65,7 @@ function Main(): JSX.Element {
         <Tile tile="consolo" />
         <Tile tile="snifter" />
         <Tile tile="jolly_brancher" />
+        <Tile tile="wayward" />
         <Tile tile="docker" />
         <Tile tile="linting" />
         <Tile tile="devops" />
