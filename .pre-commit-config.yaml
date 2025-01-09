@@ -29,3 +29,9 @@ repos:
     rev: "v4.0.0-alpha.8"
     hooks:
       - id: prettier
+repos:
+-   repo: https://github.com/biomejs/pre-commit
+    rev: "v0.6.1"
+    hooks:
+    -   id: biome-check
+        additional_dependencies: ["@biomejs/biome@1.4.1"]
