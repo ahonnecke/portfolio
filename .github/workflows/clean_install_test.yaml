@@ -1,0 +1,43 @@
+name: NPM CI and Build
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_call:
+    inputs:
+      push:
+        description: "Whether this is a push event"
+        required: false
+        type: boolean
+        default: false
+jobs:
+  clean_install_and_test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "21"
+          cache: "npm"
+          cache-dependency-path: portfolio/package-lock.json
+      - name: Install portfolio dependencies
+        working-directory: portfolio
+        run: npm ci
+      - name: Run lint
+        working-directory: portfolio
+        run: npm run lint
+  smoke_build:
+    name: Test Build
+    needs: clean_install_and_test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Smoke Test Docker image
+        run: |
+          docker build -f portfolio/Dockerfile.prod -t portfolio/ashtonportfolio ./portfolio
+          docker tag portfolio/frontend registry.digitalocean.com/beampockets/ashtonportfolio:test
