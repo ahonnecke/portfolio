@@ -52,7 +52,5 @@ jobs:
           docker push registry.digitalocean.com/beampockets/ashtonportfolio:latest
       - name: Create deployment
         run: |
-          # Update app spec with current configuration
-          doctl apps update $DO_APP_ID --spec .do/app.yaml --wait
           # Create deployment
           doctl apps create-deployment $DO_APP_ID --wait
