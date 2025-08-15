@@ -1,12 +1,15 @@
 name: ashtonportfolio
 region: nyc
 services:
-- dockerfile_path: portfolio/Dockerfile
+- image:
+    registry_type: DOCR
+    repository: beampockets/ashtonportfolio
+    tag: latest
   github:
     branch: main
     deploy_on_push: true
     repo: ahonnecke/portfolio
-  http_port: 3000
+  http_port: 8080
   instance_count: 1
   instance_size_slug: basic-xxs
   name: ashtonportfolio

@@ -1,9 +1,26 @@
 # Build stage
 FROM node:21 AS build
 WORKDIR /app
+
+# Debug: Show directory contents
+RUN ls -la
+
+# Copy package files first for better caching
 COPY package*.json ./
+
+# Debug: Show what was copied
+RUN ls -la
+
+# Install dependencies
 RUN npm ci
+
+# Copy the rest of the application
 COPY . .
+
+# Debug: Show what we have before building
+RUN ls -la && cat package.json
+
+# Build the application
 RUN npm run build
 
 # Runtime
