@@ -1,17 +1,16 @@
-version: "3.7"
-
 services:
   frontend:
     build:
       context: ./portfolio
+      target: build
     volumes:
-      - ./portfolio:/home/node/app
+      - ./portfolio:/app
     tty: true
     ports:
       - "5173:5173"
     environment:
       - NODE_ENV=dev
-      - SET_ALL_ENVIRONMENT_VARIABLES_IN_DOT_ENV_FILE=true
+    working_dir: /app
     command: ["npm", "run", "dev"]
 
   nginx:

@@ -33,24 +33,13 @@ jobs:
         run: |
           npm ci
           npm run build
-      - name: Build Docker image for deploy
-        run: |
-          docker build -f portfolio/Dockerfile -t portfolio/ashtonportfolio ./portfolio
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_API_TOKEN }}
-      - name: Log in to DO Container Registry
-        run: doctl registry login --expiry-seconds 600
-      - name: Tag image
-        run: |
-          docker tag portfolio/ashtonportfolio registry.digitalocean.com/beampockets/ashtonportfolio:${{ env.RELEASE_TAG }}
-          docker tag portfolio/ashtonportfolio registry.digitalocean.com/beampockets/ashtonportfolio:latest
-      - name: Push image to DO Container Registry
-        run: |
-          docker push registry.digitalocean.com/beampockets/ashtonportfolio:${{ env.RELEASE_TAG }}
-          docker push registry.digitalocean.com/beampockets/ashtonportfolio:latest
       - name: Create deployment
         run: |
+          # Update app spec with current configuration
+          doctl apps update $DO_APP_ID --spec .do/app.yaml --wait
           # Create deployment
           doctl apps create-deployment $DO_APP_ID --wait

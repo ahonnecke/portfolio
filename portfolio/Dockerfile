@@ -2,23 +2,14 @@
 FROM node:21 AS build
 WORKDIR /app
 
-# Debug: Show directory contents
-RUN ls -la
-
 # Copy package files first for better caching
 COPY package*.json ./
-
-# Debug: Show what was copied
-RUN ls -la
 
 # Install dependencies
 RUN npm ci
 
 # Copy the rest of the application
-COPY . .
-
-# Debug: Show what we have before building
-RUN ls -la && cat package.json
+COPY . ./
 
 # Build the application
 RUN npm run build
@@ -34,12 +25,15 @@ RUN npm install -g serve
 # Copy built files
 COPY --from=build /app/dist ./dist
 
+# Set proper ownership
+RUN chown -R node:node /app
+
 # Run as non-root
 USER node
 
-# Expose DO's expected port
-ENV PORT=8080
-EXPOSE 8080
+# Expose port 3000 for Digital Ocean
+ENV PORT=3000
+EXPOSE 3000
 
 # Bind to $PORT so DO's probe works
-CMD ["sh", "-lc", "serve -s dist -l ${PORT}"]
+CMD ["sh", "-c", "serve -s dist -l ${PORT}"]
