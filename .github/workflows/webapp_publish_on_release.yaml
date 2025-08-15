@@ -17,7 +17,7 @@ jobs:
     if: github.event_name == 'release' || github.event_name == 'push'
     runs-on: ubuntu-latest
     env:
-      DO_APP_ID: ${{ secrets.DIGITALOCEAN_APP_ID }}
+      DO_APP_ID: dc34af0e-170f-4861-94ee-a385ce011ea2
       RELEASE_TAG: ${{ github.event_name == 'release' && github.event.release.tag_name || format('commit-{0}', github.sha) }}
     steps:
       - name: Checkout the repo
