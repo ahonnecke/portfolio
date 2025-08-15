@@ -14,7 +14,7 @@ services:
     deploy_on_push: true
     repo: ahonnecke/portfolio
   http_port: 3000
+  source_dir: portfolio
   instance_count: 1
   instance_size_slug: basic-xxs
   name: ashtonportfolio
-  source_dir: /
