@@ -182,21 +182,26 @@ export function Docker() {
 					<img src={navData.image} alt={navData.text} />
 					<h2>{navData.text}</h2>
 					<p>
-						The talk titled “Cleaning Up Your Python Environment” delivered by
-						the author is a comprehensive guide on managing Python environments.
-						The talk addresses the common challenges faced by developers in
-						maintaining my Python environments, drawing a parallel with Randall
-						Munroe's (of XKCD fame) Python environment superfund site. Key
-						points from the talk include: The importance of keeping a clean and
-						organized Python environment. Practical tips and best practices for
-						managing Python environments. Demonstrations of common pitfalls and
-						how to avoid them. Use of various tools and techniques to streamline
-						the process. This talk showcases the author's deep understanding of
-						Python, my ability to communicate complex concepts in an accessible
-						manner, and my commitment to sharing knowledge with the community.
-						It's a testament to my expertise and my passion for continuous
-						learning and improvement. This makes it a notable accomplishment to
-						include on a resume.
+						My talk, <em>“Cleaning Up Your Python Environment”</em>, is a
+						straightforward guide to taking the chaos out of Python development.
+						I kicked things off with Randall Munroe’s classic XKCD comic about
+						Python environment disasters—because let’s be honest, we’ve all been
+						there. From there, I walked through real-world strategies for
+						keeping things clean, reproducible, and maintainable.
+					</p>
+					<p>
+						I covered tools, patterns, and techniques that help avoid common
+						pitfalls—like how to use containers for isolation, and Docker
+						Compose to manage multi-service environments (especially databases).
+						The goal was to make Python workflows less painful and easier to
+						share across teams.
+					</p>
+					<p>
+						What I enjoyed most was breaking down the complexity into something
+						approachable. The talk reflects not just my technical background,
+						but my belief that knowledge should be shared and tooling should
+						reduce cognitive load—not add to it. It's a talk I'm proud to
+						include as part of my professional work.
 					</p>
 					<ul>
 						<li>
@@ -226,44 +231,43 @@ export function Consolo() {
 					<h2>{navData.text}</h2>
 					<div>
 						<p>
-							Consolo is a Free and Open Source Software (FOSS) utility that
-							provides a solution for pseudo-mounting an AWS lambda filesystem
-							locally. It supports hot reloading by default, enhancing the
-							development experience.
+							I built <strong>Consolo</strong> as a free and open source utility
+							for pseudo-mounting an AWS Lambda filesystem locally. It’s
+							designed to make serverless development feel a bit more like
+							working with a local codebase—hot reloading included, by default.
+						</p>
+						<p>Consolo’s main features include:</p>
+						<ul>
+							<li>
+								<strong>Hot Syncing:</strong> It can automatically sync with
+								your Lambda codebase so you can make changes locally and see
+								them take effect immediately.
+							</li>
+							<li>
+								<strong>Upload and Download:</strong> You can push changes to
+								the cloud or pull down the latest from a Lambda function using a
+								simple flag.
+							</li>
+							<li>
+								<strong>Easy Install:</strong> Installable with a single curl
+								command or via <code>pip install</code>.
+							</li>
+						</ul>
+						<p>
+							It’s written in Python using libraries like <code>argdantic</code>
+							, <code>requests</code>, <code>watchdog</code>, and{" "}
+							<code>boto3</code>, and is built to be both fast and
+							developer-friendly.
 						</p>
 						<p>
-							Key features of Consolo include:
-							<ul>
-								<li>
-									Hot Syncing: Consolo can start hot syncing with the AWS lambda
-									filesystem.
-								</li>
-								<li>
-									Upload and Download: It allows users to upload from local to
-									cloud and download from cloud to local.
-								</li>
-								<li>
-									Installation: Consolo can be installed via a single file curl
-									command or pip install.
-								</li>
-							</ul>
+							It’s pronounced "Con Solo"—like Han Solo—which felt like the right
+							blend of utility and fun.
 						</p>
 						<p>
-							The utility is built with Python and leverages several libraries
-							such as argdantic, requests, watchdog, and boto3. It's a display
-							of ability in Python programming, cloud computing, and software
-							development.
-						</p>
-						<p>
-							Pronounced 'Con Solo', like 'Han Solo'. This playful touch shows
-							the author's creativity and sense of humor.
-						</p>
-						<p>
-							This utility demonstrates the author's ability to create practical
-							and innovative solutions that streamline and enhance the
-							development process. It's a valuable addition to any software
-							developer's toolkit, and a notable accomplishment to include on a
-							resume.
+							Consolo is a good example of my approach to building lightweight,
+							practical tools that improve everyday developer workflows. I
+							designed it to scratch my own itch, but it turned out to be useful
+							for others too—which is always the goal.
 						</p>
 					</div>
 				</div>
@@ -282,38 +286,40 @@ export function Snifter() {
 					<h2>{navData.text}</h2>
 					<div>
 						<p>
-							Snifter is a Free and Open Source Software (FOSS) utility that
-							provides a solution for inspecting AWS Simple Notification Service
-							(SNS) topic data. Because SNS data is ephemeral, Snifter creates a
-							temporary SQS queue, subscribes the queue to the SNS topic you
-							want to inspect, and then watches that queue. This is all done in
+							I built <strong>Snifter</strong> to make it easier to inspect data
+							coming through AWS SNS topics. Since SNS messages are ephemeral,
+							there’s no built-in way to pause and look at them unless you
+							subscribe to something like email or SMS—which isn’t exactly ideal
+							for debugging. Snifter solves that by creating a temporary SQS
+							queue, subscribing it to your topic, and watching the queue—all in
 							a single command.
 						</p>
+						<p>Key features include:</p>
+						<ul>
+							<li>
+								<strong>Live Streaming:</strong> It starts watching SNS messages
+								in real time with minimal setup.
+							</li>
+							<li>
+								<strong>Interactive Debugging:</strong> Add the{" "}
+								<code>--debug</code> flag to drop into a debugger as messages
+								arrive—great for digging into payload structure on the fly.
+							</li>
+							<li>
+								<strong>Simple CLI:</strong> Clean and intuitive command-line
+								interface that works with any AWS profile and topic ARN.
+							</li>
+						</ul>
 						<p>
-							Key features of Snifter include:
-							<ul>
-								<li>
-									Hot Syncing: Snifter can start hot syncing with the AWS SNS
-									topic.
-								</li>
-								<li>
-									Interactive Debugging: Providing the --debug flag will cause
-									you to drop into a debugger when something is popped from the
-									queue.
-								</li>
-								<li>
-									Ease of Usage: Snifter can be used with a simple command line
-									interface.
-								</li>
-							</ul>
+							Snifter is written in Python and leverages AWS SDK tooling under
+							the hood. It’s a lightweight, throwaway tool I use to troubleshoot
+							or understand what a topic is emitting—without needing to set up
+							permanent infrastructure.
 						</p>
 						<p>
-							The utility is built with Python, demonstrating the author's
-							skills in Python programming, cloud computing, and software
-							development. This utility showcases the author's ability to create
-							practical solutions that enhance the development process. It's a
-							valuable addition to any software developer's toolkit, and a
-							notable accomplishment to include on a resume.
+							It’s a small utility, but a great example of my approach:
+							practical solutions for real problems that developers run into all
+							the time.
 						</p>
 					</div>
 				</div>
@@ -332,45 +338,45 @@ export function JollyBrancher() {
 					<h2>{navData.text}</h2>
 					<div>
 						<p>
-							Jolly-Brancher is a Free and Open Source Software (FOSS) utility
-							designed to streamline the developer's workflow by connecting an
-							arbitrary ticketing system to a git forge.
+							I built <strong>Jolly-Brancher</strong> to automate one of the
+							most tedious parts of dev workflow: wiring up your git branches to
+							your ticketing system. It’s a free and open source tool that
+							connects JIRA to GitHub, and helps streamline everything from
+							branch creation to PR description.
+						</p>
+						<p>Here’s what it can do:</p>
+						<ul>
+							<li>
+								<strong>Branch Creation:</strong> Point it at a repo and a JIRA
+								ticket, and it’ll create a new branch with the ticket ID and
+								summary baked into the branch name and metadata.
+							</li>
+							<li>
+								<strong>Pull Review Creation:</strong> It can generate a pull
+								request from a well-formed branch with a single command.
+							</li>
+							<li>
+								<strong>Auto-filled Descriptions:</strong> The PR body gets
+								pre-filled with ticket details so you don’t have to copy-paste
+								or write from scratch.
+							</li>
+							<li>
+								<strong>Configurable:</strong> Set your JIRA and GitHub
+								credentials in
+								<code>~/.config/jolly_brancher.ini</code> and you’re ready to
+								go.
+							</li>
+						</ul>
+						<p>
+							Jolly-Brancher is written in Python and designed to reduce context
+							switching for developers. It’s currently focused on JIRA and
+							GitHub, but I have plans to expand support and add features like
+							comment extraction and auto-generated branch summaries.
 						</p>
 						<p>
-							Key features of Jolly-Brancher include:
-							<ul>
-								<li>
-									Branch Creation: Given a repository location, Jolly-Brancher
-									creates branches from JIRA tickets that automatically include
-									ticket information in the branch and branch name.
-								</li>
-								<li>
-									Pull Review Creation: It can create a pull review from an
-									existing branch that is well formed.
-								</li>
-								<li>
-									PR Description: It automatically populates the PR description
-									with information from the ticket.
-								</li>
-								<li>
-									Ease of Configuration: JIRA and git credentials are required
-									in ~/.config/jolly_brancher.ini. Currently, only JIRA is
-									supported for the ticketing system and only GitHub is
-									supported for the git forge.
-								</li>
-							</ul>
-						</p>
-						<p>
-							The utility is built with Python, demonstrating the author's
-							skills in Python programming, cloud computing, and software
-							development. This utility showcases the author's ability to create
-							practical solutions that enhance the development process. It's a
-							valuable addition to any software developer's toolkit, and a
-							notable accomplishment to include on a resume. Future features
-							include extracting the contents of the comments in the branch and
-							constructing a description of the changes in the branch,
-							performing in-place analysis of the branch and adding information
-							to the PR, and more.
+							At its core, it’s about reducing friction. I built it to eliminate
+							repetitive tasks and let me (and hopefully others) stay focused on
+							actual code—not copy-pasting ticket IDs.
 						</p>
 					</div>
 				</div>
@@ -386,33 +392,40 @@ export function Github() {
 			<Link to={navData.link}>
 				<img src={navData.image} alt={navData.text} />
 				<div className="content">
-					<h2>Github</h2>
+					<h2>GitHub</h2>
 					<div>
 						<p>
-							A GitHub profile serves as a dynamic resume, showcasing my coding
-							projects and contributions to the open-source community. It
-							provides a real-time demonstration of the author's coding skills,
-							problem-solving abilities, and collaboration in team projects.
+							My GitHub profile is a living portfolio that showcases how I
+							think, code, and collaborate. It gives a real-time view into the
+							projects I’ve built, the open source work I’ve contributed to, and
+							how I approach software development as a whole.
 						</p>
-						<p>Key features of the GitHub profile include:</p>
+						<p>Some highlights include:</p>
+						<ul>
+							<li>
+								<strong>Repositories:</strong> Each repo tells a story—what I
+								built, why I built it, and how it works. I include detailed
+								READMEs, clear commit history, and clean, documented code.
+							</li>
+							<li>
+								<strong>Contributions:</strong> My contribution graph reflects
+								my commitment to continuous improvement and active engagement
+								with the community.
+							</li>
+							<li>
+								<strong>Stars:</strong> Stars on my projects serve as peer
+								feedback, showing what others have found useful or inspiring.
+							</li>
+							<li>
+								<strong>Forks:</strong> Seeing others build on top of my work is
+								one of the most rewarding aspects of sharing code—it’s proof
+								that what I’ve made has real value.
+							</li>
+						</ul>
 						<p>
-							Repositories: My repositories highlight the projects they have
-							initiated or contributed to. Each repository includes source code,
-							a README to explain the project, and a history of commits.
-						</p>
-						<p>
-							Contributions: The contribution graph shows the author's activity
-							over time, demonstrating consistency and commitment to ongoing
-							learning and improvement.
-						</p>
-						<p>
-							Stars: The stars on a repository indicate its popularity within
-							the GitHub community and can be seen as a form of peer
-							recognition.
-						</p>
-						<p>
-							Forks: Forks show how many other developers have found the
-							author's work valuable and have built upon it.
+							Whether you're looking at my solo builds or team contributions,
+							GitHub is the best place to see what I bring to the table as a
+							developer.
 						</p>
 					</div>
 				</div>
@@ -431,21 +444,26 @@ export function Linting() {
 					<h2>{navData.text}</h2>
 					<div>
 						<p>
-							I delivered a local talk on linting, which is now only{" "}
+							I gave a local talk on the value of linting; unfortunately, the
+							recording didn’t survive the early chaos of COVID, but{" "}
 							<Link to="https://github.com/ahonnecke/linting">
-								hosted on GitHub
+								the slides and materials
 							</Link>{" "}
-							(the recoding was lost in the fervor of COVID). This talk, which I
-							authored and, delved deep into the world of linting, a crucial
-							aspect of programming that ensures code quality and readability.
-							Linting, a type of static code analysis, checks code for potential
-							errors, bugs, stylistic errors, and suspicious constructs. In this
-							talk, I guided the audience through the importance of linting, how
-							to set it up, and how to use it to improve code quality. The talk
-							was beneficial for both seasoned developers and beginners in
-							coding, offering valuable insights into the best practices of
-							using linting tools in projects. This experience enhanced my
-							coding skills and deepened my understanding of linting.
+							are still available on GitHub.
+						</p>
+						<p>
+							In the talk, I explored why linting matters—not just for catching
+							bugs, but for improving readability, reducing cognitive load, and
+							keeping teams aligned. I covered how to set up linting tools (like{" "}
+							<code>black</code>, at the time), integrate them into your
+							workflow, and use them to maintain high-quality, consistent
+							codebases.
+						</p>
+						<p>
+							The session was aimed at both new and experienced developers, and
+							focused on real-world tips that go beyond the docs. Preparing and
+							delivering it pushed me to think deeply about code quality and how
+							small tooling decisions scale across teams.
 						</p>
 					</div>
 				</div>
@@ -461,21 +479,29 @@ export function Devops() {
 			<Link to={navData.link}>
 				<img src={navData.image} alt={navData.text} />
 				<div className="content">
-					<h2>Devops</h2>
+					<h2>DevOps</h2>
 					<div>
 						<p>
-							I am a passionate advocate for CI/CD, a firm believer in the power
-							of containers, and someone who loves automating processes to make
-							workflows efficient and reliable. I take pride in promoting clean
-							code practices through effective linting and strive to build
-							systems that are both robust and streamlined.
+							I’m a passionate advocate for CI/CD, a firm believer in the power
+							of containers, and someone who genuinely enjoys automating away
+							repetitive tasks to create efficient, reliable workflows. I place
+							a strong emphasis on clean code practices—especially through
+							consistent and thoughtful linting—and I’m always aiming to build
+							systems that are both robust and maintainable.
 						</p>
 						<p>
-							{" "}
-							My repositories showcase projects I’ve initiated or contributed
-							to, featuring source code, detailed READMEs, and a history of
-							commits that reflect my problem-solving skills and dedication to
-							continuous improvement.
+							My tooling spans across multiple cloud providers and CI platforms,
+							so I’m comfortable building and deploying in diverse environments.
+							Whether it’s AWS, GCP, or another provider—or CI systems like
+							GitHub Actions, GitLab CI, CircleCI, or Bitbucket Pipelines—I’ve
+							worked across them to deliver smooth, automated pipelines.
+						</p>
+						<p>
+							My repositories reflect this approach: they feature projects I’ve
+							initiated or contributed to, with clean source code, detailed
+							READMEs, and a history of commits that demonstrate my focus on
+							solving real-world problems and continuously improving the
+							developer experience.
 						</p>
 					</div>
 				</div>
@@ -494,12 +520,18 @@ export function Wayward() {
 					<h2>{navData.text}</h2>
 					<div>
 						<p>
-							The daemon is built with Python, and monitors the downloads folder
-							in the background. When a new file has been downloaded (and the
-							file has finished downloading, as determined by the file not
-							changing for 5 seconds), the daemon will apply the appropriate
-							post processing (as determined by an arbitraty python function),
-							and then move the file to the appropriate folder.
+							I built <strong>Wayward</strong> as a background daemon in Python
+							to keep my downloads folder organized without me having to think
+							about it. It watches for newly downloaded files, waits until
+							they’re fully written (determined by checking that they haven’t
+							changed for 5 seconds), and then runs them through a custom
+							post-processing function.
+						</p>
+						<p>
+							Once processed, the file is moved to its proper
+							destination—completely hands-free. The logic for what to do with
+							each file is totally flexible and written in Python, so it’s easy
+							to extend or adapt for different workflows.
 						</p>
 					</div>
 				</div>
