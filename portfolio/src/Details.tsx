@@ -566,11 +566,51 @@ export function FoodieFolder() {
 						</p>
 						<p>
 							The technical implementation includes React Native for the
-							frontend, Expo for cross-platform compatibility, a pythong backend
-							that wraps an LLM for OCR processing, and a structured data model
-							for organizing menu items. This project showcases my ability to
-							create practical mobile applications that solve real-world
-							problems while delivering a polished user experience.
+							frontend, Expo for cross-platform compatibility, Tesseract.js for
+							OCR processing, and a structured data model for organizing menu
+							items. This project showcases my ability to create practical
+							mobile applications that solve real-world problems while
+							delivering a polished user experience.
+						</p>
+					</div>
+				</div>
+			</Link>
+		</span>
+	);
+}
+
+export function Hagglebot() {
+	const navData = navMap.hagglebot;
+	return (
+		<span className="detailPage">
+			<Link to={navData.link}>
+				<img src={navData.image} alt={navData.text} />
+				<div className="content">
+					<h2>{navData.text}</h2>
+					<div>
+						<p>
+							I developed <strong>Hagglebot</strong>, an AI-powered negotiation
+							assistant that helps car buyers get the best possible deals when
+							purchasing vehicles. The system automates the haggling process by
+							analyzing dealer responses, identifying price offers, and
+							generating strategic counter-offers to push for better pricing.
+						</p>
+						<p>
+							Hagglebot manages email conversations with multiple dealerships
+							simultaneously, maintaining context across lengthy negotiations.
+							It uses natural language processing to extract key information
+							from dealer messages, such as price points, incentives, and
+							special conditions, then formulates appropriate responses that
+							advance the buyer's position.
+						</p>
+						<p>
+							The technical implementation includes a containerized architecture
+							with Docker, a React frontend for user interaction, a backend API
+							for processing negotiations, and integration with email services.
+							This project demonstrates my ability to create practical AI
+							applications that solve real-world problems while delivering
+							significant value to users through automation of complex social
+							interactions.
 						</p>
 					</div>
 				</div>

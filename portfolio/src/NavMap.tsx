@@ -4,15 +4,15 @@ import CvCard from "../public/cv_card.png";
 import DevopsCard from "../public/devops_card.jpg";
 import DockerCard from "../public/docker_card.png";
 import FireTableCard from "../public/fire_table_card.png";
-import FoodieFolderCard from "../public/foodie_card.png";
 import GithubCard from "../public/github_card.png";
+import HagglebotCard from "../public/hagglebot_card.png";
 import HomeCard from "../public/home_card.jpg";
 import JollyBrancherCard from "../public/jolly_brancher_card.png";
 import LintingCard from "../public/linting_card.png";
 import QuadricycleCard from "../public/quadricycle_card.png";
 import SnifterCard from "../public/snifter_card.png";
+import FoodieFolderCard from "../public/wayward_card.png";
 import WaywardCard from "../public/wayward_card.png";
-import type { NavMap } from "./NavMapInterface.tsx";
 
 const BigWheelAbstract: () => JSX.Element = () => {
 	return (
@@ -196,6 +196,17 @@ const FoodieFolderAbstract = () => {
 	);
 };
 
+const HagglebotAbstract = () => {
+	return (
+		<span>
+			Developed Hagglebot, an AI-powered negotiation assistant that automates
+			car buying haggling by analyzing dealer emails, extracting price offers,
+			and generating strategic counter-offers to help buyers secure the best
+			possible deals with minimal effort.
+		</span>
+	);
+};
+
 export const navMap: NavMap = {
 	big_wheel: {
 		link: "https://drive.google.com/file/d/0B2sPu-smnJTpX2hCc2JLWTNSN3M/view?resourcekey=0-76YjSJXAvs0IlX1lH6tkmw",
@@ -252,6 +263,13 @@ export const navMap: NavMap = {
 		text: "Foodie Folder",
 		category: "Mobile",
 		detail: FoodieFolderAbstract,
+	},
+	hagglebot: {
+		link: "hagglebot/",
+		image: HagglebotCard,
+		text: "Hagglebot",
+		category: "AI",
+		detail: HagglebotAbstract,
 	},
 	wayward: {
 		link: "wayward/",
