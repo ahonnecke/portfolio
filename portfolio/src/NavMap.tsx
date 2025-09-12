@@ -4,6 +4,7 @@ import CvCard from "../public/cv_card.png";
 import DevopsCard from "../public/devops_card.jpg";
 import DockerCard from "../public/docker_card.png";
 import FireTableCard from "../public/fire_table_card.png";
+import FoodieFolderCard from "../public/foodie_card.png";
 import GithubCard from "../public/github_card.png";
 import HagglebotCard from "../public/hagglebot_card.png";
 import HomeCard from "../public/home_card.jpg";
@@ -11,7 +12,6 @@ import JollyBrancherCard from "../public/jolly_brancher_card.png";
 import LintingCard from "../public/linting_card.png";
 import QuadricycleCard from "../public/quadricycle_card.png";
 import SnifterCard from "../public/snifter_card.png";
-import FoodieFolderCard from "../public/wayward_card.png";
 import WaywardCard from "../public/wayward_card.png";
 import type { NavMap } from "./NavMapInterface.tsx";
 
