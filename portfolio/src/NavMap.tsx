@@ -247,7 +247,7 @@ export const navMap: NavMap = {
 		detail: ConsoloAbstract,
 	},
 	foodie_folder: {
-		link: "foodie_folder/",
+		link: "https://apps.apple.com/us/app/foodie-folder/id6738889379",
 		image: FoodieFolderCard,
 		text: "Foodie Folder",
 		category: "Mobile",
