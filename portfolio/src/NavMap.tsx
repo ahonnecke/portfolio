@@ -13,6 +13,7 @@ import QuadricycleCard from "../public/quadricycle_card.png";
 import SnifterCard from "../public/snifter_card.png";
 import FoodieFolderCard from "../public/wayward_card.png";
 import WaywardCard from "../public/wayward_card.png";
+import type { NavMap } from "./NavMapInterface.tsx";
 
 const BigWheelAbstract: () => JSX.Element = () => {
 	return (
@@ -265,7 +266,7 @@ export const navMap: NavMap = {
 		detail: FoodieFolderAbstract,
 	},
 	hagglebot: {
-		link: "hagglebot/",
+		link: "https://github.com/ahonnecke/hagglebot",
 		image: HagglebotCard,
 		text: "Hagglebot",
 		category: "AI",
