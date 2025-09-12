@@ -9,6 +9,7 @@ import {
 	Devops,
 	Docker,
 	FireTable,
+	FoodieFolder,
 	Github,
 	JollyBrancher,
 	Linting,
@@ -46,6 +47,7 @@ function App(): JSX.Element {
 					<Route path="/github" element={<Github />} />
 					<Route path="/jolly_brancher" element={<JollyBrancher />} />
 					<Route path="/wayward" element={<Wayward />} />
+					<Route path="/foodie_folder" element={<FoodieFolder />} />
 					<Route path="/linting" element={<Linting />} />
 					<Route path="/quadricycle" element={<Quadricycle />} />
 					<Route path="/snifter" element={<Snifter />} />
@@ -66,6 +68,7 @@ function Main(): JSX.Element {
 				<Tile tile="snifter" />
 				<Tile tile="jolly_brancher" />
 				<Tile tile="wayward" />
+				<Tile tile="foodie_folder" />
 				<Tile tile="docker" />
 				<Tile tile="linting" />
 				<Tile tile="devops" />

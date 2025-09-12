@@ -4,6 +4,7 @@ import CvCard from "../public/cv_card.png";
 import DevopsCard from "../public/devops_card.jpg";
 import DockerCard from "../public/docker_card.png";
 import FireTableCard from "../public/fire_table_card.png";
+import FoodieFolderCard from "../public/foodie_card.png";
 import GithubCard from "../public/github_card.png";
 import HomeCard from "../public/home_card.jpg";
 import JollyBrancherCard from "../public/jolly_brancher_card.png";
@@ -184,6 +185,17 @@ const WaywardAbstract = () => {
 	);
 };
 
+const FoodieFolderAbstract = () => {
+	return (
+		<span>
+			Developed Foodie Folder, a mobile app built with Expo and React Native
+			that allows users to capture images of restaurant menus, extract dish
+			information via OCR, and maintain a personalized collection of dishes with
+			notes and ratings for future reference.
+		</span>
+	);
+};
+
 export const navMap: NavMap = {
 	big_wheel: {
 		link: "https://drive.google.com/file/d/0B2sPu-smnJTpX2hCc2JLWTNSN3M/view?resourcekey=0-76YjSJXAvs0IlX1lH6tkmw",
@@ -233,6 +245,13 @@ export const navMap: NavMap = {
 		text: "Consolo",
 		category: "FOSS",
 		detail: ConsoloAbstract,
+	},
+	foodie_folder: {
+		link: "foodie_folder/",
+		image: FoodieFolderCard,
+		text: "Foodie Folder",
+		category: "Mobile",
+		detail: FoodieFolderAbstract,
 	},
 	wayward: {
 		link: "wayward/",

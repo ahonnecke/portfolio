@@ -539,3 +539,42 @@ export function Wayward() {
 		</span>
 	);
 }
+
+export function FoodieFolder() {
+	const navData = navMap.foodie_folder;
+	return (
+		<span className="detailPage">
+			<Link to={navData.link}>
+				<img src={navData.image} alt={navData.text} />
+				<div className="content">
+					<h2>{navData.text}</h2>
+					<div>
+						<p>
+							I developed <strong>Foodie Folder</strong>, a mobile application
+							built with Expo and React Native that transforms how food
+							enthusiasts document their culinary experiences. The app allows
+							users to capture images of restaurant menus, which are then
+							processed through OCR (Optical Character Recognition) to extract
+							and structure dish information automatically.
+						</p>
+						<p>
+							Users can save dishes from various restaurants, add personal notes
+							and ratings for each item, and build a personalized food diary
+							over time. The app features an intuitive interface for browsing
+							past entries, searching by dish or restaurant, and sharing
+							recommendations with friends.
+						</p>
+						<p>
+							The technical implementation includes React Native for the
+							frontend, Expo for cross-platform compatibility, a pythong backend
+							that wraps an LLM for OCR processing, and a structured data model
+							for organizing menu items. This project showcases my ability to
+							create practical mobile applications that solve real-world
+							problems while delivering a polished user experience.
+						</p>
+					</div>
+				</div>
+			</Link>
+		</span>
+	);
+}
