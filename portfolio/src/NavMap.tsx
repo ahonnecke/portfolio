@@ -236,9 +236,9 @@ export const navMap: NavMap = {
 		detail: FireTableAbstract,
 	},
 	cv: {
-		link: "https://pixelstub.com/cv/ashton_honnecke_cv.pdf",
+		link: "https://pixelstub.com/cv/cv.pdf",
 		image: CvCard,
-		text: "CV PDF",
+		text: "Full CV PDF",
 		category: "Doc",
 		detail: CvAbstract,
 	},
