@@ -13,6 +13,7 @@ import LintingCard from "../public/linting_card.png";
 import QuadricycleCard from "../public/quadricycle_card.png";
 import RentinityCard from "../public/rentinity_card.png";
 import SnifterCard from "../public/snifter_card.png";
+import TonalRecallCard from "../public/tonal_recall_card.png";
 import WaywardCard from "../public/wayward_card.png";
 import type { NavMap } from "./NavMapInterface.tsx";
 
@@ -138,12 +139,10 @@ const JollyBrancherAbstract = () => {
 const GithubAbstract = () => {
 	return (
 		<span>
-			My GitHub profile is more than just a collection of code—it's a living
-			portfolio that reflects how I think, build, and collaborate. It highlights
-			the projects I’ve worked on, my contributions to open-source, and the way
-			I tackle real-world problems through code. Whether I’m building something
-			from scratch or contributing to a team effort, my GitHub shows how I
-			approach challenges and grow as a developer.{" "}
+			My GitHub account. There are deep links to individual projects, but as a
+			whole, it's a living portfolio that reflects how I think, build, and
+			collaborate. It highlights the projects I’ve worked on, my contributions
+			to open-source, and the way I tackle real-world problems through code.{" "}
 		</span>
 	);
 };
@@ -220,6 +219,17 @@ const RentinityAbstract = () => {
 	);
 };
 
+const TonalRecallAbstract = () => {
+	return (
+		<span>
+			Developed Tonal Recall, an interactive guitar-training game that teaches
+			fretboard fluency and ear-training through real-time pitch detection,
+			providing instant feedback as players improve their skills with multiple
+			difficulty levels and a clean Pygame interface.
+		</span>
+	);
+};
+
 export const navMap: NavMap = {
 	big_wheel: {
 		link: "https://drive.google.com/file/d/0B2sPu-smnJTpX2hCc2JLWTNSN3M/view?resourcekey=0-76YjSJXAvs0IlX1lH6tkmw",
@@ -290,6 +300,13 @@ export const navMap: NavMap = {
 		text: "Rentinity",
 		category: "Blockchain",
 		detail: RentinityAbstract,
+	},
+	tonal_recall: {
+		link: "https://github.com/ahonnecke/TonalRecall",
+		image: TonalRecallCard,
+		text: "Tonal Recall",
+		category: "Game",
+		detail: TonalRecallAbstract,
 	},
 	wayward: {
 		link: "wayward/",

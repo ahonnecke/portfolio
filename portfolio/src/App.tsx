@@ -17,6 +17,7 @@ import {
 	Quadricycle,
 	Rentinity,
 	Snifter,
+	TonalRecall,
 	Wayward,
 } from "./Details.tsx";
 import { navMap } from "./NavMap.tsx";
@@ -52,6 +53,7 @@ function App(): JSX.Element {
 					<Route path="/foodie_folder" element={<FoodieFolder />} />
 					<Route path="/hagglebot" element={<Hagglebot />} />
 					<Route path="/rentinity" element={<Rentinity />} />
+					<Route path="/tonal_recall" element={<TonalRecall />} />
 					<Route path="/linting" element={<Linting />} />
 					<Route path="/quadricycle" element={<Quadricycle />} />
 					<Route path="/snifter" element={<Snifter />} />
@@ -75,6 +77,7 @@ function Main(): JSX.Element {
 				<Tile tile="foodie_folder" />
 				<Tile tile="hagglebot" />
 				<Tile tile="rentinity" />
+				<Tile tile="tonal_recall" />
 				<Tile tile="docker" />
 				<Tile tile="linting" />
 				<Tile tile="devops" />

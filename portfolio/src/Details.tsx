@@ -660,3 +660,42 @@ export function Rentinity() {
 		</span>
 	);
 }
+
+export function TonalRecall() {
+	const navData = navMap.tonal_recall;
+	return (
+		<span className="detailPage">
+			<Link to={navData.link}>
+				<img src={navData.image} alt={navData.text} />
+				<div className="content">
+					<h2>{navData.text}</h2>
+					<div>
+						<p>
+							I developed <strong>Tonal Recall</strong>, an interactive
+							guitar-training game that teaches fretboard fluency and
+							ear-training through real-time feedback. The application allows
+							guitarists to connect via any audio interface, see a target note
+							on screen, play it, and receive instant visual feedback on
+							accuracy.
+						</p>
+						<p>
+							The game features multiple difficulty levels that scale from
+							beginner to intermediate players, real-time pitch detection from
+							live guitar input, and a visual comparison of played versus target
+							notes.
+						</p>
+						<p>
+							The technical implementation uses Python with Pygame for the
+							interface, NumPy for signal processing, and sounddevice/aubio
+							libraries for note detection. The architecture is simple and
+							extensible, allowing for easy addition of new modes and drills.
+							This project demonstrates my ability to combine audio processing,
+							real-time feedback systems, and game design to create an
+							educational tool that makes learning more engaging and effective.
+						</p>
+					</div>
+				</div>
+			</Link>
+		</span>
+	);
+}
