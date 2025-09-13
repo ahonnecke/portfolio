@@ -11,6 +11,7 @@ import HomeCard from "../public/home_card.jpg";
 import JollyBrancherCard from "../public/jolly_brancher_card.png";
 import LintingCard from "../public/linting_card.png";
 import QuadricycleCard from "../public/quadricycle_card.png";
+import RentinityCard from "../public/rentinity_card.png";
 import SnifterCard from "../public/snifter_card.png";
 import WaywardCard from "../public/wayward_card.png";
 import type { NavMap } from "./NavMapInterface.tsx";
@@ -208,6 +209,17 @@ const HagglebotAbstract = () => {
 	);
 };
 
+const RentinityAbstract = () => {
+	return (
+		<span>
+			Developed Rentinity, a blockchain-based platform for fractional real
+			estate investment in NNN properties, enabling investors to purchase
+			tokenized shares of commercial properties with automated rent distribution
+			and governance through Polygon blockchain technology.
+		</span>
+	);
+};
+
 export const navMap: NavMap = {
 	big_wheel: {
 		link: "https://drive.google.com/file/d/0B2sPu-smnJTpX2hCc2JLWTNSN3M/view?resourcekey=0-76YjSJXAvs0IlX1lH6tkmw",
@@ -271,6 +283,13 @@ export const navMap: NavMap = {
 		text: "Hagglebot",
 		category: "AI",
 		detail: HagglebotAbstract,
+	},
+	rentinity: {
+		link: "https://github.com/ahonnecke/rentinity/",
+		image: RentinityCard,
+		text: "Rentinity",
+		category: "Blockchain",
+		detail: RentinityAbstract,
 	},
 	wayward: {
 		link: "wayward/",

@@ -618,3 +618,45 @@ export function Hagglebot() {
 		</span>
 	);
 }
+
+export function Rentinity() {
+	const navData = navMap.rentinity;
+	return (
+		<span className="detailPage">
+			<Link to={navData.link}>
+				<img src={navData.image} alt={navData.text} />
+				<div className="content">
+					<h2>{navData.text}</h2>
+					<div>
+						<p>
+							I developed <strong>Rentinity</strong>, a blockchain-based
+							platform for fractional real estate investment focused on NNN
+							(Triple Net Lease) properties. The platform enables investors to
+							purchase tokenized shares of commercial properties, creating a
+							pathway for smaller investors to access previously inaccessible
+							real estate markets with low-touch rental income and eventual
+							liquidity.
+						</p>
+						<p>
+							The system implements a complete property investment lifecycle,
+							from seller onboarding and Wyoming Series LLC formation to
+							property tokenization using ERC-20 tokens on the Polygon
+							blockchain. Investors can purchase fractional ownership, receive
+							automated rent distributions, and participate in property
+							governance through a token-weighted voting system.
+						</p>
+						<p>
+							The technical implementation includes smart contracts for
+							tokenization and ownership tracking, a React-based dashboard for
+							investors, KYC verification systems, and automated rent
+							distribution through both traditional financial rails and
+							cryptocurrency payments. This project demonstrates my ability to
+							bridge traditional finance with blockchain technology to create
+							innovative investment opportunities.
+						</p>
+					</div>
+				</div>
+			</Link>
+		</span>
+	);
+}

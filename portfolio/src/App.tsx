@@ -15,6 +15,7 @@ import {
 	JollyBrancher,
 	Linting,
 	Quadricycle,
+	Rentinity,
 	Snifter,
 	Wayward,
 } from "./Details.tsx";
@@ -50,6 +51,7 @@ function App(): JSX.Element {
 					<Route path="/wayward" element={<Wayward />} />
 					<Route path="/foodie_folder" element={<FoodieFolder />} />
 					<Route path="/hagglebot" element={<Hagglebot />} />
+					<Route path="/rentinity" element={<Rentinity />} />
 					<Route path="/linting" element={<Linting />} />
 					<Route path="/quadricycle" element={<Quadricycle />} />
 					<Route path="/snifter" element={<Snifter />} />
@@ -72,6 +74,7 @@ function Main(): JSX.Element {
 				<Tile tile="wayward" />
 				<Tile tile="foodie_folder" />
 				<Tile tile="hagglebot" />
+				<Tile tile="rentinity" />
 				<Tile tile="docker" />
 				<Tile tile="linting" />
 				<Tile tile="devops" />
