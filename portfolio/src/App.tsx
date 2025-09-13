@@ -31,7 +31,7 @@ function App(): JSX.Element {
 						<Link to="/">Ashton Honnecke</Link>
 						<Link
 							className="quickPdf"
-							to="https://pixelstub.com/cv/ashton_honnecke_cv.pdf" // Change to Link with 'to' attribute
+							to="https://pixelstub.com/cv/ashton_honnecke_cv_short.pdf"
 						>
 							PDF
 						</Link>
