@@ -1,5 +1,13 @@
 /* ./portfolio/src/App.css */
 
+html,
+body {
+	background-color: #121212;
+	color: #e3e3e3;
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	display: inline;
 }
@@ -137,6 +145,7 @@ body {
 .tagline {
 	text-align: center;
 	margin-top: 0;
+	color: #e3e3e3;
 }
 
 .bigWheel {
@@ -232,4 +241,24 @@ body {
 	line-height: 1.6;
 	font-size: 1.2em;
 	margin: 0;
+}
+
+a {
+	color: #4da6ff;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+a:hover {
+	color: #66b3ff;
+	text-decoration: underline;
+}
+
+.detailPage a {
+	color: #4da6ff;
+}
+
+.detailPage a:hover {
+	color: #66b3ff;
+	text-decoration: underline;
 }

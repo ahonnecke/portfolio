@@ -117,6 +117,13 @@ export function CV() {
 						Also available in interactive sphinx format
 					</Link>
 					, really though, this is the least interesting page on the site.
+					<p>
+						You can download my full CV{" "}
+						<a href={navData.link} target="_blank" rel="noopener noreferrer">
+							here
+						</a>
+						.
+					</p>
 				</div>
 			</Link>
 		</span>
@@ -215,6 +222,13 @@ export function Docker() {
 							</Link>
 						</li>
 					</ul>
+					<p>
+						You can watch the full presentation{" "}
+						<a href={navData.link} target="_blank" rel="noopener noreferrer">
+							here
+						</a>
+						.
+					</p>
 				</div>
 			</div>
 		</span>
@@ -269,6 +283,13 @@ export function Consolo() {
 							designed it to scratch my own itch, but it turned out to be useful
 							for others too—which is always the goal.
 						</p>
+						<p>
+							You can browse the Consolo project on PyPI{" "}
+							<a href={navData.link} target="_blank" rel="noopener noreferrer">
+								here
+							</a>
+							.
+						</p>
 					</div>
 				</div>
 			</Link>
@@ -317,9 +338,16 @@ export function Snifter() {
 							permanent infrastructure.
 						</p>
 						<p>
-							It’s a small utility, but a great example of my approach:
+							It's a small utility, but a great example of my approach:
 							practical solutions for real problems that developers run into all
 							the time.
+						</p>
+						<p>
+							You can browse the Snifter project on PyPI{" "}
+							<a href={navData.link} target="_blank" rel="noopener noreferrer">
+								here
+							</a>
+							.
 						</p>
 					</div>
 				</div>
@@ -374,9 +402,16 @@ export function JollyBrancher() {
 							comment extraction and auto-generated branch summaries.
 						</p>
 						<p>
-							At its core, it’s about reducing friction. I built it to eliminate
+							At its core, it's about reducing friction. I built it to eliminate
 							repetitive tasks and let me (and hopefully others) stay focused on
 							actual code—not copy-pasting ticket IDs.
+						</p>
+						<p>
+							You can browse the Jolly-Brancher project on PyPI{" "}
+							<a href={navData.link} target="_blank" rel="noopener noreferrer">
+								here
+							</a>
+							.
 						</p>
 					</div>
 				</div>
@@ -427,6 +462,13 @@ export function Github() {
 							GitHub is the best place to see what I bring to the table as a
 							developer.
 						</p>
+						<p>
+							You can browse my GitHub repositories{" "}
+							<a href={navData.link} target="_blank" rel="noopener noreferrer">
+								here
+							</a>
+							.
+						</p>
 					</div>
 				</div>
 			</Link>
@@ -445,7 +487,7 @@ export function Linting() {
 					<div>
 						<p>
 							I gave a local talk on the value of linting; unfortunately, the
-							recording didn’t survive the early chaos of COVID, but{" "}
+							recording didn't survive the early chaos of COVID, but{" "}
 							<Link to="https://github.com/ahonnecke/linting">
 								the slides and materials
 							</Link>{" "}
@@ -533,6 +575,13 @@ export function Wayward() {
 							each file is totally flexible and written in Python, so it’s easy
 							to extend or adapt for different workflows.
 						</p>
+						<p>
+							You can learn more about Wayward{" "}
+							<a href={navData.link} target="_blank" rel="noopener noreferrer">
+								here
+							</a>
+							.
+						</p>
 					</div>
 				</div>
 			</Link>
@@ -571,6 +620,13 @@ export function FoodieFolder() {
 							items. This project showcases my ability to create practical
 							mobile applications that solve real-world problems while
 							delivering a polished user experience.
+						</p>
+						<p>
+							You can download Foodie Folder from the App Store{" "}
+							<a href={navData.link} target="_blank" rel="noopener noreferrer">
+								here
+							</a>
+							.
 						</p>
 					</div>
 				</div>
@@ -611,6 +667,13 @@ export function Hagglebot() {
 							applications that solve real-world problems while delivering
 							significant value to users through automation of complex social
 							interactions.
+						</p>
+						<p>
+							You can browse the Hagglebot project repository{" "}
+							<a href={navData.link} target="_blank" rel="noopener noreferrer">
+								here
+							</a>
+							.
 						</p>
 					</div>
 				</div>
@@ -654,6 +717,13 @@ export function Rentinity() {
 							bridge traditional finance with blockchain technology to create
 							innovative investment opportunities.
 						</p>
+						<p>
+							You can browse the Rentinity project repository{" "}
+							<a href={navData.link} target="_blank" rel="noopener noreferrer">
+								here
+							</a>
+							.
+						</p>
 					</div>
 				</div>
 			</Link>
@@ -692,6 +762,13 @@ export function TonalRecall() {
 							This project demonstrates my ability to combine audio processing,
 							real-time feedback systems, and game design to create an
 							educational tool that makes learning more engaging and effective.
+						</p>
+						<p>
+							You can browse the Tonal Recall project repository{" "}
+							<a href={navData.link} target="_blank" rel="noopener noreferrer">
+								here
+							</a>
+							.
 						</p>
 					</div>
 				</div>
@@ -733,6 +810,13 @@ export function ToyContractor() {
 							architectures, and develop solutions that bridge the gap between
 							natural language processing and specialized domain knowledge like
 							legal documentation.
+						</p>
+						<p>
+							You can browse the Toy Contractor project repository{" "}
+							<a href={navData.link} target="_blank" rel="noopener noreferrer">
+								here
+							</a>
+							.
 						</p>
 					</div>
 				</div>

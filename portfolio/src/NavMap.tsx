@@ -279,7 +279,7 @@ export const navMap: NavMap = {
 		detail: DockerAbstract,
 	},
 	linting: {
-		link: "linting/",
+		link: "https://github.com/ahonnecke/linting",
 		image: LintingCard,
 		text: "Linting",
 		category: "Speaking",
