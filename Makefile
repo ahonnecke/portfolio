@@ -15,5 +15,8 @@ ps:
 build:
 	@$(COMPOSE) up --build
 
+deploy:
+	./bin/deploy.sh
+
 web:
 	chromium 'http://localhost:5173'
