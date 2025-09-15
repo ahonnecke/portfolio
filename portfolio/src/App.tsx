@@ -18,6 +18,7 @@ import {
 	Rentinity,
 	Snifter,
 	TonalRecall,
+	ToyContractor,
 	Wayward,
 } from "./Details.tsx";
 import { navMap } from "./NavMap.tsx";
@@ -54,6 +55,7 @@ function App(): JSX.Element {
 					<Route path="/hagglebot" element={<Hagglebot />} />
 					<Route path="/rentinity" element={<Rentinity />} />
 					<Route path="/tonal_recall" element={<TonalRecall />} />
+					<Route path="/toy_contractor" element={<ToyContractor />} />
 					<Route path="/linting" element={<Linting />} />
 					<Route path="/quadricycle" element={<Quadricycle />} />
 					<Route path="/snifter" element={<Snifter />} />
@@ -78,6 +80,7 @@ function Main(): JSX.Element {
 				<Tile tile="hagglebot" />
 				<Tile tile="rentinity" />
 				<Tile tile="tonal_recall" />
+				<Tile tile="toy_contractor" />
 				<Tile tile="docker" />
 				<Tile tile="linting" />
 				<Tile tile="devops" />

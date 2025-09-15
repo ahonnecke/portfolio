@@ -14,6 +14,7 @@ import QuadricycleCard from "../public/quadricycle_card.png";
 import RentinityCard from "../public/rentinity_card.png";
 import SnifterCard from "../public/snifter_card.png";
 import TonalRecallCard from "../public/tonal_recall_card.png";
+import ToyContractorCard from "../public/toy_contractor_card.png"; // Temporarily using wayward_card.png as placeholder
 import WaywardCard from "../public/wayward_card.png";
 import type { NavMap } from "./NavMapInterface.tsx";
 
@@ -230,6 +231,17 @@ const TonalRecallAbstract = () => {
 	);
 };
 
+const ToyContractorAbstract = () => {
+	return (
+		<span>
+			Developed Toy Contractor, an experimental platform that generates and
+			revises legal contracts from natural language using Mistral LLM, with a
+			containerized architecture including API, backend, client, and document
+			revision history.
+		</span>
+	);
+};
+
 export const navMap: NavMap = {
 	big_wheel: {
 		link: "https://drive.google.com/file/d/0B2sPu-smnJTpX2hCc2JLWTNSN3M/view?resourcekey=0-76YjSJXAvs0IlX1lH6tkmw",
@@ -307,6 +319,13 @@ export const navMap: NavMap = {
 		text: "Tonal Recall",
 		category: "Game",
 		detail: TonalRecallAbstract,
+	},
+	toy_contractor: {
+		link: "https://github.com/ahonnecke/toy_contractor",
+		image: ToyContractorCard,
+		text: "Toy Contractor",
+		category: "AI",
+		detail: ToyContractorAbstract,
 	},
 	wayward: {
 		link: "wayward/",

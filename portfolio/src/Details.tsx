@@ -699,3 +699,44 @@ export function TonalRecall() {
 		</span>
 	);
 }
+
+export function ToyContractor() {
+	const navData = navMap.toy_contractor;
+	return (
+		<span className="detailPage">
+			<Link to={navData.link}>
+				<img src={navData.image} alt={navData.text} />
+				<div className="content">
+					<h2>{navData.text}</h2>
+					<div>
+						<p>
+							I developed <strong>Toy Contractor</strong>, a self-contained
+							experimental platform that generates and revises legal contracts
+							from natural language inputs. The system leverages a Mistral LLM
+							to interpret user requirements and transform them into properly
+							formatted legal documents, while also providing capabilities to
+							revise existing contracts or other documents.
+						</p>
+						<p>
+							The architecture consists of a lightweight backend API that
+							handles document processing and storage, a client interface for
+							user interactions, and integration with the Mistral large language
+							model for text generation and analysis. The system maintains a
+							complete revision history of all documents, allowing users to
+							track changes and evolution of their contracts over time.
+						</p>
+						<p>
+							The entire solution is containerized using Docker and orchestrated
+							with Docker Compose, making it easy to deploy and scale. This
+							project demonstrates my ability to integrate AI language models
+							with practical applications, create maintainable microservice
+							architectures, and develop solutions that bridge the gap between
+							natural language processing and specialized domain knowledge like
+							legal documentation.
+						</p>
+					</div>
+				</div>
+			</Link>
+		</span>
+	);
+}
