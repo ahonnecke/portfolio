@@ -1,5 +1,9 @@
 import { navMap } from "./NavMap.tsx";
 
+import resumeInvokeBuild from "../public/cv_build/blue_background_black_border,_red_arrow_pointing_top_left_corner.png";
+import resumeElispBuild from "../public/cv_build/code_screen_programming_displays_computer_large_amount_written_language.png";
+import resumeOrgMode from "../public/cv_build/screen_code_written_computer_displaying_lot_code.png";
+import resumeDeployment from "../public/cv_build/screen_computer_black_background_white_displaying_program_code.png";
 import myVideo from "../public/fire_table.mov";
 import quadFlash from "../public/quad_flashton.jpg";
 import quadLit from "../public/quad_lit.jpg";
@@ -817,6 +821,55 @@ export function ToyContractor() {
 								here
 							</a>
 							.
+						</p>
+					</div>
+				</div>
+			</Link>
+		</span>
+	);
+}
+
+export function ResumeBuildPipeline() {
+	const navData = navMap.resume_build_pipeline;
+	return (
+		<span className="detailPage">
+			<Link to={navData.link}>
+				<img src={navData.image} alt={navData.text} />
+				<div className="content">
+					<h2>{navData.text}</h2>
+					<div>
+						<p>
+							I built an automated pipeline that transforms my resume from
+							Org-mode source files into PDF, LaTeX, DOCX, and HTML outputs. The
+							entire build process runs in Emacs using custom Elisp, with
+							deployment handled via SCP over bash.
+						</p>
+						<p>
+							The workflow starts with Org-mode as the source format, applies
+							custom formatting rules, and exports to multiple formats through
+							Elisp build scripts. This lets me maintain a single source file,
+							make edits in my preferred environment, and generate all output
+							formats with a single command.
+						</p>
+						<p>Below are screenshots showing the build process in action:</p>
+						<div className="screenshots">
+							<h3>My resume in Org-mode</h3>
+							<img src={resumeOrgMode} alt="Resume source in Org-mode" />
+
+							<h3>The Elisp that builds and formats my CV</h3>
+							<img src={resumeElispBuild} alt="Elisp build script" />
+
+							<h3>Invoking the build process from inside Emacs</h3>
+							<img src={resumeInvokeBuild} alt="Build invocation in Emacs" />
+
+							<h3>Deployment</h3>
+							<img src={resumeDeployment} alt="SCP deployment" />
+						</div>
+						<p>
+							It's a straightforward example of treating documentation as code—
+							version controlled, automated, and reproducible. No manual
+							copy-pasting between Word docs or fighting with formatting
+							inconsistencies.
 						</p>
 					</div>
 				</div>

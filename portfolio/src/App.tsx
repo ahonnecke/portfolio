@@ -16,6 +16,7 @@ import {
 	Linting,
 	Quadricycle,
 	Rentinity,
+	ResumeBuildPipeline,
 	Snifter,
 	TonalRecall,
 	ToyContractor,
@@ -60,6 +61,10 @@ function App(): JSX.Element {
 					<Route path="/quadricycle" element={<Quadricycle />} />
 					<Route path="/snifter" element={<Snifter />} />
 					<Route path="/devops" element={<Devops />} />
+					<Route
+						path="/resume_build_pipeline"
+						element={<ResumeBuildPipeline />}
+					/>
 				</Routes>
 			</Router>
 		</>

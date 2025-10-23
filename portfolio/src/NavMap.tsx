@@ -1,5 +1,6 @@
 import BigWheelCard from "../public/big_wheel_card.png";
 import ConsoloCard from "../public/consolo_card.png";
+import ResumeBuildPipelineCard from "../public/cv_build_card.png";
 import CvCard from "../public/cv_card.png";
 import DevopsCard from "../public/devops_card.jpg";
 import DockerCard from "../public/docker_card.png";
@@ -32,6 +33,7 @@ import {
 	LintingAbstract,
 	QuadricycleAbstract,
 	RentinityAbstract,
+	ResumeBuildPipelineAbstract,
 	SnifterAbstract,
 	TonalRecallAbstract,
 	ToyContractorAbstract,
@@ -164,5 +166,12 @@ export const navMap: NavMap = {
 		text: "DevOps",
 		category: "CI/CD",
 		detail: DevopsAbstract,
+	},
+	resume_build_pipeline: {
+		link: "/resume_build_pipeline/",
+		image: ResumeBuildPipelineCard,
+		text: "Resume Build Pipeline",
+		category: "DevOps",
+		detail: ResumeBuildPipelineAbstract,
 	},
 };

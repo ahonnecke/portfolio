@@ -221,3 +221,15 @@ export const ToyContractorAbstract: () => JSX.Element = () => {
 		</span>
 	);
 };
+
+export const ResumeBuildPipelineAbstract: () => JSX.Element = () => {
+	return (
+		<span>
+			I built an automated pipeline that transforms my resume from Org-mode
+			source files into PDF, LaTeX, DOCX, and HTML outputs. The entire build
+			runs in Emacs using custom Elisp with deployment via SCP over bash. It's a
+			straightforward way to maintain one source file and generate multiple
+			formats without manual copy-pasting or formatting headaches.
+		</span>
+	);
+};
