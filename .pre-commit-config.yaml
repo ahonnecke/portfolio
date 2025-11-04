@@ -34,10 +34,14 @@ repos:
         types: [text]
         files: "\\.(jsx?|tsx?|c(js|ts)|m(js|ts)|d\\.(ts|cts|mts)|jsonc?|css|svelte|vue|astro|graphql|gql)$"
 
-      # NEW: fail commit if the app can’t type-check or build
       - id: frontend-build
         name: Typecheck & Vite build
-        entry: npm ci && npm run build
+        entry: bash
         language: system
         pass_filenames: false
-        stages: [commit]
+        args:
+          - -c
+          - |
+            cd portfolio
+            npm ci
+            npm run build

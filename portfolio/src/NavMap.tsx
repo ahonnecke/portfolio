@@ -17,7 +17,7 @@ import SnifterCard from "../public/snifter_card.png";
 import TonalRecallCard from "../public/tonal_recall_card.png";
 import ToyContractorCard from "../public/toy_contractor_card.png"; // Temporarily using wayward_card.png as placeholder
 import WaywardCard from "../public/wayward_card.png";
-import type { NavMap } from "./NavMapInterface.tsx";
+import type { NavMap } from "./NavMapInterface";
 import {
 	BigWheelAbstract,
 	ConsoloAbstract,

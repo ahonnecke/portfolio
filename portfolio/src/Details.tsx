@@ -1,6 +1,6 @@
-import { navMap } from "./NavMap.tsx";
+import { navMap } from "./NavMap";
 
-import resumeInvokeBuild from "../public/cv_build/blue_background_black_border,_red_arrow_pointing_top_left_corner.png";
+import resumeInvokeBuild from "../public/cv_build/blue_background_black_border_red_arrow_pointing_top_left_corner.png";
 import resumeElispBuild from "../public/cv_build/code_screen_programming_displays_computer_large_amount_written_language.png";
 import resumeOrgMode from "../public/cv_build/screen_code_written_computer_displaying_lot_code.png";
 import resumeDeployment from "../public/cv_build/screen_computer_black_background_white_displaying_program_code.png";

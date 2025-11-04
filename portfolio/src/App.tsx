@@ -21,8 +21,8 @@ import {
 	TonalRecall,
 	ToyContractor,
 	Wayward,
-} from "./Details.tsx";
-import { navMap } from "./NavMap.tsx";
+} from "./Details";
+import { navMap } from "./NavMap";
 
 function App(): JSX.Element {
 	// Add explicit return type for function App
