@@ -167,7 +167,7 @@ export function Quadricycle() {
 							and the lights at night
 						</p>
 
-						<img src={quadFlash} alt="Quadricycle" />
+						<img src={quadFlash} alt="Quadricycle " />
 
 						<p>
 							{" "}
@@ -178,6 +178,8 @@ export function Quadricycle() {
 							thing feel like a proper hardware project—not just a Frankenstein
 							bike experiment.{" "}
 						</p>
+
+						<img src={quadLit} alt="Quadricycle Lights" />
 
 						<p>
 							{" "}
