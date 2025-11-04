@@ -145,37 +145,47 @@ export function Quadricycle() {
 					<div>
 						<img src={quadLit} alt="Quadricycle" />
 						<p>
-							In a combination of engineering and creativity, I designed and
-							constructed a two-bicycle, serial tandem bicycle, also known as a
-							quadricycle. This unique project showcased the candidate's
-							problem-solving skills, hands-on fabrication abilities, and
-							passion for cycling.
+							{" "}
+							I built a parallel double bicycle—affectionately known as “the
+							quad,” or technically, a quadricycle. It was a weird and wonderful
+							blend of engineering and creativity. I got to flex everything from
+							problem-solving and fabrication to some embedded programming
+							(because yes, the lights matter).{" "}
 						</p>
 
 						<p>
-							The quadricycle was built from four scavenged aluminum "La Jolla"
-							frames, and aluminum stock tubing. The frames were welded together
-							in parallel, gincreasing stability, particularly important on
-							sandy terrains preventing the quadricycle from falling over. A
-							self-centering mechanism was ingeniously incorporated into the
-							steering system, enhancing maneuverability and control. The
-							candidate thoughtfully added a trunk for storage, demonstrating my
-							attention to practicality and user experience. A shaded parasol
-							was mounted on aluminum struts, providing comfort for the riders
-							under the sun.
+							{" "}
+							The quadricycle started as four scavenged aluminum “La Jolla”
+							frames and a pile of aluminum tubing. I welded the frames together
+							in parallel, giving it an ultra-stable platform... really lovely
+							if you’re riding on sand and don’t want to face-plant. I
+							engineered a self-centering steering mechanism so handling it
+							feels effortless, almost like it steers itself. I even added a
+							trunk for storage, because what’s the point of a ridiculous
+							multi-person bike if you can’t haul snacks? A superstructure of
+							custom aluminum struts supported aluminet in the day for shade,
+							and the lights at night
 						</p>
+
 						<img src={quadFlash} alt="Quadricycle" />
+
 						<p>
-							In a fusion of technology and art, the quadricycle was adorned
-							with hundreds of lights, creating a dazzling display that added to
-							the joy of riding it. The candidate's ability to integrate
-							electronic components into the design highlighted my
-							multidisciplinary skills. The successful completion of the
-							quadricycle, followed by a successful test ride, stands as a
-							testament to the candidate's technical skills, creativity, and
-							dedication to bringing a vision to life. This project is a notable
-							accomplishment and a valuable addition to the candidate's resume.
-							It truly embodies the spirit of innovation and creativity.
+							{" "}
+							Then came the fun part: I covered the whole thing in hundreds of
+							lights. It looked like a rolling party, equal parts art and
+							engineering. Getting the lighting system integrated cleanly
+							required custom wiring and embedded code, which made the whole
+							thing feel like a proper hardware project—not just a Frankenstein
+							bike experiment.{" "}
+						</p>
+
+						<p>
+							{" "}
+							The first test ride was a success, and honestly, seeing something
+							that started as a pile of scrap metal turn into a rideable,
+							glowing, joy-machine felt amazing. It’s one of my favorite builds
+							and a great example of what happens when I decide to mix
+							engineering, creativity, and a little bit of chaos.{" "}
 						</p>
 					</div>
 				</div>
