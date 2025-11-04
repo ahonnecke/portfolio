@@ -12,19 +12,19 @@ repos:
       - id: check-symlinks
       - id: check-json
       - id: check-symlinks
+
   - repo: https://github.com/shellcheck-py/shellcheck-py
     rev: v0.10.0.1
     hooks:
       - id: shellcheck
+
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    # Ruff version.
     rev: v0.9.0
     hooks:
-      # Run the linter.
       - id: ruff
         args: [--fix]
-      # Run the formatter.
       - id: ruff-format
+
   - repo: local
     hooks:
       - id: local-biome-check
@@ -33,3 +33,11 @@ repos:
         language: system
         types: [text]
         files: "\\.(jsx?|tsx?|c(js|ts)|m(js|ts)|d\\.(ts|cts|mts)|jsonc?|css|svelte|vue|astro|graphql|gql)$"
+
+      # NEW: fail commit if the app can’t type-check or build
+      - id: frontend-build
+        name: Typecheck & Vite build
+        entry: npm ci && npm run build
+        language: system
+        pass_filenames: false
+        stages: [commit]
