@@ -251,7 +251,6 @@ a {
 
 a:hover {
 	color: #66b3ff;
-	text-decoration: underline;
 }
 
 .detailPage a {
@@ -260,5 +259,4 @@ a:hover {
 
 .detailPage a:hover {
 	color: #66b3ff;
-	text-decoration: underline;
 }
