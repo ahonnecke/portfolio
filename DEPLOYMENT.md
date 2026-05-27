@@ -49,21 +49,32 @@ This script:
 
 ## Docker Configuration
 
-The application uses two Dockerfiles:
-- `portfolio/Dockerfile` - For local development
-- `portfolio/Dockerfile.prod` - For production deployment
+Production uses a single multi-stage Dockerfile, `portfolio/Dockerfile`
+(referenced by `.do/app.yaml`):
+- Stage `build` — installs deps and runs `npm run build` (Vite → `dist/`).
+- Stage `runner` — serves `dist/` with `serve -s` on `$PORT` (3000).
 
-The production Dockerfile:
-- Uses a multi-stage build process
-- Builds the application with Node.js
-- Serves the static files using Nginx
-- Configures proper routing for the SPA
+DigitalOcean App Platform builds this image directly on push to `main`
+(`deploy_on_push: true`), so no image registry is required.
 
-## Nginx Configuration
+The root `nginx/` + `docker-compose.yml` are for **local development only**
+(`make build` / `make up`): an nginx reverse proxy in front of the Vite dev
+server. They are not part of the production deploy.
 
-The Nginx configuration in `portfolio/nginx/default.conf` handles:
-- Serving static files
-- SPA routing (redirecting to index.html for client-side routing)
+## CV artifacts
+
+The CV is a React route (`/cv`) driven by typed data in
+`portfolio/src/cv/resume.data.ts`. The served PDFs and JSON Resume files in
+`portfolio/public/cv/` are generated from that route by Playwright:
+
+```bash
+cd portfolio
+npm run cv:build   # writes cv.pdf, cv-ic.pdf, resume.json, resume-ic.json
+```
+
+The `.github/workflows/cv_build.yaml` workflow regenerates and commits these
+automatically when `src/cv/**` changes, so the artifacts never drift from the
+data. See `portfolio/src/cv/README.md`.
 
 ## Troubleshooting
 
@@ -71,4 +82,5 @@ If you encounter deployment issues:
 1. Check GitHub Actions logs for errors
 2. Verify Digital Ocean configuration
 3. Ensure all required secrets are properly set
-4. Test the Docker build locally with: `docker build -f portfolio/Dockerfile.prod -t portfolio-test ./portfolio`
+4. Test the production image locally:
+   `DOCKER_BUILDKIT=0 docker build -f portfolio/Dockerfile -t portfolio-test ./portfolio`

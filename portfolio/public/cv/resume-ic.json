@@ -1,0 +1,206 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Ashton Honnecke",
+    "label": "Senior Software/Cloud Engineer • Python • AWS • DevOps",
+    "email": "published_cv@cxcs.us",
+    "url": "https://ashton.honnecke.us",
+    "summary": "Self-motivated engineer focused on maintainable, reusable code and pragmatic delivery. Operates comfortably from low-level systems detail to high-level business outcomes. Clear communicator (written & verbal); results-driven and collaborative. Experience running/serving extremely high-scale, public-facing web properties. Speaker: PyColorado — Cleaning Up Your Python Environment: Superfund Site. Speaker: PyDEN — The Value of Linting.",
+    "location": {
+      "city": "Denver",
+      "region": "CO",
+      "countryCode": "US"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "url": "https://github.com/ahonnecke",
+        "username": "ahonnecke"
+      },
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/ashtonhonnecke/",
+        "username": "ashtonhonnecke"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "CrewCapable AI",
+      "position": "Chief Technology Officer",
+      "startDate": "2025",
+      "summary": "TypeScript, Python, Next.js 15, React 19, AWS CDK, Lambda, Step Functions, Postgres/Supabase, LLM extraction, Zod, Vitest, LocalStack, EDI X12",
+      "highlights": [
+        "Greenfield AI-native SaaS for corrugated packaging purchase-order intake: OCR + LLM extraction + human-in-the-loop review + automated ERP/EDI export; production pilot in under 10 months.",
+        "Fully serverless AWS architecture on CDK: 10 Lambda functions; Step Functions workflow orchestrating OCR/extraction/reconciliation; event-driven integration across S3, Textract, EventBridge, SNS, Secrets Manager.",
+        "Split infrastructure into 4 independently deployable CDK stacks (core backend, audit, ERP, management) to isolate blast radius and enable per-tenant rollout.",
+        "Next.js 15 / React 19 frontend backed by ~86 typed API routes; Postgres (Supabase) with row-level security on every tenant-scoped table.",
+        "Multi-provider LLM document-extraction pipeline (OpenAI, Gemini, Mistral, Tesseract, Textract) with Zod-typed schemas; immutable audit trail separating raw model output from human-reviewed values.",
+        "Document-processing state machine handling PDF, DOCX, image, and email-attachment intake with explicit failure and timeout paths.",
+        "~112k LOC TypeScript behind 94 test files (Vitest, Testing Library, LocalStack integration, ERP golden-file contract tests); 8 GitHub Actions workflows covering type checks, migration linting, ERP regression.",
+        "Strict end-to-end type safety: branded domain types, Zod validation at every boundary, generated Supabase types; Biome + ESLint + Ultracite enforced in CI.",
+        "123 forward-only Postgres migrations with automated migration linting in CI to prevent environment drift.",
+        "Per-Lambda CloudWatch alarms, state-machine failure alerts, commit-SHA logging on Lambda cold start, /api/version endpoint for incident-to-revision traceability.",
+        "AWS Secrets Manager + per-Lambda IAM scoping + RLS on every customer-data table — no shared service accounts across tenants.",
+        "Production integrations: Amtech DAT (SFTP), Epicor P21, QuickBooks, outbound X12 850 EDI; Stripe billing, Supabase Auth with Google OAuth, PostHog analytics, SES-based email intake.",
+        "Turborepo / pnpm monorepo spanning web, backend, and 5 shared packages with LLM-optimized single-concern file markers."
+      ]
+    },
+    {
+      "name": "Panasonic North America",
+      "position": "Lead Cloud Engineer",
+      "startDate": "2020",
+      "endDate": "2025",
+      "summary": "Python, boto3, Bash, AWS (Lambda, SQS, SNS, Fargate, S3, CloudWatch, Cost Explorer), SonarQube, Docker, V2X/OBU telematics, SAE J2735 (DSRC), edge devices",
+      "highlights": [
+        "Chaired cross-team best-practices workgroup (~50 engineers) on OO, SOLID, code quality, and security; mentored developers across the org.",
+        "Authored ADRs for event-driven/serverless and long-running serverful (Fargate) cloud-native architectures.",
+        "Authored end-to-end incident playbooks: classification → response → resolution → blameless post-mortem.",
+        "Built a near-real-time OBU ingress pipeline on Lambda/SQS/SNS with horizontal scale; worked with SAE J2735 DSRC messages in the data path; provisioned for throughput headroom not exercised in production.",
+        "Shipped V2X messaging deployment for a Utah snowplow fleet; worked on edge devices, packet sniffing, and hardware↔cloud integration.",
+        "Designed and released internal developer tooling as open-source on PyPI: hot Lambda filesystem mounting (Consolo), CLI SNS inspection (Snifter), Jira↔Git forge integration (Jolly Brancher).",
+        "Delivered artifact build pipeline reducing build time and cost.",
+        "Identified and decommissioned unused AWS resources via Cost Explorer and tagging discipline → up to ~30% infrastructure savings.",
+        "Drove self-hosted SonarQube rollout across the org → >50% unit-test coverage gains across multiple languages."
+      ]
+    },
+    {
+      "name": "Digital Assets Data",
+      "position": "Sr. Software Engineer / Blockchain Tech Lead",
+      "startDate": "2018",
+      "endDate": "2020",
+      "summary": "Python, Django, React, Pandas, Docker, AWS (Lambda, API Gateway, S3, CloudWatch, ECS), Google BigQuery, CircleCI, BTC/ETH nodes, smart contracts",
+      "highlights": [
+        "Built Python microservices to extract on-chain BTC/ETH data directly from cloud-hosted nodes (low-latency ingest; pandas; scheduled CloudWatch Events).",
+        "Implemented Lambda + API Gateway microservices for cryptographic decoding at very high throughput.",
+        "AWS ingestion pipelines on S3, CloudWatch Events, Lambda, and ECS — processed 100 GB nightly with individual files up to 30 GB.",
+        "Worked with Google BigQuery to extract, normalize, and ingest Bitcoin and Ethereum datasets.",
+        "Implemented QR-code TOTP multi-factor authentication in Django/React; hardened and containerized blockchain nodes across per-env configurations.",
+        "\"Fan-out\" CircleCI workflows to parallelize PR tests; standardized unit testing + linting; containerized every stack with Docker.",
+        "Automated external-library dependency PRs with integration checks against external APIs in the PR test flow only.",
+        "Tech lead with 1 direct report (blockchain team of 2 at peak); owned on-call playbooks (VictorOps, OpsGenie); performed many interviews.",
+        "Built centralized unhandled-exception capture/logging and uptime monitoring across multiple projects and languages.",
+        "Restructured deploys into a single \"push-button\" script; wrote and distributed git hooks for linting, typing, and stylistic cohesion."
+      ]
+    },
+    {
+      "name": "Havenly",
+      "position": "Senior Software Engineer",
+      "startDate": "2015",
+      "endDate": "2017",
+      "summary": "PHP, CakePHP 2/3, Linux, Git, SQL, queued-ingest systems, data modeling",
+      "highlights": [
+        "Most senior engineer on the data-ingest initiative within an ~8-person team; designed and shipped a greenfield, horizontally scalable queued data-feed system: 7M+ rows/day from 25+ sources in 15 formats.",
+        "Built decoupled pipeline: raw retention (traceability/replay) → transform/validate/store → push to external API with faceted fuzzy search.",
+        "Authored CakePHP2 → CakePHP3 migration plan; refactored into OO Components and Behaviors (CakePHP's mixins/traits) to enable encapsulation and unit testability."
+      ]
+    },
+    {
+      "name": "Colorado State University Global Campus",
+      "position": "Systems Architect (pro tem)",
+      "startDate": "2014",
+      "endDate": "2015",
+      "summary": "Linux, PHP, SQL, data modeling, SDLC, pentesting, Git, SSH",
+      "highlights": [
+        "Covered a vacated architecture-leadership role at CSU Global (director-level scope); led 1 engineer, owned architecture and SDLC for student portal, course registration, and transcript systems."
+      ]
+    },
+    {
+      "name": "Pixelstub Consulting",
+      "position": "Founder",
+      "startDate": "2009",
+      "summary": "Linux, PHP, JavaScript, SQL, SDLC, pentesting, Git, SSH, LLM extraction pipelines",
+      "highlights": [
+        "Founder of a long-running independent consultancy (profitable when actively engaged); broad tech-stack engagements across web, mobile, data, and DevOps.",
+        "Built an LLM-driven image-to-structured-data pipeline for menu data ingestion (picture → structured records)."
+      ]
+    },
+    {
+      "name": "Photobucket",
+      "position": "Software Engineer → Senior Software Engineer",
+      "startDate": "2005",
+      "endDate": "2009",
+      "summary": "PHP, MVC frameworks, PayPal API, credit-card payments, trust & safety tooling, AJAX, CI, MySQL",
+      "highlights": [
+        "W-2 engineer at Photobucket during its peak-traffic era (widely reported as top-50 global web property, ~100M users); promoted SWE → Sr SWE based on full ownership of internal tooling.",
+        "Built trust & safety reporting pipeline: tool that packaged offensive content and transmitted to the National Center for Missing & Exploited Children (NCMEC); contributed to multiple predator arrests via proactive law-enforcement integration.",
+        "Owned payments (PayPal + credit-card processing, reconciliation) and account-management tooling used for legal/compliance archival.",
+        "Created a Propel-like model code-generation system with unit tests; migrated raw PHP pages to an MVC framework for internal tools.",
+        "Introduced CI and unit testing into the team's workflow; mentored engineers on design, flow, and integration.",
+        "Built an AJAX-based status/exception display system for consistent UX, surfacing caught DB exceptions."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Denver",
+      "studyType": "Master of Business Administration",
+      "area": "Emphasis: Accounting",
+      "startDate": "2004",
+      "endDate": "2005"
+    },
+    {
+      "institution": "University of Denver",
+      "studyType": "Bachelor of Computer Science",
+      "area": "Minors: Mathematics, Philosophy",
+      "startDate": "2000",
+      "endDate": "2004"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Software development across multiple languages, frameworks, and stacks (~25 yrs)."
+    },
+    {
+      "name": "Linux/Unix administration (~20 yrs); DevOps (cloud & colo) (~10 yrs)."
+    },
+    {
+      "name": "Startups (founder & early-stage) (~15 yrs), including profitable exits or profitability (~10 yrs)."
+    },
+    {
+      "name": "AI/LLM-native engineering (production LLM extraction pipelines, agent-directed development, multi-provider orchestration) (~1 yr production, ongoing)."
+    },
+    {
+      "name": "Blockchain (ETH/BTC nodes, data engineering) (~2 yrs)."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Consolo",
+      "description": "Hot-mount Lambda filesystems for rapid iteration; \"hot reloading.\"",
+      "url": "https://pypi.org/project/consolo/"
+    },
+    {
+      "name": "Snifter",
+      "description": "Fast SNS topic/message inspection from the CLI.",
+      "url": "https://pypi.org/project/snifter/"
+    },
+    {
+      "name": "Jolly Brancher",
+      "description": "Git/Jira helper: find tickets, create matching branches, enforce branch hygiene.",
+      "url": "https://pypi.org/project/jolly-brancher/"
+    }
+  ],
+  "interests": [
+    {
+      "name": "I enjoy snowboarding, cooking, board games, reading, welding, electric bass, and a steady stream of hands-on projects. I love puzzles and problem-solving and contribute to open-source projects."
+    }
+  ],
+  "x_speaking": [
+    {
+      "title": "Cleaning Up Your Python Environment: Superfund Site",
+      "venue": "PyColorado",
+      "url": "https://www.youtube.com/watch?v=cpseEHA_haA"
+    },
+    {
+      "title": "The Value of Linting",
+      "venue": "PyDEN",
+      "url": "https://www.meetup.com/PyDENCO/events/llxnlrybcdbkc/"
+    }
+  ],
+  "meta": {
+    "variant": "ic",
+    "canonical": "https://ashton.honnecke.us/cv",
+    "version": "1"
+  }
+}

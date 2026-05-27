@@ -2,6 +2,10 @@
 FROM node:21 AS build
 WORKDIR /app
 
+# The Playwright devDep is only used to render the CV PDFs in CI; the site
+# build needs no browser, so skip Playwright's browser download here.
+ENV PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+
 # Copy package files first for better caching
 COPY package*.json ./
 

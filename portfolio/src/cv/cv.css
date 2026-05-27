@@ -1,0 +1,402 @@
+/* CV page styles. Two layers:
+   - Screen: web-first, dark-mode aware, sticky variant toggle.
+   - Print (@media print + @page): clean letter-size PDF; the Playwright
+     exporter renders this layer. Print forces light colors regardless of the
+     viewer's color scheme so the PDF is always ink-on-white. */
+
+.cv {
+	--accent: #0f766e;
+	--accent-soft: #0f766e1a;
+	--bg: #ffffff;
+	--surface: #f6f7f8;
+	--text: #1f2933;
+	--muted: #667085;
+	--border: #e4e7eb;
+
+	max-width: 60rem;
+	margin: 0 auto;
+	padding: 2rem 1.5rem 4rem;
+	color: var(--text);
+	background: var(--bg);
+	font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif;
+	line-height: 1.5;
+	font-size: 15px;
+}
+
+@media (prefers-color-scheme: dark) {
+	.cv {
+		--accent: #2dd4bf;
+		--accent-soft: #2dd4bf1f;
+		--bg: #0e1116;
+		--surface: #161b22;
+		--text: #e6edf3;
+		--muted: #9aa4b2;
+		--border: #232a33;
+	}
+}
+
+/* --- Header --- */
+.cv-header {
+	position: sticky;
+	top: 0;
+	z-index: 5;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 1.5rem;
+	padding: 1rem 0;
+	margin-bottom: 1rem;
+	background: var(--bg);
+	border-bottom: 2px solid var(--accent);
+}
+
+.cv-name {
+	margin: 0;
+	font-size: 2rem;
+	font-weight: 800;
+	letter-spacing: -0.01em;
+}
+
+.cv-tagline {
+	margin: 0.25rem 0 0.5rem;
+	color: var(--accent);
+	font-weight: 600;
+}
+
+.cv-contact {
+	margin: 0;
+	font-size: 0.82rem;
+	color: var(--muted);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	align-items: center;
+}
+
+.cv-contact a {
+	color: var(--muted);
+	text-decoration: none;
+}
+.cv-contact a:hover {
+	color: var(--accent);
+}
+.cv-sep {
+	opacity: 0.4;
+}
+
+/* --- Variant toggle --- */
+.cv-toggle {
+	display: inline-flex;
+	flex-shrink: 0;
+	margin: 0;
+	padding: 0;
+	min-inline-size: 0;
+	border: 1px solid var(--border);
+	border-radius: 999px;
+	overflow: hidden;
+	background: var(--surface);
+}
+
+.cv-toggle button {
+	appearance: none;
+	border: 0;
+	background: transparent;
+	color: var(--muted);
+	padding: 0.4rem 0.9rem;
+	font: inherit;
+	font-size: 0.82rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background 0.15s, color 0.15s;
+}
+
+.cv-toggle button.is-active {
+	background: var(--accent);
+	color: #fff;
+}
+
+/* --- Sections --- */
+.cv-section {
+	margin: 1.5rem 0;
+}
+
+.cv-section-title {
+	margin: 0 0 0.6rem;
+	font-size: 0.78rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: var(--accent);
+}
+
+.cv-grid {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 1.5rem 2.5rem;
+	align-items: start;
+}
+
+@media (max-width: 640px) {
+	.cv-grid {
+		grid-template-columns: 1fr;
+	}
+	.cv-header {
+		flex-direction: column;
+	}
+}
+
+/* --- Bullets --- */
+.cv-bullets {
+	margin: 0;
+	padding-left: 1.1rem;
+}
+.cv-bullets li {
+	margin-bottom: 0.35rem;
+}
+
+/* --- Skills --- */
+.cv-skill-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+.cv-skill {
+	font-size: 0.85rem;
+	padding: 0.4rem 0.6rem;
+	border-left: 3px solid var(--accent);
+	background: var(--accent-soft);
+	border-radius: 0 4px 4px 0;
+}
+
+/* --- Experience --- */
+.cv-roles {
+	display: flex;
+	flex-direction: column;
+	gap: 1.1rem;
+}
+.cv-role-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 1rem;
+}
+.cv-role-title {
+	margin: 0;
+	font-size: 1rem;
+	font-weight: 700;
+}
+.cv-dash {
+	margin: 0 0.4rem;
+	color: var(--muted);
+	font-weight: 400;
+}
+.cv-position {
+	font-weight: 600;
+	color: var(--accent);
+}
+.cv-period {
+	flex-shrink: 0;
+	font-size: 0.8rem;
+	color: var(--muted);
+	font-variant-numeric: tabular-nums;
+}
+.cv-expertise {
+	margin: 0.2rem 0 0.4rem;
+	font-size: 0.85rem;
+	color: var(--muted);
+}
+.cv-expertise-label {
+	font-weight: 700;
+	color: var(--text);
+}
+
+/* --- Speaking --- */
+.cv-talks {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+}
+.cv-talk {
+	display: flex;
+	flex-direction: column;
+}
+.cv-talk-title {
+	font-weight: 600;
+	color: var(--text);
+	text-decoration: none;
+}
+.cv-talk-title:hover {
+	color: var(--accent);
+}
+.cv-talk-venue {
+	font-size: 0.78rem;
+	color: var(--muted);
+}
+.cv-talk-links {
+	display: flex;
+	gap: 0.8rem;
+	margin-top: 0.15rem;
+}
+.cv-talk-links a {
+	font-size: 0.78rem;
+	color: var(--accent);
+	text-decoration: none;
+}
+.cv-talk-links a:hover {
+	text-decoration: underline;
+}
+
+/* --- Education --- */
+.cv-education {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+}
+.cv-education li {
+	display: flex;
+	flex-direction: column;
+}
+.cv-degree {
+	font-weight: 600;
+}
+.cv-school,
+.cv-note {
+	font-size: 0.8rem;
+	color: var(--muted);
+}
+
+/* --- Open source projects --- */
+.cv-projects {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+	gap: 0.8rem;
+}
+.cv-project {
+	display: flex;
+	flex-direction: column;
+	gap: 0.2rem;
+	padding: 0.8rem;
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	text-decoration: none;
+	color: var(--text);
+	transition: border-color 0.15s, transform 0.15s;
+}
+.cv-project:hover {
+	border-color: var(--accent);
+	transform: translateY(-2px);
+}
+.cv-project-name {
+	font-weight: 700;
+	color: var(--accent);
+}
+.cv-project-summary {
+	font-size: 0.83rem;
+	color: var(--muted);
+}
+
+.cv-interests p {
+	margin: 0;
+	color: var(--muted);
+}
+
+/* --- Print / PDF layer ---
+   Tuned for a dense ~2–3 page CV: small margins/leading, compact sections,
+   two columns retained. Forces ink-on-white regardless of viewer color scheme. */
+@page {
+	size: letter;
+	margin: 0.45in 0.5in;
+}
+
+@media print {
+	.cv {
+		--accent: #0f766e;
+		--accent-soft: #0f766e14;
+		--bg: #ffffff;
+		--surface: #ffffff;
+		--text: #1a1a1a;
+		--muted: #3d3d3d;
+		--border: #cccccc;
+		max-width: none;
+		margin: 0;
+		padding: 0;
+		font-size: 8.6px;
+		line-height: 1.32;
+	}
+	.cv-toggle {
+		display: none;
+	}
+	.cv-header {
+		position: static;
+		padding: 0 0 0.3rem;
+		margin-bottom: 0.5rem;
+		border-bottom-width: 1.5px;
+	}
+	.cv-name {
+		font-size: 1.45rem;
+	}
+	.cv-tagline {
+		margin: 0.1rem 0 0.25rem;
+	}
+	.cv-section {
+		margin: 0.5rem 0;
+	}
+	.cv-section-title {
+		margin-bottom: 0.3rem;
+	}
+	.cv-grid {
+		gap: 0.6rem 1.6rem;
+	}
+	.cv-roles {
+		gap: 0.55rem;
+	}
+	.cv-bullets {
+		padding-left: 0.95rem;
+	}
+	.cv-bullets li {
+		margin-bottom: 0.12rem;
+	}
+	.cv-skill {
+		padding: 0.2rem 0.45rem;
+	}
+	.cv-skill-list,
+	.cv-talks,
+	.cv-education {
+		gap: 0.3rem;
+	}
+	.cv-expertise {
+		margin: 0.1rem 0 0.25rem;
+	}
+	.cv-projects {
+		gap: 0.5rem;
+	}
+	.cv-project {
+		padding: 0.5rem;
+	}
+	.cv-role,
+	.cv-project,
+	.cv-talk {
+		break-inside: avoid;
+	}
+	.cv-project:hover {
+		transform: none;
+	}
+	a {
+		color: inherit;
+	}
+	.cv-position,
+	.cv-project-name,
+	.cv-section-title {
+		color: var(--accent) !important;
+	}
+}
