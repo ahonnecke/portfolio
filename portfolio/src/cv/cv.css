@@ -1,8 +1,6 @@
-/* CV page styles. Two layers:
-   - Screen: web-first, dark-mode aware, sticky variant toggle.
-   - Print (@media print + @page): clean letter-size PDF; the Playwright
-     exporter renders this layer. Print forces light colors regardless of the
-     viewer's color scheme so the PDF is always ink-on-white. */
+/* CV page styles. Screen: web-first, dark-mode aware, sticky variant toggle.
+   The @media print block only styles the browser's "Print this page"; the
+   canonical downloadable PDF is built separately (Emacs/Org/XeLaTeX, ~/src/cv). */
 
 .cv {
 	--accent: #0f766e;
@@ -130,6 +128,28 @@
 }
 
 .cv-toggle button.is-active {
+	background: var(--accent);
+	color: #fff;
+}
+
+/* --- Controls / PDF link --- */
+.cv-controls {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 0.5rem;
+	flex-shrink: 0;
+}
+.cv-pdf-link {
+	font-size: 0.8rem;
+	font-weight: 600;
+	color: var(--accent);
+	text-decoration: none;
+	border: 1px solid var(--accent);
+	border-radius: 6px;
+	padding: 0.3rem 0.7rem;
+}
+.cv-pdf-link:hover {
 	background: var(--accent);
 	color: #fff;
 }

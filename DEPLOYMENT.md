@@ -61,20 +61,18 @@ The root `nginx/` + `docker-compose.yml` are for **local development only**
 (`make build` / `make up`): an nginx reverse proxy in front of the Vite dev
 server. They are not part of the production deploy.
 
-## CV artifacts
+## CV
 
-The CV is a React route (`/cv`) driven by typed data in
-`portfolio/src/cv/resume.data.ts`. The served PDFs and JSON Resume files in
-`portfolio/public/cv/` are generated from that route by Playwright:
+Two separate things:
 
-```bash
-cd portfolio
-npm run cv:build   # writes cv.pdf, cv-ic.pdf, resume.json, resume-ic.json
-```
+- **Web page** — the React route `/cv`, driven by typed data in
+  `portfolio/src/cv/resume.data.ts` (CTO/IC variants, dark mode). This is the
+  primary, always-current artifact. See `portfolio/src/cv/README.md`.
+- **PDF** — built by the Emacs/Org/XeLaTeX pipeline in `~/src/cv`
+  (`M-x build-cv`), then copied into `portfolio/public/cv/{cv,cv-ic}.pdf` by
+  that repo's `deploy.sh`. The web page links to it via "Download PDF".
 
-The `.github/workflows/cv_build.yaml` workflow regenerates and commits these
-automatically when `src/cv/**` changes, so the artifacts never drift from the
-data. See `portfolio/src/cv/README.md`.
+The PDF is *not* generated from the web page.
 
 ## Troubleshooting
 

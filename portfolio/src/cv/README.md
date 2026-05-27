@@ -1,45 +1,29 @@
 # CV
 
-Web-first CV. One typed dataset is the source of truth; the live page, the
-PDFs, and the JSON Resume artifacts all derive from it, so they cannot drift.
+The CV web page (`/cv` route). One typed dataset drives a web-first page with
+two audience variants; the page also embeds machine-readable JSON.
 
-## Source of truth
+## Source of truth (this directory)
 
-- `resume.data.ts` — **edit this**. All content for both audience variants.
-- `resume.types.ts` — the schema (`ByVariant<T>` for variant-specific fields).
+- `resume.data.ts` — **edit this**. All content for both variants.
+- `resume.types.ts` — schema (`ByVariant<T>` for variant-specific fields).
 - `variant.ts` — `selectVariant()` projects the dataset to one variant.
 - `jsonresume.ts` — `toJsonResume()` (JSON Resume) and `toSchemaOrg()` (JSON-LD).
-- `CvPage.tsx` / `cv.css` — the `/cv` route and its screen + print styling.
+- `CvPage.tsx` / `cv.css` — the `/cv` route and its styling.
 
 ## Variants
 
-Two audiences are maintained from the one dataset:
+Maintained from the one dataset, switched by the on-page toggle:
 
 - **cto** — engineering-leadership positioning (default; `/cv`).
 - **ic** — deep senior / individual-contributor positioning (`/cv?variant=ic`).
 
-The on-page toggle switches between them.
+The page embeds the JSON Resume object and a schema.org `Person` graph inline
+(no build step) so crawlers and LLMs can read it.
 
-## Outputs
+## PDF
 
-Rendered into `../../public/cv/` and served at `https://ashton.honnecke.us/cv/`:
-
-| File             | What                                |
-| ---------------- | ----------------------------------- |
-| (the `/cv` route)| Primary human artifact (live page)  |
-| `cv.pdf`         | CTO variant, PDF (fallback export)  |
-| `cv-ic.pdf`      | IC variant, PDF                     |
-| `resume.json`    | CTO variant, JSON Resume            |
-| `resume-ic.json` | IC variant, JSON Resume             |
-
-The page also embeds schema.org `Person` JSON-LD for crawlers and LLMs.
-
-## Build
-
-```bash
-npm run cv:build   # from portfolio/ — Playwright renders /cv to PDF + JSON
-```
-
-No prior `vite build` needed — the script boots its own Vite dev server. CI
-(`.github/workflows/cv_build.yaml`) regenerates and commits on `src/cv/**`
-changes. History: this replaced an Emacs/Org/XeLaTeX pipeline (`~/src/cv`).
+The downloadable PDF is **not** generated from this page. It is built by the
+Emacs/Org/XeLaTeX pipeline in `~/src/cv` (`M-x build-cv`) and copied into
+`../../public/cv/{cv,cv-ic}.pdf` by that repo's `deploy.sh`. The "Download PDF"
+link on the page points at those files.

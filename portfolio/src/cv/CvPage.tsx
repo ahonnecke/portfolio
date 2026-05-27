@@ -1,8 +1,7 @@
 // Web-first CV page. Reads the typed dataset, projects it to the selected
-// audience variant (CTO/IC), and renders a screen-optimized layout. The same
-// markup yields a clean PDF via the print stylesheet in cv.css (consumed by
-// the Playwright export). Variant selection is mirrored in the URL (?variant=ic)
-// so a given rendering is shareable and so the PDF exporter can target a variant.
+// audience variant (CTO/IC), and renders the layout. Variant selection is
+// mirrored in the URL (?variant=ic) so a rendering is shareable. The
+// downloadable PDF is built separately (Emacs/Org/XeLaTeX in ~/src/cv).
 
 import { useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
@@ -104,7 +103,7 @@ export default function CvPage(): JSX.Element {
 
 	return (
 		<main className="cv" data-variant={variant}>
-			{/* Machine-readable: harvested to /cv/resume.json by scripts/build-cv.mjs */}
+			{/* Machine-readable: JSON Resume + schema.org JSON-LD embedded for crawlers/LLMs */}
 			<script
 				type="application/json"
 				id="cv-resume-json"
@@ -122,24 +121,32 @@ export default function CvPage(): JSX.Element {
 					<p className="cv-tagline">{data.tagline}</p>
 					<ContactLine contact={data.contact} />
 				</div>
-				<fieldset className="cv-toggle" aria-label="Résumé variant">
-					<button
-						type="button"
-						className={variant === "cto" ? "is-active" : ""}
-						aria-pressed={variant === "cto"}
-						onClick={() => setVariant("cto")}
+				<div className="cv-controls">
+					<fieldset className="cv-toggle" aria-label="Résumé variant">
+						<button
+							type="button"
+							className={variant === "cto" ? "is-active" : ""}
+							aria-pressed={variant === "cto"}
+							onClick={() => setVariant("cto")}
+						>
+							Leadership
+						</button>
+						<button
+							type="button"
+							className={variant === "ic" ? "is-active" : ""}
+							aria-pressed={variant === "ic"}
+							onClick={() => setVariant("ic")}
+						>
+							Engineering
+						</button>
+					</fieldset>
+					<a
+						className="cv-pdf-link"
+						href={variant === "cto" ? "/cv/cv.pdf" : "/cv/cv-ic.pdf"}
 					>
-						Leadership
-					</button>
-					<button
-						type="button"
-						className={variant === "ic" ? "is-active" : ""}
-						aria-pressed={variant === "ic"}
-						onClick={() => setVariant("ic")}
-					>
-						Engineering
-					</button>
-				</fieldset>
+						Download PDF
+					</a>
+				</div>
 			</header>
 
 			<div className="cv-grid">
