@@ -63,11 +63,10 @@ try {
 			console.log(`screenshot: ${shot}`);
 		}
 
-		await page.emulateMedia({ media: "print" });
+		await page.emulateMedia({ media: "print", colorScheme: "light" });
 		const pdf = resolve(outDir, variant.pdf);
 		await page.pdf({
 			path: pdf,
-			format: "Letter",
 			printBackground: true,
 			preferCSSPageSize: true,
 		});

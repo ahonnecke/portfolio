@@ -22,6 +22,24 @@
 		"Helvetica Neue", Arial, sans-serif;
 	line-height: 1.5;
 	font-size: 15px;
+	overflow-wrap: break-word;
+}
+
+/* The app sets no global box-sizing; without this, padding/borders add onto
+   widths and overflow the print page. */
+.cv,
+.cv *,
+.cv *::before,
+.cv *::after {
+	box-sizing: border-box;
+}
+
+/* Grid/flex children default to min-width:auto, which refuses to shrink below
+   their content and overflows narrow (print) widths. Allow them to shrink. */
+.cv-grid > *,
+.cv-roles > *,
+.cv-projects > * {
+	min-width: 0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -278,7 +296,7 @@
 /* --- Open source projects --- */
 .cv-projects {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(min(14rem, 100%), 1fr));
 	gap: 0.8rem;
 }
 .cv-project {
@@ -313,12 +331,28 @@
 /* --- Print / PDF layer ---
    Tuned for a dense ~2–3 page CV: small margins/leading, compact sections,
    two columns retained. Forces ink-on-white regardless of viewer color scheme. */
+/* Top/bottom margins via @page so they repeat correctly on every page.
+   Left/right margins come from .cv padding instead — a horizontal @page margin
+   makes Chromium lay the body out at full paper width and clip the right edge. */
 @page {
 	size: letter;
-	margin: 0.45in 0.5in;
+	margin: 0.5in 0;
 }
 
 @media print {
+	/* The site's :root background is dark by default; force the whole page
+	   white for print so nothing bleeds into margins or empty space. The app
+	   also centers <body> with flex — neutralize that for document flow. */
+	html,
+	body,
+	#root {
+		background: #ffffff !important;
+	}
+	body {
+		display: block !important;
+		min-height: 0 !important;
+		place-items: initial !important;
+	}
 	.cv {
 		--accent: #0f766e;
 		--accent-soft: #0f766e14;
@@ -327,11 +361,22 @@
 		--text: #1a1a1a;
 		--muted: #3d3d3d;
 		--border: #cccccc;
-		max-width: none;
-		margin: 0;
+		/* Fixed, centered content width (letter 8.5in − 2×0.6in margins).
+		   Explicit width is immune to however Chromium sizes the print body. */
+		width: 7.3in;
+		max-width: 7.3in;
+		margin: 0 auto;
 		padding: 0;
 		font-size: 8.6px;
 		line-height: 1.32;
+	}
+	.cv-role-title {
+		min-width: 0;
+	}
+	/* Let the date wrap below a long title instead of overflowing the row. */
+	.cv-role-head {
+		flex-wrap: wrap;
+		column-gap: 0.6rem;
 	}
 	.cv-toggle {
 		display: none;
@@ -379,6 +424,7 @@
 	}
 	.cv-projects {
 		gap: 0.5rem;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
 	}
 	.cv-project {
 		padding: 0.5rem;
