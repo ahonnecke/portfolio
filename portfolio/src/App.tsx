@@ -1,10 +1,9 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { Link, BrowserRouter as Router } from "react-router-dom"; // Import Link from react-router-dom
 import "./App.css";
 import type * as React from "react"; // Import React to fix TypeScript error
 import {
 	BigWheel,
-	CV,
 	Consolo,
 	Devops,
 	Docker,
@@ -23,31 +22,21 @@ import {
 	Wayward,
 } from "./Details";
 import { navMap } from "./NavMap";
+import CvPage from "./cv/CvPage";
 
 function App(): JSX.Element {
 	// Add explicit return type for function App
 	return (
 		<>
 			<Router>
-				<div>
-					<h1 id="fullname">
-						<Link to="/">Ashton Honnecke</Link>
-						<Link
-							className="quickPdf"
-							to="https://pixelstub.com/cv/ashton_honnecke_cv_short.pdf"
-						>
-							PDF
-						</Link>
-					</h1>
-					<h3 className="tagline">Linux / Python / Cloud / DevOps</h3>
-				</div>
+				<SiteHeader />
 
 				<Routes>
 					<Route path="/" element={<Main />} />
 					<Route path="/big_wheel" element={<BigWheel />} />
 					<Route path="/docker" element={<Docker />} />
 					<Route path="/consolo" element={<Consolo />} />
-					<Route path="/cv" element={<CV />} />
+					<Route path="/cv" element={<CvPage />} />
 					<Route path="/fire_table" element={<FireTable />} />
 					<Route path="/github" element={<Github />} />
 					<Route path="/jolly_brancher" element={<JollyBrancher />} />
@@ -68,6 +57,26 @@ function App(): JSX.Element {
 				</Routes>
 			</Router>
 		</>
+	);
+}
+
+function SiteHeader(): JSX.Element | null {
+	// The /cv page renders its own identity header; suppress the site chrome
+	// there so the name/tagline aren't duplicated (on screen and in the PDF).
+	const { pathname } = useLocation();
+	if (pathname === "/cv") {
+		return null;
+	}
+	return (
+		<div>
+			<h1 id="fullname">
+				<Link to="/">Ashton Honnecke</Link>
+				<a className="quickPdf" href="/cv/cv.pdf">
+					CV
+				</a>
+			</h1>
+			<h3 className="tagline">Linux / Python / Cloud / DevOps</h3>
+		</div>
 	);
 }
 
@@ -116,24 +125,27 @@ function toCamelCase(str: string): string {
 function Tile({ tile }: { tile: string }): JSX.Element {
 	// Add explicit return type for function Tile
 	const navData = navMap[tile]; // Fixed to reference navMap
-	console.log(tile);
 	const AbstractComponent = navData.detail as React.ElementType;
-	return (
-		<Link to={tile}>
-			<span
-				className={`card ${toCamelCase(navData.text)}`}
-				style={{ backgroundImage: `url(${navData.image})` }}
-			>
-				<span className="cardCategory">{navData.category}</span>
-				<span className="cardTitle">{navData.text}</span>
-				{AbstractComponent && (
-					<span className="cardAbstract">
-						<AbstractComponent />
-					</span>
-				)}
-			</span>
-		</Link>
+	const card = (
+		<span
+			className={`card ${toCamelCase(navData.text)}`}
+			style={{ backgroundImage: `url(${navData.image})` }}
+		>
+			<span className="cardCategory">{navData.category}</span>
+			<span className="cardTitle">{navData.text}</span>
+			{AbstractComponent && (
+				<span className="cardAbstract">
+					<AbstractComponent />
+				</span>
+			)}
+		</span>
 	);
+	// Static documents (e.g. the CV PDF) are served as files, not SPA routes,
+	// so a react-router <Link> would never reach them — use a plain anchor.
+	if (navData.link.endsWith(".pdf")) {
+		return <a href={navData.link}>{card}</a>;
+	}
+	return <Link to={tile}>{card}</Link>;
 }
 
 export default App;
