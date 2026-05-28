@@ -71,9 +71,9 @@ function SiteHeader(): JSX.Element | null {
 		<div>
 			<h1 id="fullname">
 				<Link to="/">Ashton Honnecke</Link>
-				<Link className="quickPdf" to="/cv">
+				<a className="quickPdf" href="/cv/cv.pdf">
 					CV
-				</Link>
+				</a>
 			</h1>
 			<h3 className="tagline">Linux / Python / Cloud / DevOps</h3>
 		</div>
@@ -125,24 +125,27 @@ function toCamelCase(str: string): string {
 function Tile({ tile }: { tile: string }): JSX.Element {
 	// Add explicit return type for function Tile
 	const navData = navMap[tile]; // Fixed to reference navMap
-	console.log(tile);
 	const AbstractComponent = navData.detail as React.ElementType;
-	return (
-		<Link to={tile}>
-			<span
-				className={`card ${toCamelCase(navData.text)}`}
-				style={{ backgroundImage: `url(${navData.image})` }}
-			>
-				<span className="cardCategory">{navData.category}</span>
-				<span className="cardTitle">{navData.text}</span>
-				{AbstractComponent && (
-					<span className="cardAbstract">
-						<AbstractComponent />
-					</span>
-				)}
-			</span>
-		</Link>
+	const card = (
+		<span
+			className={`card ${toCamelCase(navData.text)}`}
+			style={{ backgroundImage: `url(${navData.image})` }}
+		>
+			<span className="cardCategory">{navData.category}</span>
+			<span className="cardTitle">{navData.text}</span>
+			{AbstractComponent && (
+				<span className="cardAbstract">
+					<AbstractComponent />
+				</span>
+			)}
+		</span>
 	);
+	// Static documents (e.g. the CV PDF) are served as files, not SPA routes,
+	// so a react-router <Link> would never reach them — use a plain anchor.
+	if (navData.link.endsWith(".pdf")) {
+		return <a href={navData.link}>{card}</a>;
+	}
+	return <Link to={tile}>{card}</Link>;
 }
 
 export default App;
