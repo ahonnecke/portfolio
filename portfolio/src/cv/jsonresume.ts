@@ -1,6 +1,6 @@
 // Projects the dataset into machine-readable formats:
 //   toJsonResume  — standards-compliant JSON Resume (https://jsonresume.org),
-//                   embedded in the page and harvested to /cv/resume.json.
+//                   embedded inline in the page for machine readers.
 //   toSchemaOrg   — schema.org Person/ProfilePage JSON-LD for crawlers & LLMs.
 //
 // Both are derived from the same typed dataset via selectVariant, so the web
