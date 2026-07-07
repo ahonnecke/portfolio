@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# CV PDF build artifacts (generated from src/cv/resume.data.ts)
+build/

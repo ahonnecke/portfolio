@@ -23,7 +23,19 @@ The page embeds the JSON Resume object and a schema.org `Person` graph inline
 
 ## PDF
 
-The downloadable PDF is **not** generated from this page. It is built by the
-Emacs/Org/XeLaTeX pipeline in `~/src/cv` (`M-x build-cv`) and copied into
-`../../public/cv/{cv,cv-ic}.pdf` by that repo's `deploy.sh`. The "Download PDF"
-link on the page points at those files.
+The downloadable PDFs are generated from **this same `resume.data.ts`** — no
+Emacs, no Org, no second copy of the content. `scripts/generate-cv-tex.ts`
+projects the data with the same `selectVariant()` the page uses, emits a
+self-contained `.tex` (styling lives in that file's preamble), and xelatex
+compiles it in the `cv-tex` container.
+
+```bash
+make cv-pdf          # from repo root: builds cv.pdf (cto) + cv-ic.pdf (ic)
+```
+
+Outputs land in `../../public/cv/{cv,cv-ic}.pdf` — the files the site serves and
+the "Download PDF" link points at. Edit `resume.data.ts`, run `make cv-pdf`, and
+the web page and both PDFs update from one source.
+
+> The job-tailored variants (python-backend, verification) still live in the
+> Org pipeline in `~/src/cv`; only the canonical cto/ic PDFs build from here.
