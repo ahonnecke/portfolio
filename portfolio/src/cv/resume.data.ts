@@ -100,7 +100,7 @@ export const resume: Resume = {
 					"Authored end-to-end incident playbooks: classification → response → resolution → blameless post-mortem.",
 					"Built a near-real-time OBU ingress pipeline on Lambda/SQS/SNS with horizontal scale; worked with SAE J2735 DSRC messages in the data path; provisioned for throughput headroom not exercised in production.",
 					"Shipped V2X messaging deployment for a Utah snowplow fleet; worked on edge devices, packet sniffing, and hardware↔cloud integration.",
-					"At an internal hackathon, built an iOS app that drove physical EV-charging hardware in real time (3-person team, one day) — native mobile issuing commands to the charge-management controller.",
+					"At an internal hackathon (3-person team, one day), built an iOS and Apple Watch app that drove physical EV-charging hardware in real time — native phone and wrist control of the charge-management controller.",
 					"Designed and released internal developer tooling as open-source on PyPI: hot Lambda filesystem mounting (Consolo), CLI SNS inspection (Snifter), Jira↔Git forge integration (Jolly Brancher).",
 					"Delivered artifact build pipeline reducing build time and cost.",
 					"Identified and decommissioned unused AWS resources via Cost Explorer and tagging discipline → up to ~30% infrastructure savings.",
