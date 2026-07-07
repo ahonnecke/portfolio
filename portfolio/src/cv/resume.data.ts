@@ -23,7 +23,7 @@ export const resume: Resume = {
 	highlights: {
 		cto: [
 			"Engineering leader with ~25 years building and scaling production systems; fluent from low-level systems detail to business outcomes.",
-			"Shipped a greenfield B2B SaaS (CrewCapable) from zero to production pilot in under 10 months as solo founder-engineer, directing LLM-accelerated development.",
+			"AI-native engineering leadership: shipped a greenfield B2B SaaS (CrewCapable) as sole engineer, driving it from a brittle MVP to a fully productionized, horizontally scalable cloud platform in under 10 months while directing LLM-accelerated development.",
 			"Cost and quality leadership at scale: ~30% AWS infrastructure reduction and >50% unit-test coverage gains at Panasonic via Cost Explorer discipline and self-hosted SonarQube rollout.",
 			"Chaired cross-team best-practices workgroup (~50 engineers) at Panasonic; authored ADRs, incident playbooks, and blameless post-mortem process.",
 			"Public speaker (PyColorado, PyDEN) and active open-source maintainer (PyPI: Consolo, Snifter, Jolly Brancher).",
@@ -51,16 +51,16 @@ export const resume: Resume = {
 			},
 			highlights: {
 				cto: [
-					"Owned end-to-end technology strategy for a greenfield B2B SaaS (supply-chain / manufacturing); took the platform from zero to production pilot in under 10 months as founder-engineer with a few active contributors.",
+					"Owned end-to-end technology strategy for a greenfield AI-native B2B SaaS (supply-chain / manufacturing); single-handedly drove the platform from a brittle MVP to a fully productionized, horizontally scalable cloud implementation in under 10 months.",
 					"Partnered directly with the founding business team on roadmap, architecture, hiring, and vendor strategy; converted a manual purchase-order intake workflow into an API-driven, human-in-the-loop product.",
 					"Designed a serverless AWS architecture on CDK: Lambda functions plus a Step Functions workflow orchestrating OCR, extraction, and reconciliation across S3, Textract, EventBridge, SNS, and Secrets Manager.",
 					"Architected a multi-provider LLM document-extraction pipeline (OpenAI, Gemini, Mistral, Tesseract, Textract) with Zod-typed schemas and an immutable audit trail separating raw model output from human-reviewed values.",
 					"Shipped production integrations with 3 ERPs (Amtech DAT over SFTP, Epicor P21, QuickBooks) and outbound X12 850 EDI, replacing manual data entry for the pilot customer.",
 					"Chose serverless-first, managed-database stack (Lambda + Supabase + Vercel) to keep cloud spend proportional to document volume and eliminate idle infrastructure cost.",
-					"Established engineering conventions (strict typing, per-tenant RLS, single-concern file layout) across a Turborepo / pnpm monorepo spanning web, backend, and shared packages.",
+					"Established engineering conventions (LLM-optimized code patterns, strict typing, per-tenant RLS) across a Turborepo / pnpm monorepo spanning web, backend, and shared packages.",
 				],
 				ic: [
-					"Greenfield SaaS for corrugated packaging purchase-order intake: OCR + LLM extraction + human-in-the-loop review + automated ERP/EDI export; production pilot in under 10 months.",
+					"Greenfield AI-native SaaS for corrugated packaging purchase-order intake: OCR + LLM extraction + human-in-the-loop review + automated ERP/EDI export; single-handedly productionized from a brittle MVP to a horizontally scalable cloud deployment in under 10 months.",
 					"Serverless AWS architecture on CDK: Lambda functions and a Step Functions workflow orchestrating OCR/extraction/reconciliation; event-driven integration across S3, Textract, EventBridge, SNS, Secrets Manager.",
 					"Split infrastructure into four independently deployable CDK stacks (core backend, audit, ERP, management) to isolate blast radius and enable per-tenant rollout.",
 					"Next.js 15 / React 19 frontend over a typed API layer; Postgres (Supabase) with row-level security on every tenant-scoped table.",
@@ -68,11 +68,11 @@ export const resume: Resume = {
 					"Document-processing state machine handling PDF, DOCX, image, and email-attachment intake with explicit failure and timeout paths.",
 					"Test suite spanning Vitest unit tests, Testing Library, LocalStack integration, and ERP golden-file contract tests; CI covering type checks, migration linting, and ERP regression.",
 					"Strict end-to-end type safety: branded domain types, Zod validation at every boundary, generated Supabase types; Biome + ESLint + Ultracite enforced in CI.",
-					"Forward-only Postgres migrations with automated migration linting in CI to prevent environment drift.",
+					"Forward-only Postgres migrations wired into the promotion pipeline: the same migrations apply automatically on promotion to staging and then to prod, with migration linting in CI to prevent drift.",
 					"Per-Lambda CloudWatch alarms, state-machine failure alerts, commit-SHA logging on Lambda cold start, /api/version endpoint for incident-to-revision traceability.",
 					"AWS Secrets Manager + per-Lambda IAM scoping + RLS on every customer-data table — no shared service accounts across tenants.",
 					"Production integrations: Amtech DAT (SFTP), Epicor P21, QuickBooks, outbound X12 850 EDI; Stripe billing, Supabase Auth with Google OAuth, PostHog analytics, SES-based email intake.",
-					"Turborepo / pnpm monorepo spanning web, backend, and shared packages with a single-concern file layout.",
+					"Turborepo / pnpm monorepo spanning web, backend, and shared packages with LLM-optimized single-concern file markers.",
 				],
 			},
 		},
