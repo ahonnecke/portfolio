@@ -293,13 +293,13 @@ export const resume: Resume = {
 		{
 			institution: "University of Denver",
 			studyType: "Master of Business Administration",
-			period: "2004–2005",
+			period: "2002–2004",
 			notes: ["Emphasis: Accounting"],
 		},
 		{
 			institution: "University of Denver",
 			studyType: "Bachelor of Computer Science",
-			period: "2000–2004",
+			period: "1999–2003",
 			notes: ["Minors: Mathematics, Philosophy"],
 		},
 	],

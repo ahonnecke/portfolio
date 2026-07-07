@@ -27,6 +27,13 @@ deploy: ## Deploy the application
 	./bin/deploy.sh
 
 ##
+# CV
+##
+
+cv-pdf: ## Build CV PDFs (cv.pdf, cv-ic.pdf) from src/cv/resume.data.ts
+	cd portfolio && ./scripts/build-cv-pdf.sh
+
+##
 # CI Commands - Run GitLab CI jobs locally
 ##
 
