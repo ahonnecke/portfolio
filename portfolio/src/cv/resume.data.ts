@@ -23,7 +23,7 @@ export const resume: Resume = {
 	highlights: {
 		cto: [
 			"Engineering leader with ~25 years building and scaling production systems; fluent from low-level systems detail to business outcomes.",
-			"AI-native engineering leadership: shipped a greenfield B2B SaaS (CrewCapable) as sole engineer, driving it from a brittle MVP to a fully productionized, horizontally scalable cloud platform in under 10 months while directing LLM-accelerated development.",
+			"AI-native engineering leadership: shipped a greenfield B2B SaaS (CrewCapable) as sole engineer, driving it from a brittle proof of concept to a fully productionized, horizontally scalable cloud platform in under 10 months while directing LLM-accelerated development.",
 			"Cost and quality leadership at scale: ~30% AWS infrastructure reduction and >50% unit-test coverage gains at Panasonic via Cost Explorer discipline and self-hosted SonarQube rollout.",
 			"Chaired cross-team best-practices workgroup (~50 engineers) at Panasonic; authored ADRs, incident playbooks, and blameless post-mortem process.",
 			"Public speaker (PyColorado, PyDEN) and active open-source maintainer (PyPI: Consolo, Snifter, Jolly Brancher).",
@@ -51,7 +51,7 @@ export const resume: Resume = {
 			},
 			highlights: {
 				cto: [
-					"Owned end-to-end technology strategy for a greenfield AI-native B2B SaaS (supply-chain / manufacturing); single-handedly drove the platform from a brittle MVP to a fully productionized, horizontally scalable cloud implementation in under 10 months.",
+					"Owned end-to-end technology strategy for a greenfield AI-native B2B SaaS (supply-chain / manufacturing); single-handedly drove the platform from a proof of concept to a fully productionized, horizontally scalable cloud implementation in under 10 months.",
 					"Partnered directly with the founding business team on roadmap, architecture, hiring, and vendor strategy; converted a manual purchase-order intake workflow into an API-driven, human-in-the-loop product.",
 					"Designed a serverless AWS architecture on CDK: Lambda functions plus a Step Functions workflow orchestrating OCR, extraction, and reconciliation across S3, EventBridge, SNS, and Secrets Manager.",
 					"Architected a multi-provider LLM document-extraction pipeline (Gemini, Mistral) with Zod-typed schemas and an immutable audit trail separating raw model output from human-reviewed values.",
@@ -60,7 +60,7 @@ export const resume: Resume = {
 					"Established engineering conventions (LLM-optimized code patterns, strict typing, per-tenant RLS) across a Turborepo / pnpm monorepo spanning web, backend, and shared packages.",
 				],
 				ic: [
-					"Greenfield AI-native SaaS for corrugated packaging purchase-order intake: OCR + LLM extraction + human-in-the-loop review + automated ERP/EDI export; single-handedly productionized from a brittle MVP to a horizontally scalable cloud deployment in under 10 months.",
+					"Greenfield AI-native SaaS for corrugated packaging purchase-order intake: OCR + LLM extraction + human-in-the-loop review + automated ERP/EDI export; single-handedly productionized from a proof of concept to a horizontally scalable cloud deployment in under 10 months.",
 					"Serverless AWS architecture on CDK: Lambda functions and a Step Functions workflow orchestrating OCR/extraction/reconciliation; event-driven integration across S3, EventBridge, SNS, Secrets Manager.",
 					"Split infrastructure into four independently deployable CDK stacks (core backend, audit, ERP, management) to isolate blast radius and enable per-tenant rollout.",
 					"Next.js 15 / React 19 frontend over a typed API layer; Postgres (Supabase) with row-level security on every tenant-scoped table.",
