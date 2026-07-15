@@ -128,15 +128,15 @@ export const externalCaseStudy: CaseStudy = {
 	accent: "linear-gradient(135deg, #0b2b3c 0%, #12566e 55%, #2b9fd4 100%)",
 	status: "Shipped · in production",
 	summary:
-		"Sole engineer taking a greenfield B2B order-automation platform from proof of concept to a productionized, horizontally scalable cloud system.",
+		"Sole engineer taking a greenfield B2B order-automation platform from proof of concept to production. CrewCapable's own customer case study covers the outcome at a corrugated plant.",
 	problem: "",
 	approach: [],
 	stack: [],
 	outcome: "",
-	// TODO(ashton): confirm target. crewcapable.com has no /case-studies page —
-	// how-it-works is the closest public equivalent. Swap if they publish one.
+	// Points at CrewCapable's published customer case study rather than a
+	// redacted write-up — it's their story to tell, and they've told it.
 	external: {
-		href: "https://crewcapable.com/platform/how-it-works",
-		label: "View on crewcapable.com",
+		href: "https://app.crewcapable.com/psc",
+		label: "Read the case study on crewcapable.com",
 	},
 };
