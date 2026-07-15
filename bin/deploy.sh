@@ -33,10 +33,16 @@ step() { printf '\n\033[36m==>\033[0m %s\n' "$1"; }
 command -v doctl >/dev/null 2>&1 || die "doctl not installed"
 doctl account get >/dev/null 2>&1 || die "doctl not authenticated — run: doctl auth init"
 
+# Take the first N lines WITHOUT piping to head: under `set -o pipefail`, head
+# exiting early SIGPIPEs the producer and fails the whole pipeline with 141.
+# That bit this script on its first real run — the deploy went ACTIVE and the
+# verb then died before verifying.
+first_lines() { awk -v n="$1" 'NR<=n'; }
+
 # --- Status mode (read-only) --------------------------------------------
 if [ "${1:-}" = "--status" ]; then
 	step "Most recent deployment"
-	doctl apps list-deployments "$APP_ID" --format ID,Phase,Cause,Updated | head -n2
+	doctl apps list-deployments "$APP_ID" --format ID,Phase,Cause,Updated | first_lines 2
 	step "Live check"
 	BASE_URL="$PROD_URL" "$here/verify-live.sh"
 	exit $?
@@ -68,7 +74,7 @@ step "Creating deployment (DO builds portfolio/Dockerfile — takes a few minute
 # push-triggered deployment racing this one can land as CANCELED.
 doctl apps create-deployment "$APP_ID" --wait --format ID,Phase || true
 
-phase="$(doctl apps list-deployments "$APP_ID" --format Phase --no-header | head -n1)"
+phase="$(doctl apps list-deployments "$APP_ID" --format Phase --no-header | first_lines 1)"
 step "Deployment phase: $phase"
 
 case "$phase" in
