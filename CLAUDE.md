@@ -9,15 +9,19 @@ This is a personal portfolio website built with React, TypeScript, and Vite. The
 ## Development Commands
 
 ### Initial Setup
+
+This repo uses **npm**, not pnpm. Both `package-lock.json` files are the source
+of truth, and CI (`.github/workflows/`) and `portfolio/Dockerfile` both run
+`npm ci`. Do not introduce pnpm — a `pnpm-lock.yaml` would diverge from what CI
+and the production image actually build.
+
 ```bash
-# Install dependencies using pnpm
+# Install dependencies (root holds Biome; portfolio holds the app)
 make ci.install
 
 # Or manually:
-corepack enable
-corepack prepare pnpm@10 --activate
-pnpm config set store-dir .pnpm-store
-pnpm install --frozen-lockfile
+npm ci
+cd portfolio && npm ci
 ```
 
 ### Development

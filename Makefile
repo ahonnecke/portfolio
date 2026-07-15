@@ -38,11 +38,9 @@ cv-pdf: ## Build CV PDFs (cv.pdf, cv-ic.pdf) from src/cv/resume.data.ts
 ##
 
 ci.install: ## Install dependencies (mimics CI install stage)
-	@echo "Installing dependencies with pnpm..."
-	corepack enable
-	corepack prepare pnpm@10 --activate
-	pnpm config set store-dir .pnpm-store
-	pnpm install --frozen-lockfile
+	@echo "Installing dependencies with npm..."
+	npm ci
+	cd portfolio && npm ci
 
 ci.pre-commit: ## Run pre-commit hooks on all files (mimics CI pre-commit stage)
 	@echo "Running pre-commit hooks..."
