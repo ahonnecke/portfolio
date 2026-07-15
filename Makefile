@@ -1,7 +1,7 @@
 SHELL = /bin/bash
 COMPOSE = docker compose -f docker-compose.yml
 
-.PHONY: help ci.install ci.pre-commit web
+.PHONY: help ci.install ci.pre-commit web deploy deploy.status verify.live
 
 ##
 # Docker Compose Commands
@@ -23,8 +23,14 @@ build: ## Build and start the docker containers
 # Deployment
 ##
 
-deploy: ## Deploy the application
+deploy: ## Deploy main to DigitalOcean, wait, and verify production
 	./bin/deploy.sh
+
+deploy.status: ## Show the current deployment phase + verify what's live (read-only)
+	./bin/deploy.sh --status
+
+verify.live: ## Smoke-verify a deployment; override with BASE_URL=http://localhost:3456
+	./bin/verify-live.sh
 
 ##
 # CV

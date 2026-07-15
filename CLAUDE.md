@@ -70,13 +70,37 @@ make down
 ```
 
 ### Deployment
+
+Production is the DigitalOcean App Platform app `dc34af0e-170f-4861-94ee-a385ce011ea2`
+(`ashtonportfolio`), serving <https://ashton.honnecke.us>. It is GitHub-sourced
+and builds `portfolio/Dockerfile` from `main`.
+
 ```bash
-# Manual deployment (rsync to server)
+# Deploy main -> DO, wait for a terminal phase, verify production
 make deploy
 
-# Production deployments happen automatically via GitHub Actions
-# on pushes to main branch or new releases
+# Read-only: current deployment phase + what's actually live
+make deploy.status
+
+# Smoke-verify any target (same command, local or prod)
+make verify.live
+BASE_URL=http://localhost:3456 make verify.live
 ```
+
+**Do not verify a deploy with HTTP status codes.** Production runs
+`serve -s dist`, which rewrites every unmatched path to `index.html`, so
+`/anything` returns 200 with a full page. A route that doesn't exist still
+200s. `make verify.live` therefore asserts on served bytes: it pulls the
+content-hashed Vite bundle and checks for expected markers, checks that no
+client identifiers leaked, and checks `/cv/cv.pdf` returns real PDF magic
+bytes rather than an SPA fallback page.
+
+**Deployments race, and that's expected.** The DO app has
+`deploy_on_push: true` on `main`, *and* `.github/workflows/webapp_publish_on_release.yaml`
+runs `doctl apps create-deployment`. Both fire on a push to main, so the
+history is full of push-triggered rows at `CANCELED` superseded by a `manual`
+row. That is normal. It also means a green push does not prove a deploy —
+always confirm with `make deploy.status`.
 
 ## Architecture
 
@@ -125,9 +149,9 @@ The repository uses pre-commit hooks that run:
 
 - **Development**: Vite dev server with hot module replacement
 - **Production Build**: TypeScript compilation + Vite bundler creates static assets
-- **Containerization**: Multi-stage Docker build (Node.js build → Nginx serving)
-- **CI/CD**: GitHub Actions builds Docker image and deploys to Digital Ocean Container Registry
-- **Hosting**: Digital Ocean App Platform serves the containerized application
+- **Containerization**: Multi-stage Docker build (`portfolio/Dockerfile`: node build → `serve -s dist` on port 3000). The `nginx/` directory is for local docker-compose only and is NOT used in production.
+- **CI/CD**: DO builds the Dockerfile from GitHub on push to `main`; the release workflow also calls `doctl apps create-deployment`.
+- **Hosting**: DigitalOcean App Platform (`ashtonportfolio`) serves <https://ashton.honnecke.us>
 
 ## Important Files
 
