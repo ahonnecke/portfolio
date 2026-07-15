@@ -1,7 +1,7 @@
 SHELL = /bin/bash
 COMPOSE = docker compose -f docker-compose.yml
 
-.PHONY: help ci.install ci.pre-commit web
+.PHONY: help ci.install ci.pre-commit web deploy deploy.status verify.live
 
 ##
 # Docker Compose Commands
@@ -23,8 +23,14 @@ build: ## Build and start the docker containers
 # Deployment
 ##
 
-deploy: ## Deploy the application
+deploy: ## Deploy main to DigitalOcean, wait, and verify production
 	./bin/deploy.sh
+
+deploy.status: ## Show the current deployment phase + verify what's live (read-only)
+	./bin/deploy.sh --status
+
+verify.live: ## Smoke-verify a deployment; override with BASE_URL=http://localhost:3456
+	./bin/verify-live.sh
 
 ##
 # CV
@@ -38,11 +44,9 @@ cv-pdf: ## Build CV PDFs (cv.pdf, cv-ic.pdf) from src/cv/resume.data.ts
 ##
 
 ci.install: ## Install dependencies (mimics CI install stage)
-	@echo "Installing dependencies with pnpm..."
-	corepack enable
-	corepack prepare pnpm@10 --activate
-	pnpm config set store-dir .pnpm-store
-	pnpm install --frozen-lockfile
+	@echo "Installing dependencies with npm..."
+	npm ci
+	cd portfolio && npm ci
 
 ci.pre-commit: ## Run pre-commit hooks on all files (mimics CI pre-commit stage)
 	@echo "Running pre-commit hooks..."

@@ -22,6 +22,11 @@ import {
 	Wayward,
 } from "./Details";
 import { navMap } from "./NavMap";
+import CaseStudiesIndex, {
+	CaseStudiesSection,
+} from "./caseStudies/CaseStudiesIndex";
+import CaseStudyPage from "./caseStudies/CaseStudyPage";
+import "./caseStudies/caseStudies.css";
 import CvPage from "./cv/CvPage";
 
 function App(): JSX.Element {
@@ -33,6 +38,8 @@ function App(): JSX.Element {
 
 				<Routes>
 					<Route path="/" element={<Main />} />
+					<Route path="/case-studies" element={<CaseStudiesIndex />} />
+					<Route path="/case-studies/:slug" element={<CaseStudyPage />} />
 					<Route path="/big_wheel" element={<BigWheel />} />
 					<Route path="/docker" element={<Docker />} />
 					<Route path="/consolo" element={<Consolo />} />
@@ -84,6 +91,8 @@ function Main(): JSX.Element {
 	// Add explicit return type for function Main
 	return (
 		<>
+			<CaseStudiesSection />
+			<h2 className="csSectionHeading">Projects</h2>
 			<div className="tiles">
 				<Tile tile="github" />
 				<Tile tile="consolo" />

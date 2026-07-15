@@ -1,0 +1,258 @@
+/* ./portfolio/src/caseStudies/caseStudies.css */
+
+.csSection {
+	margin: 3rem 0 2rem;
+}
+
+.csSectionHeading {
+	font-size: 2.5em;
+	color: #fdfdff;
+	margin-bottom: 0.2em;
+}
+
+.csSectionBlurb {
+	color: #b9b9c2;
+	font-size: 1.1em;
+	line-height: 1.6;
+	max-width: 70ch;
+	margin-top: 0;
+}
+
+.csGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
+	grid-gap: 12px;
+}
+
+/* The link is the grid item; grid stretches it to the row height for us.
+   Making it a flex container lets the card fill it without a percentage
+   height, which would resolve against an auto-sized track and overflow. */
+.csGrid > a {
+	display: flex;
+}
+
+/* --- Card ---------------------------------------------------------------- */
+
+.csCard {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 0.6rem;
+	/* Fill the stretched link; the floor keeps a short card from collapsing
+	   when it's alone in a row. */
+	flex: 1;
+	min-height: 260px;
+	border-radius: 10px;
+	padding: 24px;
+	color: #ffffff;
+	text-align: left;
+	background-size: cover;
+	box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px
+		rgba(0, 0, 0, 0.05);
+	transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.csCard:hover {
+	transform: translateY(-6px);
+	box-shadow: 0px 18px 28px -6px rgba(0, 0, 0, 0.5);
+}
+
+.csCardSector {
+	font-size: 0.85em;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	background-color: rgba(0, 0, 0, 0.45);
+	border-radius: 999px;
+	padding: 0.3em 0.9em;
+}
+
+.csCardTitle {
+	font-size: 1.9em;
+	font-weight: 700;
+	line-height: 1.15;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.csCardClient {
+	font-size: 0.95em;
+	font-style: italic;
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.csCardSummary {
+	font-size: 1em;
+	line-height: 1.5;
+	color: rgba(255, 255, 255, 0.92);
+}
+
+.csCardStatus {
+	margin-top: auto;
+	font-size: 0.85em;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	background-color: rgba(0, 0, 0, 0.55);
+	border-radius: 6px;
+	padding: 0.35em 0.8em;
+}
+
+/* --- Detail page --------------------------------------------------------- */
+
+/* Long-form write-up: measure-constrained for readability. */
+.csPage {
+	max-width: 80ch;
+	margin: 0 auto;
+	padding-bottom: 4rem;
+}
+
+/* Card index: must stay full width or the grid collapses to one column. */
+.csIndexPage {
+	padding-bottom: 4rem;
+}
+
+.csArticle {
+	color: #e3e3e3;
+	font-size: 1.15em;
+	line-height: 1.7;
+}
+
+.csArticle h2 {
+	font-size: 1.6em;
+	color: #fdfdff;
+	margin-top: 2.2rem;
+	margin-bottom: 0.4rem;
+}
+
+.csArticle p {
+	text-align: justify;
+}
+
+.csHero {
+	border-radius: 10px;
+	padding: 2.5rem 2rem;
+	margin-top: 2rem;
+	color: #ffffff;
+}
+
+.csHero h1 {
+	font-size: 2.6em;
+	margin: 0.3em 0 0.2em;
+	text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.45);
+}
+
+.csHeroSector {
+	font-size: 0.8em;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	background-color: rgba(0, 0, 0, 0.45);
+	border-radius: 999px;
+	padding: 0.3em 0.9em;
+}
+
+.csHeroMeta {
+	margin: 0;
+	font-size: 0.95em;
+	color: rgba(255, 255, 255, 0.9);
+	text-align: left;
+}
+
+.csApproach {
+	padding-left: 1.2em;
+}
+
+.csApproach li {
+	margin-bottom: 0.8em;
+}
+
+.csDecision {
+	border-left: 4px solid #4da6ff;
+	background-color: rgba(77, 166, 255, 0.07);
+	border-radius: 0 8px 8px 0;
+	padding: 0.5rem 1.5rem 1.2rem;
+	margin-top: 2.2rem;
+}
+
+.csDecision h2 {
+	margin-top: 1rem;
+	color: #7fc4ff;
+}
+
+.csStack {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	padding: 0;
+	list-style: none;
+}
+
+.csStack li {
+	background-color: rgba(255, 255, 255, 0.08);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	border-radius: 999px;
+	padding: 0.3em 0.9em;
+	font-size: 0.85em;
+}
+
+/* --- Prototype block ----------------------------------------------------- */
+
+.csProto {
+	margin-top: 2.5rem;
+	border-radius: 8px;
+	padding: 0.5rem 1.5rem 1.5rem;
+}
+
+.csProtoLive {
+	background-color: rgba(45, 212, 191, 0.08);
+	border: 1px solid rgba(45, 212, 191, 0.3);
+}
+
+.csProtoPlanned {
+	background-color: rgba(255, 255, 255, 0.04);
+	border: 1px dashed rgba(255, 255, 255, 0.2);
+	color: #b9b9c2;
+}
+
+.csProtoLaunch {
+	display: inline-block;
+	margin-top: 0.5rem;
+	background-color: #2dd4bf;
+	color: #0b1b1a;
+	font-weight: 700;
+	border-radius: 8px;
+	padding: 0.7em 1.4em;
+	text-decoration: none;
+}
+
+.csProtoLaunch:hover {
+	background-color: #5eead4;
+	color: #0b1b1a;
+}
+
+/* --- Rights notice ------------------------------------------------------- */
+
+.csRights {
+	margin-top: 3rem;
+	border-top: 1px solid rgba(255, 255, 255, 0.15);
+	padding-top: 1.2rem;
+	color: #8d8d99;
+	font-size: 0.85em;
+	line-height: 1.6;
+}
+
+.csRights strong {
+	color: #c9c9d4;
+}
+
+.csBack {
+	margin-top: 2.5rem;
+}
+
+@media (max-width: 600px) {
+	.csGrid {
+		grid-template-columns: 1fr;
+	}
+
+	.csHero h1 {
+		font-size: 1.9em;
+	}
+}

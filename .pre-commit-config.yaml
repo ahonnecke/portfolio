@@ -1,5 +1,7 @@
-default_language_version:
-  python: python3.11
+# No default_language_version pin: none of these hooks need a specific
+# interpreter (ruff and shellcheck are prebuilt binaries; pre-commit-hooks
+# supports 3.9+), and pinning an exact minor breaks every machine that
+# doesn't happen to have it. Let pre-commit use the ambient python3.
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -11,7 +13,6 @@ repos:
       - id: mixed-line-ending
       - id: check-symlinks
       - id: check-json
-      - id: check-symlinks
 
   - repo: https://github.com/shellcheck-py/shellcheck-py
     rev: v0.10.0.1
