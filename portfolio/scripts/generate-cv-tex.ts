@@ -27,7 +27,8 @@ const SPECIALS: Record<string, string> = {
 	"~": "\\textasciitilde{}",
 	"^": "\\textasciicircum{}",
 };
-const tex = (s: string): string => s.replace(/[\\&%$#_{}~^]/g, (c) => SPECIALS[c]);
+const tex = (s: string): string =>
+	s.replace(/[\\&%$#_{}~^]/g, (c) => SPECIALS[c]);
 
 // URLs get the same escaping (matches the previous Org output, e.g. \_ in a
 // query string); \url / \href tolerate the escaped forms.
@@ -119,7 +120,8 @@ function preamble(r: ResolvedResume): string {
 }
 
 // --- Body sections --------------------------------------------------------
-const section = (title: string): string => `\\section*{\\color{Accent}${tex(title)}}`;
+const section = (title: string): string =>
+	`\\section*{\\color{Accent}${tex(title)}}`;
 const subsection = (title: string): string => `\\subsection*{${tex(title)}}`;
 
 function experience(r: ResolvedResume): string {
@@ -141,9 +143,12 @@ function speaking(r: ResolvedResume): string {
 			? [head, "\\begin{itemize}", ...links, "\\end{itemize}"].join("\n")
 			: head;
 	});
-	return [section("Speaking"), "\\begin{itemize}", ...items, "\\end{itemize}"].join(
-		"\n",
-	);
+	return [
+		section("Speaking"),
+		"\\begin{itemize}",
+		...items,
+		"\\end{itemize}",
+	].join("\n");
 }
 
 function projects(r: ResolvedResume): string {
