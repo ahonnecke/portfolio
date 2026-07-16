@@ -96,7 +96,26 @@ for term in knopp bracely odoo brex tinsmith "november uniform" eshf; do
 done
 [ "$leaked" -eq 0 ] && ok "no client identifiers in deployed bundle"
 
-# --- 5. Pre-existing surfaces still work (regression guard) -------------
+# --- 5. SEO files are REAL files, not the SPA fallback ------------------
+# Before these existed, /robots.txt and /sitemap.xml both returned 200 serving
+# index.html — the fallback impersonating them. Status was 200 either way, so
+# only the body reveals it. Assert on content, not codes.
+robots="$(fetch "$BASE_URL/robots.txt" || true)"
+if printf '%s' "$robots" | grep -qi '^sitemap:'; then
+	ok "/robots.txt is a real robots file"
+else
+	bad "/robots.txt is not a robots file (SPA fallback serving HTML?)"
+fi
+
+sitemap="$(fetch "$BASE_URL/sitemap.xml" || true)"
+if printf '%s' "$sitemap" | grep -q '<urlset'; then
+	n="$(printf '%s' "$sitemap" | grep -c '<loc>' || true)"
+	ok "/sitemap.xml is a real sitemap ($n urls)"
+else
+	bad "/sitemap.xml is not a sitemap (SPA fallback serving HTML?)"
+fi
+
+# --- 6. Pre-existing surfaces still work (regression guard) -------------
 # The CV PDF link has broken before. Status is useless here (SPA fallback
 # would 200 an HTML page), so assert on the magic bytes.
 pdf_head="$(curl -sS --max-time 30 -A "$UA" -L -r 0-4 "$BASE_URL/cv/cv.pdf" || true)"
