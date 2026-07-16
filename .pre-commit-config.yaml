@@ -3,6 +3,12 @@
 # supports 3.9+), and pinning an exact minor breaks every machine that
 # doesn't happen to have it. Let pre-commit use the ambient python3.
 
+# The vendored prototype under portfolio/public/prototypes/ is byte-exact
+# generated output from a separate build (see bin/build-prototype.sh). The
+# whitespace/EOF fixers must not "fix" it — that corrupts the artifacts and
+# makes every regeneration show phantom diffs against the real build output.
+exclude: '^portfolio/public/prototypes/'
+
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0

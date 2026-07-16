@@ -1,7 +1,7 @@
 SHELL = /bin/bash
 COMPOSE = docker compose -f docker-compose.yml
 
-.PHONY: help ci.install ci.pre-commit web deploy deploy.status verify.live
+.PHONY: help ci.install ci.pre-commit web deploy deploy.status verify.live prototype
 
 ##
 # Docker Compose Commands
@@ -31,6 +31,9 @@ deploy.status: ## Show the current deployment phase + verify what's live (read-o
 
 verify.live: ## Smoke-verify a deployment; override with BASE_URL=http://localhost:3456
 	./bin/verify-live.sh
+
+prototype: ## Rebuild + re-vendor the Ledgerline prototype from its source repo
+	./bin/build-prototype.sh
 
 ##
 # CV

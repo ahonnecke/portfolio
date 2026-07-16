@@ -81,8 +81,8 @@ export const caseStudies: CaseStudy[] = [
 		outcome:
 			"Built, machine-verified, and screenshot-checked across every route. The engagement did not convert. The simulation core is worth more than the pitch was: it's a reference implementation of the transactional-outbox pattern with a double-entry ledger attached, and it's being extracted into a standalone open-source project.",
 		prototype: {
-			state: "planned",
-			note: "The simulation core is being genericized into a standalone reference implementation before it goes up — the demo will model an anonymous ERP and payment processor, not any particular company's stack.",
+			state: "live",
+			href: "/prototypes/ledgerline/",
 		},
 	},
 	{

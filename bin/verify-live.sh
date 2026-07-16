@@ -125,6 +125,36 @@ else
 	bad "/cv/cv.pdf did not return PDF bytes — got: ${pdf_head:0:20}"
 fi
 
+# --- 7. Clickable prototype (nested static app under /prototypes/) -------
+# nginx serves this as a real nested app. The failure mode to catch is the
+# server falling back to the portfolio SPA — which would look "up" (200) while
+# the prototype is actually broken. Assert on prototype-specific markers.
+proto="$(fetch "$BASE_URL/prototypes/ledgerline/" || true)"
+if printf '%s' "$proto" | grep -q '/prototypes/ledgerline/_next/'; then
+	ok "prototype root serves the nested app (not the portfolio SPA)"
+else
+	bad "prototype root did not serve the app (SPA fallback / missing?)"
+fi
+
+# A deep route must resolve to the app too, not the portfolio shell.
+proto_deep="$(fetch "$BASE_URL/prototypes/ledgerline/quote/" || true)"
+if printf '%s' "$proto_deep" | grep -q '/prototypes/ledgerline/_next/'; then
+	ok "prototype deep route resolves (nginx nested routing works)"
+else
+	bad "prototype deep route fell back — nested routing broken"
+fi
+
+# The prototype is a de-branded client piece. Its shipped HTML must carry no
+# client identifiers — checked against what's actually served, not a local build.
+pleak=0
+for term in bracely odoo stripe brex "json-rpc"; do
+	if printf '%s' "$proto $proto_deep" | grep -qiF -- "$term"; then
+		bad "REDACTION LEAK — prototype serves '$term'"
+		pleak=1
+	fi
+done
+[ "$pleak" -eq 0 ] && ok "prototype HTML carries no client identifiers"
+
 # --- Result -------------------------------------------------------------
 printf '\n%d passed, %d failed\n' "$pass" "$fail"
 if [ "$fail" -gt 0 ]; then

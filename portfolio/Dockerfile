@@ -11,29 +11,24 @@ RUN npm ci
 # Copy the rest of the application
 COPY . ./
 
-# Build the application
+# Build the application (Vite copies public/ verbatim into dist/, so the
+# vendored prototype under public/prototypes/ ships as static files)
 RUN npm run build
 
-# Runtime
-FROM node:21-slim AS runner
-WORKDIR /app
-ENV NODE_ENV=production
+# Runtime: nginx serving the static build.
+#
+# This replaced `serve -s dist`. `serve -s` rewrites every non-file path to the
+# SPA shell, which makes it impossible to host a nested static app — a prototype
+# under /prototypes/ would be hijacked by the portfolio's index.html. nginx with
+# an explicit /prototypes/ location serves the nested app while keeping SPA
+# fallback for the portfolio's own client-side routes. See nginx.conf.
+FROM nginx:alpine AS runner
 
-# Install static server
-RUN npm install -g serve
+# Full replacement of the default config (which only include-serves conf.d).
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /app/dist /usr/share/nginx/html
 
-# Copy built files
-COPY --from=build /app/dist ./dist
-
-# Set proper ownership
-RUN chown -R node:node /app
-
-# Run as non-root
-USER node
-
-# Expose port 3000 for Digital Ocean
-ENV PORT=3000
+# DO's App Platform routes to http_port 3000; nginx listens there (see conf).
 EXPOSE 3000
 
-# Bind to $PORT so DO's probe works
-CMD ["sh", "-c", "serve -s dist -l ${PORT}"]
+# nginx:alpine's default CMD runs `nginx -g "daemon off;"` in the foreground.
