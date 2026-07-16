@@ -10,7 +10,7 @@ export const caseStudies: CaseStudy[] = [
 		sector: "HVAC / Building Science",
 		period: "2025–2026",
 		accent: "linear-gradient(135deg, #0f3b4c 0%, #1d6f7a 55%, #2fa8a0 100%)",
-		status: "Built · not purchased",
+		status: "Working prototype",
 		summary:
 			"A sizing tool that treats humidity as a first-class constraint, architected so the client's proprietary calculation methodology stayed on their side of a hard interface boundary.",
 		problem:
@@ -52,7 +52,7 @@ export const caseStudies: CaseStudy[] = [
 		sector: "Insurtech / Payments",
 		period: "2026",
 		accent: "linear-gradient(135deg, #2a1a4a 0%, #4b2d7f 55%, #8b5cf6 100%)",
-		status: "Built · not purchased",
+		status: "Clickable prototype",
 		summary:
 			"Rather than mock up screens, I made the architecture itself playable — flip a failure on, bind a policy anyway, and watch the transactional outbox hold the line.",
 		problem:
@@ -92,7 +92,7 @@ export const caseStudies: CaseStudy[] = [
 		sector: "Trade Compliance",
 		period: "2026",
 		accent: "linear-gradient(135deg, #4a2c10 0%, #8a5215 55%, #d99a2b 100%)",
-		status: "Built · not validated",
+		status: "Working prototype",
 		summary:
 			"An assistant that reads a vendor's explanation of why your tariff refund isn't happening and tells you which parts are true.",
 		problem:
