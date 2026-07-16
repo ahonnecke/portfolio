@@ -79,6 +79,7 @@ check_marker() {
 check_marker 'Case Studies'                  'case studies section heading'
 check_marker 'csCard'                        'case study card component'
 check_marker 'app.crewcapable.com/psc'       'CrewCapable case study link'
+check_marker 'hvac3.fly.dev'                  'HVAC prototype launch link'
 check_marker 'hvac-moisture-platform'        'HVAC case study slug'
 check_marker 'insurtech-reliability-sim'     'insurtech case study slug'
 check_marker 'All rights reserved'           'copyright / rights notice'

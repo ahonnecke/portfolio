@@ -9,8 +9,8 @@ function PrototypeBlock({ proto }: { proto: CaseStudyPrototype }): JSX.Element {
 			<div className="csProto csProtoLive">
 				<h2>Prototype</h2>
 				<p>
-					The prototype below runs on synthetic data. Nothing in it originates
-					from a client system.
+					Opens in a new tab. It's a self-contained demo — no client systems,
+					data, or proprietary logic are involved.
 				</p>
 				<a
 					className="csProtoLaunch"

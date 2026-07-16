@@ -10,7 +10,7 @@ export const caseStudies: CaseStudy[] = [
 		sector: "HVAC / Building Science",
 		period: "2025–2026",
 		accent: "linear-gradient(135deg, #0f3b4c 0%, #1d6f7a 55%, #2fa8a0 100%)",
-		status: "Working prototype",
+		status: "Clickable prototype",
 		summary:
 			"A sizing tool that treats humidity as a first-class constraint, architected so the client's proprietary calculation methodology stayed on their side of a hard interface boundary.",
 		problem:
@@ -41,8 +41,8 @@ export const caseStudies: CaseStudy[] = [
 		outcome:
 			"The platform reached a working, tested, deployable state — authentication, projects, per-unit calculations, package comparison, audit trail, and report generation, with the full suite green. The engagement did not convert; the client's circumstances changed before the methodology behind the interface was ever delivered. Because the IP boundary was architectural rather than aspirational, the surrounding platform remained cleanly mine, and it continues as an independent product.",
 		prototype: {
-			state: "planned",
-			note: "This one is a server-rendered application backed by Postgres, so it needs a real deployment rather than a static build. Going up as a hosted demo with synthetic data.",
+			state: "live",
+			href: "https://hvac3.fly.dev/",
 		},
 	},
 	{
