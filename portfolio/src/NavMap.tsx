@@ -137,9 +137,9 @@ export const navMap: NavMap = {
 		detail: ToyContractorAbstract,
 	},
 	wayward: {
-		link: "wayward/",
+		link: "https://github.com/ahonnecke/wayward",
 		image: WaywardCard,
-		text: "wayward",
+		text: "Wayward",
 		category: "Tools",
 		detail: WaywardAbstract,
 	},

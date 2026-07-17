@@ -27,24 +27,15 @@ export function BigWheel() {
 						onboard batteries.
 					</p>
 					<p>
-						The construction of the vehicle was a feat of engineering and
-						creativity. The base was a standard golf cart, chosen for its
-						stability and ease of operation. On top of this, an eight-foot tall
-						tricycle structure was built, transforming the ordinary golf cart
-						into an extraordinary mutant vehicle. The handlebars, a massive 10
-						feet wide, were wrapped in lights, creating a dazzling display that
-						could be seen from afar. Adding to the spectacle were fifty six-foot
-						ribbon streamers attached to either handle, fluttering in the wind
-						as the vehicle moved, creating a beautiful, flowing light show.
+						The base is a standard golf cart, chosen for stability and easy
+						operation. On top of it I built an eight-foot-tall tricycle
+						structure, with handlebars ten feet wide wrapped in lights and fifty
+						six-foot ribbon streamers off each handle that trailed as it moved.
 					</p>
 					<p>
-						The mutant vehicle was not just a means of transportation, but a
-						moving piece of art, embodying the spirit of self-expression and
-						creativity that is at the heart of Burning Man. It was a testament
-						to the power of imagination and the joy of bringing a vision to
-						life. And as it moved through the playa, it brought smiles to the
-						faces of everyone who saw it, lighting up the night and the hearts
-						of the Burning Man community.
+						The whole thing ran on two Arduinos driving hundreds of lights off
+						onboard batteries — enough of a hardware and power-budget problem
+						that it was as much an electronics build as a fabrication one.
 					</p>
 				</div>
 			</Link>
@@ -74,27 +65,16 @@ export function FireTable() {
 					</video>
 
 					<p>
-						The installation was a testament to the my innovative approach to
-						combining technology and art. It featured a custom copper manifold
-						that was brazed with silver solder, capable of withstanding high
-						temperatures. The manifold was fed propane directly from a regulator
-						on a 20 LB tank, ensuring the majority of the system was under
-						negligible pressure.
+						Under the sand sits a custom copper manifold I brazed with silver
+						solder to take the heat, fed propane from a regulator on a 20 lb
+						tank so most of the system runs at negligible pressure. Gas seeps up
+						through the sand and waits in whatever grooves are raked into it.
 					</p>
 					<p>
-						One of the unique features of this installation was its interactive
-						nature. Visitors could engage with the installation, effectively
-						drawing with fire by creating valleys in sand. This created a
-						dynamic and ever-changing display of fire. This interactive element
-						added a level of engagement and excitement for the visitors, making
-						the installation not just a piece of art to be observed, but also an
-						experience to be participated in.
-					</p>
-					<p>
-						This project showcased the artist's skills in design, fabrication,
-						and installation of large-scale art projects. It stands as a
-						testament to my creativity, technical skills, and my ability to
-						create engaging and interactive art installations.
+						That's the whole interaction: people draw valleys in the sand, the
+						propane pools in them, and the fire traces the lines they made. Rake
+						a new pattern and the flame follows it. The piece is never the same
+						twice because the visitors keep redrawing it.
 					</p>
 				</div>
 			</Link>
@@ -220,11 +200,9 @@ export function Docker() {
 						share across teams.
 					</p>
 					<p>
-						What I enjoyed most was breaking down the complexity into something
-						approachable. The talk reflects not just my technical background,
-						but my belief that knowledge should be shared and tooling should
-						reduce cognitive load—not add to it. It's a talk I'm proud to
-						include as part of my professional work.
+						The through-line: tooling should reduce cognitive load, not add to
+						it. Containers and Compose aren't the point — a dev environment you
+						can hand to a teammate and have it work on the first try is.
 					</p>
 					<ul>
 						<li>
@@ -289,16 +267,7 @@ export function Consolo() {
 							<code>boto3</code>, and is built to be both fast and
 							developer-friendly.
 						</p>
-						<p>
-							It’s pronounced "Con Solo"—like Han Solo—which felt like the right
-							blend of utility and fun.
-						</p>
-						<p>
-							Consolo is a good example of my approach to building lightweight,
-							practical tools that improve everyday developer workflows. I
-							designed it to scratch my own itch, but it turned out to be useful
-							for others too—which is always the goal.
-						</p>
+						<p>It's pronounced "Con Solo," like Han Solo.</p>
 						<p>
 							You can browse the Consolo project on PyPI{" "}
 							<a href={navData.link} target="_blank" rel="noopener noreferrer">
@@ -348,15 +317,11 @@ export function Snifter() {
 							</li>
 						</ul>
 						<p>
-							Snifter is written in Python and leverages AWS SDK tooling under
-							the hood. It’s a lightweight, throwaway tool I use to troubleshoot
-							or understand what a topic is emitting—without needing to set up
-							permanent infrastructure.
-						</p>
-						<p>
-							It's a small utility, but a great example of my approach:
-							practical solutions for real problems that developers run into all
-							the time.
+							Snifter is written in Python on top of boto3. The whole point is
+							that it leaves nothing behind — the SQS queue and subscription
+							exist only while you're watching, so you can inspect what a topic
+							is emitting without standing up permanent infrastructure or
+							touching the topic's real subscribers.
 						</p>
 						<p>
 							You can browse the Snifter project on PyPI{" "}
@@ -412,15 +377,13 @@ export function JollyBrancher() {
 							</li>
 						</ul>
 						<p>
-							Jolly-Brancher is written in Python and designed to reduce context
-							switching for developers. It’s currently focused on JIRA and
-							GitHub, but I have plans to expand support and add features like
-							comment extraction and auto-generated branch summaries.
-						</p>
-						<p>
-							At its core, it's about reducing friction. I built it to eliminate
-							repetitive tasks and let me (and hopefully others) stay focused on
-							actual code—not copy-pasting ticket IDs.
+							Under the hood it's Python (jira, PyGithub, python-gitlab,
+							prompt_toolkit) with a substantial Emacs Lisp layer on top — the
+							author's own description is "half lisp, half python." The Emacs
+							interface, all under a <code>C-c j</code> prefix, lets you list
+							and filter tickets with JQL, start work (which cuts the branch),
+							and end work (which opens the PR) without leaving the editor. It
+							even reads CODEOWNERS to suggest reviewers.
 						</p>
 						<p>
 							You can browse the Jolly-Brancher project on PyPI{" "}
@@ -446,37 +409,11 @@ export function Github() {
 					<h2>GitHub</h2>
 					<div>
 						<p>
-							My GitHub profile is a living portfolio that showcases how I
-							think, code, and collaborate. It gives a real-time view into the
-							projects I’ve built, the open source work I’ve contributed to, and
-							how I approach software development as a whole.
-						</p>
-						<p>Some highlights include:</p>
-						<ul>
-							<li>
-								<strong>Repositories:</strong> Each repo tells a story—what I
-								built, why I built it, and how it works. I include detailed
-								READMEs, clear commit history, and clean, documented code.
-							</li>
-							<li>
-								<strong>Contributions:</strong> My contribution graph reflects
-								my commitment to continuous improvement and active engagement
-								with the community.
-							</li>
-							<li>
-								<strong>Stars:</strong> Stars on my projects serve as peer
-								feedback, showing what others have found useful or inspiring.
-							</li>
-							<li>
-								<strong>Forks:</strong> Seeing others build on top of my work is
-								one of the most rewarding aspects of sharing code—it’s proof
-								that what I’ve made has real value.
-							</li>
-						</ul>
-						<p>
-							Whether you're looking at my solo builds or team contributions,
-							GitHub is the best place to see what I bring to the table as a
-							developer.
+							My GitHub is the fuller picture behind these tiles: the
+							open-source Python CLIs I maintain on PyPI (Consolo, Snifter,
+							Jolly-Brancher), one-off tools and experiments, and the commit
+							history behind them. Most of what's on this site links back to a
+							repo there.
 						</p>
 						<p>
 							You can browse my GitHub repositories{" "}
@@ -502,26 +439,17 @@ export function Linting() {
 					<h2>{navData.text}</h2>
 					<div>
 						<p>
-							I gave a local talk on the value of linting; unfortunately, the
-							recording didn't survive the early chaos of COVID, but{" "}
-							<Link to="https://github.com/ahonnecke/linting">
-								the slides and materials
-							</Link>{" "}
-							are still available on GitHub.
+							I gave this talk at PyDEN, the Denver Python meetup, on why
+							linting is worth the setup. The recording didn't survive the
+							early-COVID scramble, so the write-up here is what remains of it.
 						</p>
 						<p>
-							In the talk, I explored why linting matters—not just for catching
-							bugs, but for improving readability, reducing cognitive load, and
-							keeping teams aligned. I covered how to set up linting tools (like{" "}
-							<code>black</code>, at the time), integrate them into your
-							workflow, and use them to maintain high-quality, consistent
-							codebases.
-						</p>
-						<p>
-							The session was aimed at both new and experienced developers, and
-							focused on real-world tips that go beyond the docs. Preparing and
-							delivering it pushed me to think deeply about code quality and how
-							small tooling decisions scale across teams.
+							The argument: linting pays off less for the bugs it catches than
+							for the cognitive load it removes. Consistent, auto-formatted code
+							is code a reviewer can read without re-parsing everyone's personal
+							style, which is most of what makes a review slow. I walked through
+							wiring up formatters like <code>black</code> to get that
+							consistency with almost no ongoing effort.
 						</p>
 					</div>
 				</div>
@@ -540,26 +468,18 @@ export function Devops() {
 					<h2>DevOps</h2>
 					<div>
 						<p>
-							I’m a passionate advocate for CI/CD, a firm believer in the power
-							of containers, and someone who genuinely enjoys automating away
-							repetitive tasks to create efficient, reliable workflows. I place
-							a strong emphasis on clean code practices—especially through
-							consistent and thoughtful linting—and I’m always aiming to build
-							systems that are both robust and maintainable.
+							Most of my work lives on the CI/CD and infrastructure side:
+							building reproducible, containerized deploys and automating the
+							repetitive parts of shipping software. I've built and maintained
+							pipelines on GitHub Actions, GitLab CI, CircleCI, and Bitbucket
+							Pipelines, deploying to AWS and GCP.
 						</p>
 						<p>
-							My tooling spans across multiple cloud providers and CI platforms,
-							so I’m comfortable building and deploying in diverse environments.
-							Whether it’s AWS, GCP, or another provider—or CI systems like
-							GitHub Actions, GitLab CI, CircleCI, or Bitbucket Pipelines—I’ve
-							worked across them to deliver smooth, automated pipelines.
-						</p>
-						<p>
-							My repositories reflect this approach: they feature projects I’ve
-							initiated or contributed to, with clean source code, detailed
-							READMEs, and a history of commits that demonstrate my focus on
-							solving real-world problems and continuously improving the
-							developer experience.
+							I take linting and formatting seriously — not for tidiness, but
+							because consistent code lowers the cost of every review and lets a
+							team read each other's work without friction. The same instinct
+							runs through the tooling I build: small, sharp utilities that
+							remove a recurring chore.
 						</p>
 					</div>
 				</div>
@@ -578,18 +498,20 @@ export function Wayward() {
 					<h2>{navData.text}</h2>
 					<div>
 						<p>
-							I built <strong>Wayward</strong> as a background daemon in Python
-							to keep my downloads folder organized without me having to think
-							about it. It watches for newly downloaded files, waits until
-							they’re fully written (determined by checking that they haven’t
-							changed for 5 seconds), and then runs them through a custom
-							post-processing function.
+							I built <strong>Wayward</strong> as a Python background daemon
+							(watchdog + python-daemon) that watches my downloads folder, waits
+							for each file to finish writing — it considers a file done once it
+							hasn't changed for five seconds, which avoids acting on a partial
+							download — and then routes it by type.
 						</p>
 						<p>
-							Once processed, the file is moved to its proper
-							destination—completely hands-free. The logic for what to do with
-							each file is totally flexible and written in Python, so it’s easy
-							to extend or adapt for different workflows.
+							Its real job is a Rocksmith custom-song pipeline. My song library
+							lives on a NAS, but the NFS-over-WiFi mount tops out around 540
+							KB/s — too slow for the game to stream charts from directly. So
+							Wayward converts each downloaded <code>.psarc</code> with{" "}
+							<code>pyrocksmith</code> and SCPs the result into my Mac's Steam
+							library, with a staging → live → quarantine lifecycle. As a
+							sideline, it OCRs screenshots and renames them by their contents.
 						</p>
 						<p>
 							You can learn more about Wayward{" "}
@@ -615,34 +537,25 @@ export function FoodieFolder() {
 					<h2>{navData.text}</h2>
 					<div>
 						<p>
-							I developed <strong>Foodie Folder</strong>, a mobile application
-							built with Expo and React Native that transforms how food
-							enthusiasts document their culinary experiences. The app allows
-							users to capture images of restaurant menus, which are then
-							processed through OCR (Optical Character Recognition) to extract
-							and structure dish information automatically.
+							I built and shipped <strong>Foodie Folder</strong>, a
+							cross-platform mobile app for keeping track of dishes worth
+							remembering. You photograph a restaurant menu and the app returns
+							it as structured dishes — title, description, price — that you can
+							rate, annotate, and search later.
 						</p>
 						<p>
-							Users can save dishes from various restaurants, add personal notes
-							and ratings for each item, and build a personalized food diary
-							over time. The app features an intuitive interface for browsing
-							past entries, searching by dish or restaurant, and sharing
-							recommendations with friends.
+							The OCR is the interesting part: rather than classic text
+							extraction, menu photos go to a small Node/Express service that
+							runs them through OpenAI's GPT vision model and returns clean
+							JSON, which handles the messy typography and layout of real menus
+							far better than template OCR. Google Places and maps power
+							location-aware discovery of nearby restaurants.
 						</p>
 						<p>
-							The technical implementation includes React Native for the
-							frontend, Expo for cross-platform compatibility, Tesseract.js for
-							OCR processing, and a structured data model for organizing menu
-							items. This project showcases my ability to create practical
-							mobile applications that solve real-world problems while
-							delivering a polished user experience.
-						</p>
-						<p>
-							You can download Foodie Folder from the App Store{" "}
-							<a href={navData.link} target="_blank" rel="noopener noreferrer">
-								here
-							</a>
-							.
+							The app is Expo and React Native in TypeScript, with expo-router
+							for navigation, Redux Toolkit for state, and Appwrite as the
+							backend-as-a-service. It was built and released through EAS Build
+							and published to the iOS App Store.
 						</p>
 					</div>
 				</div>
@@ -668,21 +581,18 @@ export function Hagglebot() {
 							generating strategic counter-offers to push for better pricing.
 						</p>
 						<p>
-							Hagglebot manages email conversations with multiple dealerships
-							simultaneously, maintaining context across lengthy negotiations.
-							It uses natural language processing to extract key information
-							from dealer messages, such as price points, incentives, and
-							special conditions, then formulates appropriate responses that
-							advance the buyer's position.
+							It runs several dealership threads at once and keeps context
+							across a long back-and-forth. The backend ingests dealer emails
+							over JMAP, uses an LLM to pull out the numbers that matter —
+							price, incentives, conditions — and drafts the next counter-offer
+							to advance the buyer's position.
 						</p>
 						<p>
-							The technical implementation includes a containerized architecture
-							with Docker, a React frontend for user interaction, a backend API
-							for processing negotiations, and integration with email services.
-							This project demonstrates my ability to create practical AI
-							applications that solve real-world problems while delivering
-							significant value to users through automation of complex social
-							interactions.
+							The backend is FastAPI on Python 3.12 with SQLModel over async
+							Postgres and Alembic migrations; email flows through JMAP and
+							Brevo, payments through Stripe, and auth through JWT. A React
+							frontend sits on top, and the whole thing is docker-composed with
+							deploy-on-push CI (auto-running migrations) to DigitalOcean.
 						</p>
 						<p>
 							You can browse the Hagglebot project repository{" "}
@@ -725,20 +635,17 @@ export function Rentinity() {
 							governance through a token-weighted voting system.
 						</p>
 						<p>
-							The technical implementation includes smart contracts for
-							tokenization and ownership tracking, a React-based dashboard for
-							investors, KYC verification systems, and automated rent
-							distribution through both traditional financial rails and
-							cryptocurrency payments. This project demonstrates my ability to
-							bridge traditional finance with blockchain technology to create
-							innovative investment opportunities.
+							It's built as a TypeScript Turborepo monorepo on Supabase and
+							ethers.js, with web and mobile apps, ERC-20 contracts for the cap
+							table (60-day lockup, whitelisted transfers), and an admin
+							dashboard for batch-minting tokens and processing rent
+							distributions by ownership percentage. The design phases
+							deliberately: an off-chain Postgres ledger with KYC and ACH first,
+							migrating on-chain once the mechanics are proven.
 						</p>
 						<p>
-							You can browse the Rentinity project repository{" "}
-							<a href={navData.link} target="_blank" rel="noopener noreferrer">
-								here
-							</a>
-							.
+							Rentinity is at the design and proof-of-concept stage; the source
+							isn't public.
 						</p>
 					</div>
 				</div>
@@ -771,13 +678,12 @@ export function TonalRecall() {
 							notes.
 						</p>
 						<p>
-							The technical implementation uses Python with Pygame for the
-							interface, NumPy for signal processing, and sounddevice/aubio
-							libraries for note detection. The architecture is simple and
-							extensible, allowing for easy addition of new modes and drills.
-							This project demonstrates my ability to combine audio processing,
-							real-time feedback systems, and game design to create an
-							educational tool that makes learning more engaging and effective.
+							It's Python — Pygame for the interface, NumPy for signal
+							processing, and sounddevice with aubio for pitch detection off the
+							live audio input. It works with any interface, including the
+							Rocksmith USB adapter, and ships a built-in tuner alongside the
+							drills. The level layout is data-driven, so adding a new mode is a
+							config change, not a rewrite.
 						</p>
 						<p>
 							You can browse the Tonal Recall project repository{" "}
@@ -803,29 +709,24 @@ export function ToyContractor() {
 					<h2>{navData.text}</h2>
 					<div>
 						<p>
-							I developed <strong>Toy Contractor</strong>, a self-contained
-							experimental platform that generates and revises legal contracts
-							from natural language inputs. The system leverages a Mistral LLM
-							to interpret user requirements and transform them into properly
-							formatted legal documents, while also providing capabilities to
-							revise existing contracts or other documents.
+							I built <strong>Toy Contractor</strong> to generate and
+							iteratively refine legal contracts from plain-English prompts.
+							What makes it interesting is that it runs entirely on a
+							self-hosted Mistral 7B model via Ollama — no external API, nothing
+							leaves the box — which is exactly the property you'd want for
+							anything touching contract text.
 						</p>
 						<p>
-							The architecture consists of a lightweight backend API that
-							handles document processing and storage, a client interface for
-							user interactions, and integration with the Mistral large language
-							model for text generation and analysis. The system maintains a
-							complete revision history of all documents, allowing users to
-							track changes and evolution of their contracts over time.
+							A FastAPI service handles generation and a Redis store keeps a
+							versioned revision history, so refinement is a real workflow: you
+							create a contract, then hand it back an instruction like "add a
+							30-day termination clause" and get a new version with the old one
+							preserved. A Python CLI drives the whole loop.
 						</p>
 						<p>
-							The entire solution is containerized using Docker and orchestrated
-							with Docker Compose, making it easy to deploy and scale. This
-							project demonstrates my ability to integrate AI language models
-							with practical applications, create maintainable microservice
-							architectures, and develop solutions that bridge the gap between
-							natural language processing and specialized domain knowledge like
-							legal documentation.
+							The stack — FastAPI, Redis, Ollama, and the CLI client — is wired
+							together with Docker Compose, so the whole thing comes up with a
+							single command.
 						</p>
 						<p>
 							You can browse the Toy Contractor project repository{" "}
