@@ -1,3 +1,15 @@
+export const SatoshisWagerAbstract: () => JSX.Element = () => {
+	return (
+		<span>
+			An interactive Bitcoin allocation calculator — Pascal's Wager rendered in
+			dollars. You set your priors across six plausible futures, from total
+			failure to hyperbitcoinization, and it returns the single portfolio
+			allocation that survives all of them, with concrete rebalance actions.
+			Built in React with a live price feed; click to try it.
+		</span>
+	);
+};
+
 export const BigWheelAbstract: () => JSX.Element = () => {
 	return (
 		<span>

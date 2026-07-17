@@ -156,6 +156,21 @@ for term in bracely odoo stripe brex "json-rpc"; do
 done
 [ "$pleak" -eq 0 ] && ok "prototype HTML carries no client identifiers"
 
+# --- 8. Satoshi's Wager demo (second vendored prototype) ----------------
+sw="$(fetch "$BASE_URL/prototypes/satoshis-wager/" || true)"
+if printf '%s' "$sw" | grep -q '/prototypes/satoshis-wager/assets/'; then
+	ok "satoshis-wager demo serves (not the portfolio SPA)"
+else
+	bad "satoshis-wager demo did not serve (SPA fallback / missing?)"
+fi
+# The Ko-fi donation widget is stripped from the portfolio copy; if a rebuild
+# ever reintroduced it, it would ship third-party JS. Guard against that.
+if printf '%s' "$sw" | grep -qi 'ko-fi'; then
+	bad "satoshis-wager serves the Ko-fi widget (should be stripped)"
+else
+	ok "satoshis-wager demo has no Ko-fi widget"
+fi
+
 # --- Result -------------------------------------------------------------
 printf '\n%d passed, %d failed\n' "$pass" "$fail"
 if [ "$fail" -gt 0 ]; then

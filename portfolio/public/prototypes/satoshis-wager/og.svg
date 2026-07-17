@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#f5f0e8"/>
+
+  <!-- top double rule -->
+  <line x1="80" y1="70" x2="1120" y2="70" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="80" y1="78" x2="1120" y2="78" stroke="#1a1a1a" stroke-width="2"/>
+
+  <!-- eyebrow -->
+  <text x="600" y="125" font-family="Georgia, 'Libre Baskerville', serif" font-size="15" letter-spacing="6" fill="#888070" text-anchor="middle">
+    SATOSHI'S WAGER · NOT FINANCIAL ADVICE
+  </text>
+
+  <!-- big question, the hook -->
+  <text x="600" y="240" font-family="Georgia, 'Playfair Display', serif" font-style="italic" font-size="58" fill="#1a1a1a" text-anchor="middle">
+    Should you buy bitcoin?
+  </text>
+
+  <!-- answer -->
+  <text x="600" y="335" font-family="Georgia, 'Playfair Display', serif" font-weight="900" font-size="86" letter-spacing="-1" fill="#1a1a1a" text-anchor="middle">
+    PASCAL'S WAGER,
+  </text>
+  <text x="600" y="420" font-family="Georgia, 'Playfair Display', serif" font-weight="900" font-size="86" letter-spacing="-1" fill="#1a1a1a" text-anchor="middle">
+    IN NUMBERS.
+  </text>
+
+  <!-- body -->
+  <text x="600" y="500" font-family="Georgia, serif" font-size="22" fill="#444" text-anchor="middle">
+    Six plausible futures · your priors · the allocation that survives all of them.
+  </text>
+
+  <!-- ₿ mark -->
+  <text x="600" y="572" font-family="Georgia, serif" font-weight="900" font-size="44" fill="#f7931a" text-anchor="middle">
+    ₿
+  </text>
+
+  <!-- bottom rule -->
+  <line x1="80" y1="595" x2="1120" y2="595" stroke="#1a1a1a" stroke-width="1"/>
+</svg>

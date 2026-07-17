@@ -102,6 +102,7 @@ function Main(): JSX.Element {
 				<Tile tile="foodie_folder" />
 				<Tile tile="hagglebot" />
 				<Tile tile="rentinity" />
+				<Tile tile="satoshis_wager" />
 				<Tile tile="tonal_recall" />
 				<Tile tile="toy_contractor" />
 				<Tile tile="docker" />
@@ -153,6 +154,15 @@ function Tile({ tile }: { tile: string }): JSX.Element {
 	// so a react-router <Link> would never reach them — use a plain anchor.
 	if (navData.link.endsWith(".pdf")) {
 		return <a href={navData.link}>{card}</a>;
+	}
+	// Vendored prototypes live under /prototypes/ and are served by nginx as
+	// their own apps, not SPA routes. Launch them directly in a new tab.
+	if (navData.link.startsWith("/prototypes/")) {
+		return (
+			<a href={navData.link} target="_blank" rel="noopener noreferrer">
+				{card}
+			</a>
+		);
 	}
 	return <Link to={tile}>{card}</Link>;
 }

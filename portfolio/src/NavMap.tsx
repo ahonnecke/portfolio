@@ -13,6 +13,7 @@ import JollyBrancherCard from "../public/jolly_brancher_card.png";
 import LintingCard from "../public/linting_card.png";
 import QuadricycleCard from "../public/quadricycle_card.png";
 import RentinityCard from "../public/rentinity_card.png";
+import SatoshisWagerCard from "../public/satoshis_wager_card.png";
 import SnifterCard from "../public/snifter_card.png";
 import TonalRecallCard from "../public/tonal_recall_card.png";
 import ToyContractorCard from "../public/toy_contractor_card.png"; // Temporarily using wayward_card.png as placeholder
@@ -34,6 +35,7 @@ import {
 	QuadricycleAbstract,
 	RentinityAbstract,
 	ResumeBuildPipelineAbstract,
+	SatoshisWagerAbstract,
 	SnifterAbstract,
 	TonalRecallAbstract,
 	ToyContractorAbstract,
@@ -110,6 +112,15 @@ export const navMap: NavMap = {
 		text: "Rentinity",
 		category: "Blockchain",
 		detail: RentinityAbstract,
+	},
+	satoshis_wager: {
+		// Live clickable demo, vendored as static files and served by nginx
+		// (see bin/build-satoshis-wager.sh). Launched directly from the tile.
+		link: "/prototypes/satoshis-wager/",
+		image: SatoshisWagerCard,
+		text: "Satoshi's Wager",
+		category: "Fintech",
+		detail: SatoshisWagerAbstract,
 	},
 	tonal_recall: {
 		link: "https://github.com/ahonnecke/TonalRecall",
