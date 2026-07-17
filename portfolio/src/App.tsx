@@ -5,6 +5,7 @@ import type * as React from "react"; // Import React to fix TypeScript error
 import {
 	BigWheel,
 	Consolo,
+	Denv,
 	Devops,
 	Docker,
 	FireTable,
@@ -16,6 +17,7 @@ import {
 	Quadricycle,
 	Rentinity,
 	ResumeBuildPipeline,
+	SafeStreets,
 	Snifter,
 	TonalRecall,
 	ToyContractor,
@@ -57,6 +59,8 @@ function App(): JSX.Element {
 					<Route path="/quadricycle" element={<Quadricycle />} />
 					<Route path="/snifter" element={<Snifter />} />
 					<Route path="/devops" element={<Devops />} />
+					<Route path="/safe_streets" element={<SafeStreets />} />
+					<Route path="/denv" element={<Denv />} />
 					<Route
 						path="/resume_build_pipeline"
 						element={<ResumeBuildPipeline />}
@@ -97,6 +101,8 @@ function Main(): JSX.Element {
 				<Tile tile="github" />
 				<Tile tile="consolo" />
 				<Tile tile="snifter" />
+				<Tile tile="denv" />
+				<Tile tile="safe_streets" />
 				<Tile tile="jolly_brancher" />
 				<Tile tile="wayward" />
 				<Tile tile="foodie_folder" />

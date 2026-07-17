@@ -10,6 +10,29 @@ export const SatoshisWagerAbstract: () => JSX.Element = () => {
 	);
 };
 
+export const SafeStreetsAbstract: () => JSX.Element = () => {
+	return (
+		<span>
+			Safe Streets Colorado is a traffic-safety legislation tracker I built as a
+			static Eleventy site. Each bill is a Markdown file with frontmatter that
+			renders into its own detail page, so following a bill through the
+			statehouse is a git commit, not a CMS login — a lightweight, versioned
+			source of truth for civic advocates.
+		</span>
+	);
+};
+
+export const DenvAbstract: () => JSX.Element = () => {
+	return (
+		<span>
+			denv is a Python CLI that redacts secrets from .env files so you can
+			share, document, or log them safely. It parses quotes and comments
+			correctly, masks values, keys, or both — optionally preserving length —
+			and reads and writes over stdin/stdout, so it drops straight into a pipe.
+		</span>
+	);
+};
+
 export const BigWheelAbstract: () => JSX.Element = () => {
 	return (
 		<span>

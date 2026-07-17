@@ -790,3 +790,80 @@ export function ResumeBuildPipeline() {
 		</span>
 	);
 }
+
+export function SafeStreets() {
+	const navData = navMap.safe_streets;
+	return (
+		<span className="detailPage">
+			<Link to={navData.link}>
+				<img src={navData.image} alt={navData.text} />
+				<div className="content">
+					<h2>{navData.text}</h2>
+					<div>
+						<p>
+							<strong>Safe Streets Colorado</strong> is a legislation tracker
+							for traffic-safety bills, growing out of my street-safety
+							advocacy. It follows bills through the Colorado statehouse and
+							lays out what each one actually does, in plain language, for
+							people who want to show up and testify but don't have time to read
+							a statute.
+						</p>
+						<p>
+							It's built as a static Eleventy site, and the content model is the
+							interesting part: each bill is a single Markdown file with
+							frontmatter, and a Nunjucks layout renders it into a full detail
+							page. Adding or updating a bill is a git commit — no database, no
+							CMS login — which keeps the whole record versioned, reviewable,
+							and cheap to host on Cloudflare Pages.
+						</p>
+						<p>
+							The source is on GitHub{" "}
+							<a href={navData.link} target="_blank" rel="noopener noreferrer">
+								here
+							</a>
+							.
+						</p>
+					</div>
+				</div>
+			</Link>
+		</span>
+	);
+}
+
+export function Denv() {
+	const navData = navMap.denv;
+	return (
+		<span className="detailPage">
+			<Link to={navData.link}>
+				<img src={navData.image} alt={navData.text} />
+				<div className="content">
+					<h2>{navData.text}</h2>
+					<div>
+						<p>
+							<strong>denv</strong> is a small Python CLI that redacts secrets
+							from <code>.env</code> files, so you can paste one into an issue,
+							check an example into a repo, or log your environment without
+							leaking credentials.
+						</p>
+						<p>
+							It does the fiddly parts correctly: it preserves comments, blank
+							lines, and formatting, handles single, double, and escaped quotes,
+							and can mask values, keys, or both — optionally keeping the
+							original length so a redacted file still looks plausible. It can
+							also strip whole lines whose keys look sensitive. Because it reads
+							and writes over stdin/stdout, it composes into a pipe:{" "}
+							<code>cat .env | denv</code>.
+						</p>
+						<p>
+							The source is on GitHub{" "}
+							<a href={navData.link} target="_blank" rel="noopener noreferrer">
+								here
+							</a>
+							.
+						</p>
+					</div>
+				</div>
+			</Link>
+		</span>
+	);
+}

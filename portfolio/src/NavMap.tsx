@@ -2,6 +2,7 @@ import BigWheelCard from "../public/big_wheel_card.png";
 import ConsoloCard from "../public/consolo_card.png";
 import ResumeBuildPipelineCard from "../public/cv_build_card.png";
 import CvCard from "../public/cv_card.png";
+import DenvCard from "../public/denv_card.png";
 import DevopsCard from "../public/devops_card.jpg";
 import DockerCard from "../public/docker_card.png";
 import FireTableCard from "../public/fire_table_card.png";
@@ -13,6 +14,7 @@ import JollyBrancherCard from "../public/jolly_brancher_card.png";
 import LintingCard from "../public/linting_card.png";
 import QuadricycleCard from "../public/quadricycle_card.png";
 import RentinityCard from "../public/rentinity_card.png";
+import SafeStreetsCard from "../public/safe_streets_card.png";
 import SatoshisWagerCard from "../public/satoshis_wager_card.png";
 import SnifterCard from "../public/snifter_card.png";
 import TonalRecallCard from "../public/tonal_recall_card.png";
@@ -23,6 +25,7 @@ import {
 	BigWheelAbstract,
 	ConsoloAbstract,
 	CvAbstract,
+	DenvAbstract,
 	DevopsAbstract,
 	DockerAbstract,
 	FireTableAbstract,
@@ -35,6 +38,7 @@ import {
 	QuadricycleAbstract,
 	RentinityAbstract,
 	ResumeBuildPipelineAbstract,
+	SafeStreetsAbstract,
 	SatoshisWagerAbstract,
 	SnifterAbstract,
 	TonalRecallAbstract,
@@ -121,6 +125,20 @@ export const navMap: NavMap = {
 		text: "Satoshi's Wager",
 		category: "Fintech",
 		detail: SatoshisWagerAbstract,
+	},
+	safe_streets: {
+		link: "https://github.com/ahonnecke/safe-streets-co",
+		image: SafeStreetsCard,
+		text: "Safe Streets CO",
+		category: "Civic",
+		detail: SafeStreetsAbstract,
+	},
+	denv: {
+		link: "https://github.com/ahonnecke/denv",
+		image: DenvCard,
+		text: "denv",
+		category: "Security",
+		detail: DenvAbstract,
 	},
 	tonal_recall: {
 		link: "https://github.com/ahonnecke/TonalRecall",
