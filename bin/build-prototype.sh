@@ -17,7 +17,7 @@
 #
 set -euo pipefail
 
-SRC="${PROTOTYPE_SRC:-$HOME/src/bracely}"
+SRC="${PROTOTYPE_SRC:-$HOME/src/ledgerline}"
 DEST_REL="portfolio/public/prototypes/ledgerline"
 here="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 DEST="$here/$DEST_REL"
