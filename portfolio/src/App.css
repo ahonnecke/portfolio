@@ -260,3 +260,61 @@ a:hover {
 .detailPage a:hover {
 	color: #66b3ff;
 }
+
+/* Mobile: the desktop layout assumes a wide viewport — 5rem side padding, a
+   4em name, 50px detail margins, and 375px-min tiles all overflow a phone and
+   force the page wider than the screen (content gets clipped). Reflow for small
+   screens. */
+@media (max-width: 600px) {
+	#root {
+		padding: 0 1rem;
+	}
+
+	#fullname {
+		font-size: 2.1em;
+		word-break: break-word;
+	}
+
+	#fullname .quickPdf {
+		display: inline-block;
+		margin-left: 0.5em;
+		padding: 0.4em 0.7em;
+	}
+
+	.tagline {
+		font-size: 1em;
+	}
+
+	.tiles {
+		grid-template-columns: 1fr;
+	}
+
+	.cardTitle {
+		font-size: 2.4em;
+		white-space: normal;
+	}
+
+	.cardCategory {
+		font-size: 1.2em;
+		left: 0;
+		bottom: 0;
+	}
+
+	/* Detail pages: drop the 50px margins and the image float, which don't fit
+	   a narrow column. */
+	.detailPage img {
+		float: none;
+		width: 100%;
+		margin: 1rem 0;
+		margin-right: 0;
+	}
+
+	.detailPage p,
+	.detailPage .content {
+		margin: 1rem 0;
+	}
+
+	.detailPage .content {
+		padding-left: 0;
+	}
+}

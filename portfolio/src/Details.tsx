@@ -817,9 +817,17 @@ export function SafeStreets() {
 							and cheap to host on Cloudflare Pages.
 						</p>
 						<p>
-							The source is on GitHub{" "}
+							It's live at{" "}
 							<a href={navData.link} target="_blank" rel="noopener noreferrer">
-								here
+								safestreetsco.com
+							</a>
+							, with the source on{" "}
+							<a
+								href="https://github.com/ahonnecke/safe-streets-co"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								GitHub
 							</a>
 							.
 						</p>

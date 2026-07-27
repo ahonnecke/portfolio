@@ -127,7 +127,7 @@ export const navMap: NavMap = {
 		detail: SatoshisWagerAbstract,
 	},
 	safe_streets: {
-		link: "https://github.com/ahonnecke/safe-streets-co",
+		link: "https://safestreetsco.com",
 		image: SafeStreetsCard,
 		text: "Safe Streets CO",
 		category: "Civic",
