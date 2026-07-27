@@ -3,8 +3,14 @@ import { useLocation } from "react-router-dom";
 import { SITE, metaForPath } from "./seo.data";
 
 /** Upsert a <meta> tag by name or property; create it if missing. */
-function setMeta(attr: "name" | "property", key: string, content: string): void {
-	let el = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
+function setMeta(
+	attr: "name" | "property",
+	key: string,
+	content: string,
+): void {
+	let el = document.head.querySelector<HTMLMetaElement>(
+		`meta[${attr}="${key}"]`,
+	);
 	if (!el) {
 		el = document.createElement("meta");
 		el.setAttribute(attr, key);
@@ -14,7 +20,9 @@ function setMeta(attr: "name" | "property", key: string, content: string): void 
 }
 
 function setCanonical(href: string): void {
-	let el = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+	let el = document.head.querySelector<HTMLLinkElement>(
+		'link[rel="canonical"]',
+	);
 	if (!el) {
 		el = document.createElement("link");
 		el.setAttribute("rel", "canonical");
@@ -34,7 +42,8 @@ export function Seo(): null {
 
 	useEffect(() => {
 		const { title, description } = metaForPath(pathname);
-		const url = SITE.url + (pathname === "/" ? "" : pathname.replace(/\/+$/, ""));
+		const url =
+			SITE.url + (pathname === "/" ? "" : pathname.replace(/\/+$/, ""));
 
 		document.title = title;
 		setMeta("name", "description", description);

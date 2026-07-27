@@ -838,6 +838,53 @@ export function SafeStreets() {
 	);
 }
 
+export function Shush() {
+	return (
+		<span className="detailPage">
+			<div className="content">
+				<h2>shush</h2>
+				<p>
+					I built <strong>shush</strong> to let an LLM (Claude Code and the
+					like) drive real infrastructure over SSH without handing it a shell.
+					An agent can run commands on remote hosts, but only the commands on a
+					per-host allowlist actually execute — everything else is refused.
+				</p>
+				<p>
+					The design idea is defense in depth: the allowlist is enforced in{" "}
+					<strong>two independent places</strong>. A local wrapper (
+					<code>llm-ssh</code>) is the only SSH entry point the agent can call,
+					and it validates against policy before connecting; raw{" "}
+					<code>ssh</code>, <code>scp</code>, and <code>sftp</code> are denied
+					at the tool layer. On each POSIX target, an{" "}
+					<code>authorized_keys</code> forced-command (<code>llm-jail</code>)
+					re-validates the command against its own copy of the same policy, so a
+					bug or compromise on the driving side can't widen access. Both layers
+					import the same policy module, so their verdicts are identical by
+					construction. Network appliances (Cisco, JunOS) that can't run a
+					forced command fall back to the vendor's own read-only role.
+				</p>
+				<p>
+					The policy is deny-by-default, with a regex denylist as the primary
+					anti-injection guard (blocking shell metacharacters and destructive
+					verbs), command globs, and absolute-path constraints. It's written in
+					Python with a thorough test suite.
+				</p>
+				<p>
+					The source is on{" "}
+					<a
+						href="https://github.com/ahonnecke/shush"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						GitHub
+					</a>
+					.
+				</p>
+			</div>
+		</span>
+	);
+}
+
 export function Denv() {
 	const navData = navMap.denv;
 	return (

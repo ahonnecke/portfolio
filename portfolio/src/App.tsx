@@ -1,7 +1,6 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import { Link, BrowserRouter as Router } from "react-router-dom"; // Import Link from react-router-dom
 import "./App.css";
-import type * as React from "react"; // Import React to fix TypeScript error
 import {
 	BigWheel,
 	Consolo,
@@ -18,16 +17,18 @@ import {
 	Rentinity,
 	ResumeBuildPipeline,
 	SafeStreets,
+	Shush,
 	Snifter,
 	TonalRecall,
 	ToyContractor,
 	Wayward,
 } from "./Details";
-import { navMap } from "./NavMap";
 import CaseStudiesIndex, {
 	CaseStudiesSection,
 } from "./caseStudies/CaseStudiesIndex";
 import CaseStudyPage from "./caseStudies/CaseStudyPage";
+import { ProjectCard } from "./projects/ProjectCard";
+import { projects } from "./projects/projects.data";
 import "./caseStudies/caseStudies.css";
 import CvPage from "./cv/CvPage";
 import { Seo } from "./seo/Seo";
@@ -62,6 +63,7 @@ function App(): JSX.Element {
 					<Route path="/snifter" element={<Snifter />} />
 					<Route path="/devops" element={<Devops />} />
 					<Route path="/safe_streets" element={<SafeStreets />} />
+					<Route path="/shush" element={<Shush />} />
 					<Route path="/denv" element={<Denv />} />
 					<Route
 						path="/resume_build_pipeline"
@@ -98,81 +100,16 @@ function Main(): JSX.Element {
 	return (
 		<>
 			<CaseStudiesSection />
-			<h2 className="csSectionHeading">Projects</h2>
-			<div className="tiles">
-				<Tile tile="github" />
-				<Tile tile="consolo" />
-				<Tile tile="snifter" />
-				<Tile tile="denv" />
-				<Tile tile="safe_streets" />
-				<Tile tile="jolly_brancher" />
-				<Tile tile="wayward" />
-				<Tile tile="foodie_folder" />
-				<Tile tile="hagglebot" />
-				<Tile tile="rentinity" />
-				<Tile tile="satoshis_wager" />
-				<Tile tile="tonal_recall" />
-				<Tile tile="toy_contractor" />
-				<Tile tile="docker" />
-				<Tile tile="linting" />
-				<Tile tile="devops" />
-				<Tile tile="big_wheel" />
-				<Tile tile="fire_table" />
-				<Tile tile="quadricycle" />
-				<Tile tile="cv" />
-			</div>
+			<section className="csSection">
+				<h2 className="csSectionHeading">Projects</h2>
+				<div className="csGrid">
+					{projects.map((p) => (
+						<ProjectCard key={p.to} p={p} />
+					))}
+				</div>
+			</section>
 		</>
 	);
-}
-
-function toCamelCase(str: string): string {
-	// Add type annotations to 'str'
-	return str
-		.replace(/\s+/g, " ") // Replace multiple spaces with a single space
-		.trim() // Remove leading and trailing spaces
-		.split(" ") // Split the string into words
-		.map((word, index) => {
-			// Convert the first word to lowercase and the rest to Title Case (to create camelCase)
-			return index === 0
-				? word.toLowerCase()
-				: word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-		})
-		.join(""); // Join the words without spaces
-}
-
-function Tile({ tile }: { tile: string }): JSX.Element {
-	// Add explicit return type for function Tile
-	const navData = navMap[tile]; // Fixed to reference navMap
-	const AbstractComponent = navData.detail as React.ElementType;
-	const card = (
-		<span
-			className={`card ${toCamelCase(navData.text)}`}
-			style={{ backgroundImage: `url(${navData.image})` }}
-		>
-			<span className="cardCategory">{navData.category}</span>
-			<span className="cardTitle">{navData.text}</span>
-			{AbstractComponent && (
-				<span className="cardAbstract">
-					<AbstractComponent />
-				</span>
-			)}
-		</span>
-	);
-	// Static documents (e.g. the CV PDF) are served as files, not SPA routes,
-	// so a react-router <Link> would never reach them — use a plain anchor.
-	if (navData.link.endsWith(".pdf")) {
-		return <a href={navData.link}>{card}</a>;
-	}
-	// Vendored prototypes live under /prototypes/ and are served by nginx as
-	// their own apps, not SPA routes. Launch them directly in a new tab.
-	if (navData.link.startsWith("/prototypes/")) {
-		return (
-			<a href={navData.link} target="_blank" rel="noopener noreferrer">
-				{card}
-			</a>
-		);
-	}
-	return <Link to={tile}>{card}</Link>;
 }
 
 export default App;

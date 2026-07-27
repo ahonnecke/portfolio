@@ -92,6 +92,11 @@ const PROJECT: Record<string, Meta> = {
 		description:
 			"denv — a Python CLI that redacts secrets from .env files (value, key, or both; quote-aware; works over stdin/stdout).",
 	},
+	shush: {
+		title: "shush",
+		description:
+			"shush — constrained SSH for LLM automation. Allowlisted commands only, enforced in two independent layers (a local wrapper and a remote forced-command). Python.",
+	},
 	docker: {
 		title: "Containers",
 		description:
@@ -152,7 +157,8 @@ export function metaForPath(pathname: string): Meta {
 	if (STATIC[p]) return STATIC[p];
 
 	const project = PROJECT[p.replace(/^\//, "")];
-	if (project) return { title: project.title + suffix, description: project.description };
+	if (project)
+		return { title: project.title + suffix, description: project.description };
 
 	return { title: SITE.defaultTitle, description: SITE.defaultDescription };
 }
