@@ -30,12 +30,14 @@ import CaseStudiesIndex, {
 import CaseStudyPage from "./caseStudies/CaseStudyPage";
 import "./caseStudies/caseStudies.css";
 import CvPage from "./cv/CvPage";
+import { Seo } from "./seo/Seo";
 
 function App(): JSX.Element {
 	// Add explicit return type for function App
 	return (
 		<>
 			<Router>
+				<Seo />
 				<SiteHeader />
 
 				<Routes>

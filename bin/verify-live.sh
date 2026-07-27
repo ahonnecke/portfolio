@@ -126,6 +126,15 @@ else
 	bad "/cv/cv.pdf did not return PDF bytes — got: ${pdf_head:0:20}"
 fi
 
+# The OG image is referenced by every page's link-preview metadata. Must be a
+# real PNG, not an SPA fallback page (which would break every unfurl).
+og_head="$(curl -sS --max-time 30 -A "$UA" -L -r 0-7 "$BASE_URL/og.png" | tr -d '\0' || true)"
+if printf '%s' "$og_head" | grep -q 'PNG'; then
+	ok "/og.png is a real PNG (link-preview image)"
+else
+	bad "/og.png did not return PNG bytes"
+fi
+
 # --- 7. Clickable prototype (nested static app under /prototypes/) -------
 # nginx serves this as a real nested app. The failure mode to catch is the
 # server falling back to the portfolio SPA — which would look "up" (200) while
