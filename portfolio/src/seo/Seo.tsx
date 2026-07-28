@@ -49,6 +49,14 @@ export function Seo(): null {
 		setMeta("name", "description", description);
 		setCanonical(url);
 
+		// Job-tailored pages are link-shared into an application, never meant to
+		// be discovered — keep them out of search results.
+		setMeta(
+			"name",
+			"robots",
+			pathname.startsWith("/for/") ? "noindex, nofollow" : "index, follow",
+		);
+
 		setMeta("property", "og:type", pathname === "/" ? "website" : "article");
 		setMeta("property", "og:site_name", SITE.name);
 		setMeta("property", "og:title", title);

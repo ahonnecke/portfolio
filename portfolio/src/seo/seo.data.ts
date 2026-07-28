@@ -1,4 +1,5 @@
 import { caseStudies } from "../caseStudies/caseStudies.data";
+import { pitchForSlug } from "../jd/jd.data";
 
 export const SITE = {
 	name: "Ashton Honnecke",
@@ -142,6 +143,17 @@ const PROJECT: Record<string, Meta> = {
 /** Resolve title + description for a pathname. */
 export function metaForPath(pathname: string): Meta {
 	const p = pathname.replace(/\/+$/, "") || "/";
+
+	const jd = p.match(/^\/for\/(.+)$/);
+	if (jd) {
+		const pitch = pitchForSlug(jd[1]);
+		if (pitch) {
+			return {
+				title: `${pitch.role} at ${pitch.company} — ${SITE.name}`,
+				description: pitch.headline,
+			};
+		}
+	}
 
 	const cs = p.match(/^\/case-studies\/(.+)$/);
 	if (cs) {

@@ -27,6 +27,7 @@ import CaseStudiesIndex from "./caseStudies/CaseStudiesIndex";
 import CaseStudyPage from "./caseStudies/CaseStudyPage";
 import "./caseStudies/caseStudies.css";
 import CvPage from "./cv/CvPage";
+import JdLanding from "./jd/JdLanding";
 import { Seo } from "./seo/Seo";
 import { WorkGrid } from "./work/WorkGrid";
 
@@ -42,6 +43,7 @@ function App(): JSX.Element {
 					<Route path="/" element={<Main />} />
 					<Route path="/case-studies" element={<CaseStudiesIndex />} />
 					<Route path="/case-studies/:slug" element={<CaseStudyPage />} />
+					<Route path="/for/:slug" element={<JdLanding />} />
 					<Route path="/big_wheel" element={<BigWheel />} />
 					<Route path="/docker" element={<Docker />} />
 					<Route path="/consolo" element={<Consolo />} />

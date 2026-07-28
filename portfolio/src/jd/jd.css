@@ -1,0 +1,171 @@
+/* Job-tailored landing page. */
+
+.jdPage {
+	max-width: 900px;
+	margin: 0 auto;
+	padding-bottom: 5rem;
+	color: #e3e3e3;
+}
+
+.jdHero {
+	padding: 2.5rem 0 1.5rem;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.jdEyebrow {
+	margin: 0 0 0.6rem;
+	font-size: 0.9em;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: #7fc4ff;
+	font-weight: 700;
+}
+
+.jdHero h1 {
+	margin: 0;
+	font-size: 2.5em;
+	line-height: 1.12;
+	color: #fdfdff;
+	text-wrap: balance;
+}
+
+.jdMeta {
+	margin: 0.9rem 0 0;
+	color: #8d8d99;
+	font-size: 0.95em;
+	font-variant-numeric: tabular-nums;
+}
+
+.jdIntro {
+	font-size: 1.15em;
+	line-height: 1.7;
+	margin: 1.8rem 0 0.5rem;
+}
+
+.jdIntro p {
+	margin: 0 0 1.1rem;
+}
+
+.jdSection {
+	margin-top: 3rem;
+}
+
+.jdSection > h2 {
+	font-size: 1.7em;
+	color: #fdfdff;
+	margin: 0 0 1.2rem;
+}
+
+/* Requirement → evidence rows */
+.jdReqs {
+	display: flex;
+	flex-direction: column;
+	gap: 1px;
+	background: rgba(255, 255, 255, 0.08);
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.jdReq {
+	display: grid;
+	grid-template-columns: 34% 1fr;
+	gap: 1.5rem;
+	padding: 1.1rem 1.3rem;
+	background: #161a20;
+}
+
+.jdAsk {
+	font-weight: 700;
+	color: #fdfdff;
+	line-height: 1.4;
+}
+
+.jdProof {
+	color: #d0d0d8;
+	line-height: 1.6;
+}
+
+/* Honest-fit list */
+.jdGaps {
+	display: flex;
+	flex-direction: column;
+	gap: 0.9rem;
+}
+
+.jdGap {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 0.4rem 0.9rem;
+	padding: 0.9rem 1.2rem;
+	border-left: 3px solid #4da6ff;
+	background: rgba(77, 166, 255, 0.06);
+	border-radius: 0 8px 8px 0;
+}
+
+.jdGapLabel {
+	font-weight: 700;
+	color: #fdfdff;
+}
+
+.jdGapNote {
+	color: #c9c9d4;
+	line-height: 1.55;
+	flex: 1;
+	min-width: 260px;
+}
+
+/* CTA */
+.jdCta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 12px;
+	margin-top: 3rem;
+	padding-top: 2rem;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.jdBtn {
+	display: inline-block;
+	background: #2b9fd4;
+	color: #04121a;
+	font-weight: 700;
+	border-radius: 8px;
+	padding: 0.75em 1.5em;
+	text-decoration: none;
+}
+
+.jdBtn:hover {
+	background: #5ab4e0;
+	color: #04121a;
+}
+
+.jdBtnGhost {
+	background: transparent;
+	color: #7fc4ff;
+	border: 1px solid rgba(127, 196, 255, 0.5);
+}
+
+.jdBtnGhost:hover {
+	background: rgba(127, 196, 255, 0.1);
+	color: #7fc4ff;
+}
+
+.jdCtaLink {
+	margin-left: auto;
+	color: #8d8d99;
+}
+
+@media (max-width: 600px) {
+	.jdHero h1 {
+		font-size: 1.8em;
+	}
+	.jdReq {
+		grid-template-columns: 1fr;
+		gap: 0.5rem;
+	}
+	.jdCtaLink {
+		margin-left: 0;
+	}
+}
