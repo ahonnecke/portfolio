@@ -20,7 +20,11 @@ export function WorkGrid(): JSX.Element {
 				studies. Filter by tag.
 			</p>
 
-			<div className="workFilters" role="group" aria-label="Filter work by tag">
+			<div
+				className="workFilters"
+				role="toolbar"
+				aria-label="Filter work by tag"
+			>
 				<button
 					type="button"
 					className="workChip"
