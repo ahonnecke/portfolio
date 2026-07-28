@@ -14,11 +14,12 @@
 
 .jdEyebrow {
 	margin: 0 0 0.6rem;
-	font-size: 0.9em;
-	letter-spacing: 0.1em;
+	font-family: var(--font-mono);
+	font-size: 0.85em;
+	letter-spacing: 0.08em;
 	text-transform: uppercase;
 	color: #7fc4ff;
-	font-weight: 700;
+	font-weight: 600;
 }
 
 .jdHero h1 {

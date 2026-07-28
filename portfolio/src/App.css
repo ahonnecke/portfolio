@@ -124,7 +124,10 @@ body {
 #fullname {
 	text-align: center;
 	margin-bottom: 0;
-	font-size: 4em;
+	font-family: var(--font-mono);
+	font-weight: 600;
+	letter-spacing: -0.02em;
+	font-size: 3.4em;
 	color: #fdfdff;
 }
 
@@ -144,8 +147,11 @@ body {
 
 .tagline {
 	text-align: center;
-	margin-top: 0;
-	color: #e3e3e3;
+	margin-top: 0.3em;
+	font-family: var(--font-mono);
+	font-size: 0.95em;
+	letter-spacing: 0.02em;
+	color: #9aa0aa;
 }
 
 .bigWheel {
@@ -247,10 +253,15 @@ body {
 	margin-top: 0;
 }
 .content {
-	font-family: Arial, sans-serif;
+	font-family: var(--font-sans);
 	line-height: 1.6;
 	font-size: 1.2em;
 	margin: 0;
+}
+
+code {
+	font-family: var(--font-mono);
+	font-size: 0.9em;
 }
 
 a {
@@ -269,6 +280,72 @@ a:hover {
 
 .detailPage a:hover {
 	color: #66b3ff;
+}
+
+/* Intro lead + site footer */
+.siteIntro {
+	max-width: 68ch;
+	margin: 1.4rem auto 0.5rem;
+	font-size: 1.18em;
+	line-height: 1.7;
+	color: #c9c9d4;
+	text-align: center;
+	text-wrap: pretty;
+}
+
+.siteFooter {
+	margin-top: 4rem;
+	padding: 2rem 0 3rem;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	color: #8d8d99;
+}
+
+.siteFooterName {
+	font-family: var(--font-mono);
+	color: #c9c9d4;
+}
+
+.siteFooterLinks {
+	display: flex;
+	gap: 1.5rem;
+	font-family: var(--font-mono);
+	font-size: 0.9em;
+}
+
+.siteFooterLinks a {
+	color: #8d8d99;
+}
+
+.siteFooterLinks a:hover {
+	color: #7fc4ff;
+}
+
+/* Card entrance — a subtle fade/rise on load and when the filter changes.
+   Disabled for users who prefer reduced motion. */
+@keyframes cardIn {
+	from {
+		opacity: 0;
+		transform: translateY(8px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.csGrid > a {
+	animation: cardIn 0.32s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.csGrid > a {
+		animation: none;
+	}
 }
 
 /* Mobile: the desktop layout assumes a wide viewport — 5rem side padding, a
@@ -326,5 +403,15 @@ a:hover {
 
 	.detailPage .content {
 		padding-left: 0;
+	}
+
+	.siteIntro {
+		font-size: 1.05em;
+		text-align: left;
+	}
+
+	.siteFooter {
+		flex-direction: column;
+		align-items: flex-start;
 	}
 }

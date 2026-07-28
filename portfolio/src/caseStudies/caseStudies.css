@@ -160,6 +160,15 @@
 	color: rgba(255, 255, 255, 0.92);
 }
 
+/* Mono for the small technical labels — sector/tech pills, status, filter chips. */
+.csCardSector,
+.csCardPill,
+.csCardStatus,
+.workChip,
+.workCount {
+	font-family: var(--font-mono);
+}
+
 .csCardStatus {
 	margin-top: auto;
 	font-size: 0.85em;

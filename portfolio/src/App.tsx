@@ -69,6 +69,7 @@ function App(): JSX.Element {
 						element={<ResumeBuildPipeline />}
 					/>
 				</Routes>
+				<Footer />
 			</Router>
 		</>
 	);
@@ -98,8 +99,44 @@ function Main(): JSX.Element {
 	// Add explicit return type for function Main
 	return (
 		<>
+			<p className="siteIntro">
+				Engineering leader with ~25 years building production systems — most
+				recently CTO at CrewCapable, taking an AI-native platform from proof of
+				concept to production as the sole engineer. I lead hands-on: I set the
+				standards and still ship the code. Open to Staff, Principal, and
+				Technical Lead roles, fully remote.
+			</p>
 			<WorkGrid />
 		</>
+	);
+}
+
+function Footer(): JSX.Element | null {
+	const { pathname } = useLocation();
+	if (pathname === "/cv") {
+		return null;
+	}
+	return (
+		<footer className="siteFooter">
+			<span className="siteFooterName">Ashton Honnecke</span>
+			<nav className="siteFooterLinks">
+				<a href="mailto:published_cv@cxcs.us">Email</a>
+				<a
+					href="https://www.linkedin.com/in/ashtonhonnecke/"
+					target="_blank"
+					rel="noreferrer"
+				>
+					LinkedIn
+				</a>
+				<a
+					href="https://github.com/ahonnecke/"
+					target="_blank"
+					rel="noreferrer"
+				>
+					GitHub
+				</a>
+			</nav>
+		</footer>
 	);
 }
 

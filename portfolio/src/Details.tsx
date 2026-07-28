@@ -15,7 +15,6 @@ export function BigWheel() {
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
-				<img src={navData.image} alt={navData.text} />
 				<div className="content">
 					<h2>{navData.text}</h2>
 					<p>
@@ -48,7 +47,6 @@ export function FireTable() {
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
-				<img src={navData.image} alt={navData.text} />
 				<div className="content">
 					<p>
 						I designed and created an interactive fire installation art project,
@@ -87,7 +85,6 @@ export function CV() {
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
-				<img src={navData.image} alt={navData.text} />
 				<br />
 				<br />
 				<br />
@@ -119,7 +116,6 @@ export function Quadricycle() {
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
-				<img src={navData.image} alt={navData.text} />
 				<div className="content">
 					<h2>{navData.text}</h2>
 					<div>
@@ -182,7 +178,6 @@ export function Docker() {
 		<span className="detailPage">
 			<div className="content">
 				<div>
-					<img src={navData.image} alt={navData.text} />
 					<h2>{navData.text}</h2>
 					<p>
 						My talk, <em>“Cleaning Up Your Python Environment”</em>, is a
@@ -234,7 +229,6 @@ export function Consolo() {
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
-				<img src={navData.image} alt={navData.text} />
 				<div className="content">
 					<h2>{navData.text}</h2>
 					<div>
@@ -287,7 +281,6 @@ export function Snifter() {
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
-				<img src={navData.image} alt={navData.text} />
 				<div className="content">
 					<h2>{navData.text}</h2>
 					<div>
@@ -342,7 +335,6 @@ export function JollyBrancher() {
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
-				<img src={navData.image} alt={navData.text} />
 				<div className="content">
 					<h2>{navData.text}</h2>
 					<div>
@@ -404,7 +396,6 @@ export function Github() {
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
-				<img src={navData.image} alt={navData.text} />
 				<div className="content">
 					<h2>GitHub</h2>
 					<div>
@@ -434,7 +425,6 @@ export function Linting() {
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
-				<img src={navData.image} alt={navData.text} />
 				<div className="content">
 					<h2>{navData.text}</h2>
 					<div>
@@ -463,7 +453,6 @@ export function Devops() {
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
-				<img src={navData.image} alt={navData.text} />
 				<div className="content">
 					<h2>DevOps</h2>
 					<div>
@@ -493,7 +482,6 @@ export function Wayward() {
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
-				<img src={navData.image} alt={navData.text} />
 				<div className="content">
 					<h2>{navData.text}</h2>
 					<div>
@@ -532,7 +520,6 @@ export function FoodieFolder() {
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
-				<img src={navData.image} alt={navData.text} />
 				<div className="content">
 					<h2>{navData.text}</h2>
 					<div>
@@ -569,7 +556,6 @@ export function Hagglebot() {
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
-				<img src={navData.image} alt={navData.text} />
 				<div className="content">
 					<h2>{navData.text}</h2>
 					<div>
@@ -613,7 +599,6 @@ export function Rentinity() {
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
-				<img src={navData.image} alt={navData.text} />
 				<div className="content">
 					<h2>{navData.text}</h2>
 					<div>
@@ -659,7 +644,6 @@ export function TonalRecall() {
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
-				<img src={navData.image} alt={navData.text} />
 				<div className="content">
 					<h2>{navData.text}</h2>
 					<div>
@@ -686,9 +670,18 @@ export function TonalRecall() {
 							config change, not a rewrite.
 						</p>
 						<p>
-							You can browse the Tonal Recall project repository{" "}
+							The real-time pitch-detection work here grew into{" "}
+							<a
+								href="https://github.com/got-feedback"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								got-feedback
+							</a>
+							, a collaborative music-practice platform I contribute to that has
+							since superseded it. The original Tonal Recall{" "}
 							<a href={navData.link} target="_blank" rel="noopener noreferrer">
-								here
+								repository is here
 							</a>
 							.
 						</p>
@@ -704,7 +697,6 @@ export function ToyContractor() {
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
-				<img src={navData.image} alt={navData.text} />
 				<div className="content">
 					<h2>{navData.text}</h2>
 					<div>
@@ -747,7 +739,6 @@ export function ResumeBuildPipeline() {
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
-				<img src={navData.image} alt={navData.text} />
 				<div className="content">
 					<h2>{navData.text}</h2>
 					<div>
@@ -796,7 +787,6 @@ export function SafeStreets() {
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
-				<img src={navData.image} alt={navData.text} />
 				<div className="content">
 					<h2>{navData.text}</h2>
 					<div>
@@ -890,7 +880,6 @@ export function Denv() {
 	return (
 		<span className="detailPage">
 			<Link to={navData.link}>
-				<img src={navData.image} alt={navData.text} />
 				<div className="content">
 					<h2>{navData.text}</h2>
 					<div>

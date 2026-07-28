@@ -1,9 +1,21 @@
-import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { WorkCard } from "./WorkCard";
 import { FILTER_TAGS, workItems } from "./work.data";
 
 export function WorkGrid(): JSX.Element {
-	const [active, setActive] = useState<string | null>(null);
+	// The active tag lives in the URL (?tag=Python), so a filtered view is a
+	// shareable/bookmarkable link and the back button works.
+	const [params, setParams] = useSearchParams();
+	const raw = params.get("tag");
+	const active = raw && FILTER_TAGS.includes(raw) ? raw : null;
+
+	const setActive = (tag: string | null) => {
+		if (tag) {
+			setParams({ tag });
+		} else {
+			setParams({});
+		}
+	};
 
 	const count = (t: string) =>
 		workItems.filter((w) => w.tags.includes(t)).length;
