@@ -67,6 +67,80 @@
 	padding: 0.3em 0.9em;
 }
 
+/* Multi-pill eyebrow for work cards (e.g. "Case Study · HVAC", "FOSS · Python"). */
+.csCardEyebrow {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+
+.csCardPill {
+	font-size: 0.72em;
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+	background-color: rgba(0, 0, 0, 0.42);
+	border-radius: 999px;
+	padding: 0.32em 0.7em;
+}
+
+/* --- Tag filter bar ------------------------------------------------------ */
+
+.workFilters {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	position: sticky;
+	top: 0;
+	z-index: 5;
+	background: #121212;
+	padding: 12px 0 14px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.workChip {
+	font: inherit;
+	font-size: 0.86em;
+	letter-spacing: 0.02em;
+	cursor: pointer;
+	color: #e3e3e3;
+	background: #1e2530;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 999px;
+	padding: 0.42em 1em;
+	transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.workChip:hover {
+	border-color: rgba(255, 255, 255, 0.35);
+}
+
+.workChip[aria-pressed="true"] {
+	background: #2b9fd4;
+	border-color: #2b9fd4;
+	color: #04121a;
+	font-weight: 700;
+}
+
+.workChip:focus-visible {
+	outline: 2px solid #7fc4ff;
+	outline-offset: 2px;
+}
+
+.workChipN {
+	opacity: 0.6;
+	margin-left: 0.4em;
+	font-variant-numeric: tabular-nums;
+}
+
+.workCount {
+	color: #8d8d99;
+	font-size: 0.85em;
+	margin-left: auto;
+	font-variant-numeric: tabular-nums;
+}
+
 .csCardTitle {
 	font-size: 1.9em;
 	font-weight: 700;

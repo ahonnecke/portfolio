@@ -23,15 +23,12 @@ import {
 	ToyContractor,
 	Wayward,
 } from "./Details";
-import CaseStudiesIndex, {
-	CaseStudiesSection,
-} from "./caseStudies/CaseStudiesIndex";
+import CaseStudiesIndex from "./caseStudies/CaseStudiesIndex";
 import CaseStudyPage from "./caseStudies/CaseStudyPage";
-import { ProjectCard } from "./projects/ProjectCard";
-import { projects } from "./projects/projects.data";
 import "./caseStudies/caseStudies.css";
 import CvPage from "./cv/CvPage";
 import { Seo } from "./seo/Seo";
+import { WorkGrid } from "./work/WorkGrid";
 
 function App(): JSX.Element {
 	// Add explicit return type for function App
@@ -99,15 +96,7 @@ function Main(): JSX.Element {
 	// Add explicit return type for function Main
 	return (
 		<>
-			<CaseStudiesSection />
-			<section className="csSection">
-				<h2 className="csSectionHeading">Projects</h2>
-				<div className="csGrid">
-					{projects.map((p) => (
-						<ProjectCard key={p.to} p={p} />
-					))}
-				</div>
-			</section>
+			<WorkGrid />
 		</>
 	);
 }

@@ -213,12 +213,4 @@ export const projects: ProjectCardData[] = [
 		accent: G.night,
 		home: "Photos",
 	},
-	{
-		to: "/cv/cv.pdf",
-		title: "Full CV",
-		tag: "Doc · PDF",
-		blurb: "My full CV as a PDF — the long-form version of all of this.",
-		accent: G.steel,
-		home: "Download",
-	},
 ];
