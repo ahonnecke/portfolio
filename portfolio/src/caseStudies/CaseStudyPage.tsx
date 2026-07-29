@@ -1,7 +1,13 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import { CaseStudyRights } from "./CaseStudyRights";
 import { caseStudies } from "./caseStudies.data";
 import type { CaseStudyPrototype } from "./caseStudies.types";
+
+// Old slugs that were renamed. Kept so previously-shared/indexed URLs still
+// resolve instead of soft-404ing — they redirect to the current slug.
+const SLUG_ALIASES: Record<string, string> = {
+	"insurtech-reliability-sim": "ledgerline",
+};
 
 function PrototypeBlock({ proto }: { proto: CaseStudyPrototype }): JSX.Element {
 	if (proto.state === "live" && proto.href) {
@@ -33,6 +39,11 @@ function PrototypeBlock({ proto }: { proto: CaseStudyPrototype }): JSX.Element {
 
 export function CaseStudyPage(): JSX.Element {
 	const { slug } = useParams<{ slug: string }>();
+
+	if (slug && SLUG_ALIASES[slug]) {
+		return <Navigate to={`/case-studies/${SLUG_ALIASES[slug]}`} replace />;
+	}
+
 	const study = caseStudies.find((entry) => entry.slug === slug);
 
 	if (!study) {

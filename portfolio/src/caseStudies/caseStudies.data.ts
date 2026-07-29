@@ -46,7 +46,7 @@ export const caseStudies: CaseStudy[] = [
 		},
 	},
 	{
-		slug: "insurtech-reliability-sim",
+		slug: "ledgerline",
 		title: "Playable Insurance Money-Path Architecture",
 		client: "An insurance technology company",
 		sector: "Insurtech / Payments",

@@ -55,7 +55,7 @@ export const jobPitches: JobPitch[] = [
 			{
 				ask: "Event-driven pipelines, task orchestration, async workflows",
 				proof:
-					"CrewCapable's LLM extraction runs on AWS Lambda + Step Functions with a document-processing state machine (explicit failure/timeout paths). The insurtech sim is built on a transactional outbox and an event-sourced ledger with exactly-once delivery.",
+					"CrewCapable's LLM extraction runs on AWS Lambda + Step Functions with a document-processing state machine (explicit failure/timeout paths). Ledgerline is built on a transactional outbox and an event-sourced ledger with exactly-once delivery.",
 			},
 			{
 				ask: "AI/ML and OCR-based document processing integration",
@@ -75,7 +75,7 @@ export const jobPitches: JobPitch[] = [
 			{
 				ask: "PostgreSQL — schema design, transactional workflows, migrations",
 				proof:
-					"Hagglebot uses async Postgres with SQLModel and Alembic migrations; CrewCapable uses per-tenant row-level security. The insurtech sim's whole point is transactional correctness.",
+					"Hagglebot uses async Postgres with SQLModel and Alembic migrations; CrewCapable uses per-tenant row-level security. Ledgerline's whole point is transactional correctness.",
 			},
 			{
 				ask: "Security, authentication, authorization for regulated environments",
@@ -95,7 +95,7 @@ export const jobPitches: JobPitch[] = [
 		],
 		highlight: [
 			"https://app.crewcapable.com/psc",
-			"/case-studies/insurtech-reliability-sim",
+			"/case-studies/ledgerline",
 			"/hagglebot",
 			"/shush",
 			"/consolo",

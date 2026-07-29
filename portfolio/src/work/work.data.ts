@@ -30,7 +30,7 @@ const CS: Record<string, { tags: string[]; sector: string }> = {
 		tags: ["Case Study", "Web", "TypeScript"],
 		sector: "HVAC",
 	},
-	"insurtech-reliability-sim": {
+	ledgerline: {
 		tags: ["Case Study", "Web", "TypeScript"],
 		sector: "Insurtech",
 	},
