@@ -35,6 +35,10 @@ const CS: Record<string, { tags: string[]; sector: string }> = {
 		sector: "Insurtech",
 	},
 	"tariff-refund-analyst": { tags: ["Case Study", "AI"], sector: "Trade" },
+	"embedded-laser-recovery": {
+		tags: ["Case Study", "DevOps"],
+		sector: "Embedded Linux",
+	},
 };
 
 function caseItem(s: CaseStudy, to: string, external: boolean): WorkItem {

@@ -115,6 +115,39 @@ export const caseStudies: CaseStudy[] = [
 			note: "A waitlist landing page is public; the analyzer itself is not exposed, since it hasn't been validated against real claims.",
 		},
 	},
+	{
+		slug: "embedded-laser-recovery",
+		title: "Config Recovery on a Locked-Down Laser Control",
+		client: "An industrial fiber-laser fabrication shop",
+		sector: "Industrial Controls / Embedded Linux",
+		period: "Onsite engagement",
+		accent: "linear-gradient(135deg, #17171c 0%, #3d1210 52%, #cf2b22 100%)",
+		status: "Recovered onsite, no downtime",
+		summary:
+			"A field technician needed network and machine parameters off a hardened laser control whose GUI wouldn't boot — I pulled everything he needed from the bare Linux console, without restarting the machine or touching the HMI.",
+		problem:
+			"A field technician servicing an industrial fiber-laser cutter needed the machine's networking configuration and machine-specific laser parameters off its embedded Linux control. The graphical environment he normally worked in wouldn't start, and he was GUI-only by background — no file manager, no editor, no way to browse for the files. The control itself was a hardened embedded appliance: read-only root filesystem, stripped-down userland, no package manager, no internet, and no public documentation below the HMI layer. Several of the obvious assumptions — that the USB stick was mounted, that a permissions error meant a permissions problem — turned out to be wrong, so the real risk was burning hours acting on a false premise.",
+		approach: [
+			"Established ground truth from primary sources before acting. The USB stick that looked mounted wasn't — /proc/self/mounts, the kernel's own table, settled it in one command; an apparent permissions error was really the read-only root filesystem; a \"missing\" binary was actually present. Verifying each assumption killed a chain of work that would otherwise have been built on a false premise.",
+			"Root-caused the GUI failure instead of fighting it. X11 aborted because the vendor had stripped the keymap data the HMI didn't need, so xkb couldn't compile a keymap at startup — an image gap with no config workaround. Confirming that quickly closed off hours of dead-end troubleshooting.",
+			"Treated the bare console as the working environment rather than trying to repair X (impossible without writable storage or a package manager), composing every command around a JIS keyboard with no keymap loaded — no underscore, no pipe typeable — using file redirection in place of pipes and tab completion in place of literal paths.",
+			"Recovered the networking details by reading the machine's own configuration on disk rather than probing a live industrial control's network stack. On an isolated, non-routed /16 the addresses a control talks to are written down somewhere; a recursive search through the system and vendor config directories found them without scanning a 65,000-address space.",
+			"Mounted the USB stick on writable temporary storage — the read-only rootfs ruled out a mount point under /mnt — and completed the transfer from there.",
+		],
+		decision: {
+			title: "Don't turn a data pull into an outage",
+			body: "The two decisions that mattered most were about what not to do. I declined to restart or relaunch the HMI: on a fiber laser the interface is the operator's window into interlocks, shutter state, and assist gas, and a failed restart on a control with a read-only rootfs and no recovery documentation risks converting a data-retrieval task into an outage on a machine that bills by the hour. And I stopped port-scanning the moment it was clear the target was the laser's own control PC — the information was available from configuration on disk, so probing a live industrial control's network services had real downside and no upside. The job was to get the technician his data and leave the machine exactly as I found it.",
+		},
+		stack: [
+			"Embedded Linux",
+			"X11 / xkb",
+			"/proc (mounts, partitions, net/arp)",
+			"USB mount recovery",
+			"Read-only root filesystem",
+		],
+		outcome:
+			"The technician got the networking configuration and the machine-specific laser parameters he came for, copied off to removable media. The machine was never restarted, the HMI was never touched, and nothing on the control's persistent storage was modified.",
+	},
 ];
 
 // Public, named, non-redacted work. Rendered in the same section but links out
