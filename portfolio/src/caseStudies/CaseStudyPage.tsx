@@ -60,7 +60,7 @@ export function CaseStudyPage(): JSX.Element {
 	return (
 		<div className="csPage">
 			<article className="csArticle">
-				<div className="csHero" style={{ backgroundImage: study.accent }}>
+				<div className="csHero">
 					<span className="csHeroSector">{study.sector}</span>
 					<h1>{study.title}</h1>
 					<p className="csHeroMeta">

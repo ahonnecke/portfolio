@@ -220,11 +220,13 @@ export const resume: Resume = {
 				cto: [
 					"Engineer at Photobucket during its peak-traffic era (top-50 global web property, ~100M users); promoted SWE → Sr SWE on full ownership of payments and internal tooling.",
 					"Built trust & safety reporting pipeline: tool that packaged offensive content and transmitted to the National Center for Missing & Exploited Children (NCMEC) — proactive law-enforcement integration that contributed to multiple predator arrests.",
+					"Designed and hand-rolled an ETL process and tool to perform arbitrary data migrations without locking tables.",
 				],
 				ic: [
 					"W-2 engineer at Photobucket during its peak-traffic era (widely reported as top-50 global web property, ~100M users); promoted SWE → Sr SWE based on full ownership of internal tooling.",
 					"Built trust & safety reporting pipeline: tool that packaged offensive content and transmitted to the National Center for Missing & Exploited Children (NCMEC); contributed to multiple predator arrests via proactive law-enforcement integration.",
 					"Owned payments (PayPal + credit-card processing, reconciliation) and account-management tooling used for legal/compliance archival.",
+					"Designed and hand-rolled an ETL process and tool to perform arbitrary data migrations without locking tables.",
 					"Created a Propel-like model code-generation system with unit tests; migrated raw PHP pages to an MVC framework for internal tools.",
 					"Introduced CI and unit testing into the team's workflow; mentored engineers on design, flow, and integration.",
 					"Built an AJAX-based status/exception display system for consistent UX, surfacing caught DB exceptions.",

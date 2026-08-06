@@ -4,12 +4,12 @@
 	max-width: 900px;
 	margin: 0 auto;
 	padding-bottom: 5rem;
-	color: #e3e3e3;
+	color: var(--ink-soft);
 }
 
 .jdHero {
 	padding: 2.5rem 0 1.5rem;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-bottom: 1px solid var(--rule);
 }
 
 .jdEyebrow {
@@ -18,21 +18,23 @@
 	font-size: 0.85em;
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
-	color: #7fc4ff;
+	color: var(--accent);
 	font-weight: 600;
 }
 
 .jdHero h1 {
 	margin: 0;
+	font-family: var(--font-display);
+	font-weight: 600;
 	font-size: 2.5em;
 	line-height: 1.12;
-	color: #fdfdff;
+	color: var(--ink);
 	text-wrap: balance;
 }
 
 .jdMeta {
 	margin: 0.9rem 0 0;
-	color: #8d8d99;
+	color: var(--ink-muted);
 	font-size: 0.95em;
 	font-variant-numeric: tabular-nums;
 }
@@ -52,8 +54,9 @@
 }
 
 .jdSection > h2 {
+	font-family: var(--font-display);
 	font-size: 1.7em;
-	color: #fdfdff;
+	color: var(--ink);
 	margin: 0 0 1.2rem;
 }
 
@@ -62,7 +65,8 @@
 	display: flex;
 	flex-direction: column;
 	gap: 1px;
-	background: rgba(255, 255, 255, 0.08);
+	background: var(--rule);
+	border: 1px solid var(--rule);
 	border-radius: 10px;
 	overflow: hidden;
 }
@@ -72,17 +76,17 @@
 	grid-template-columns: 34% 1fr;
 	gap: 1.5rem;
 	padding: 1.1rem 1.3rem;
-	background: #161a20;
+	background: var(--paper-card);
 }
 
 .jdAsk {
 	font-weight: 700;
-	color: #fdfdff;
+	color: var(--ink);
 	line-height: 1.4;
 }
 
 .jdProof {
-	color: #d0d0d8;
+	color: var(--ink-body);
 	line-height: 1.6;
 }
 
@@ -99,18 +103,18 @@
 	align-items: baseline;
 	gap: 0.4rem 0.9rem;
 	padding: 0.9rem 1.2rem;
-	border-left: 3px solid #4da6ff;
-	background: rgba(77, 166, 255, 0.06);
+	border-left: 3px solid var(--accent);
+	background: rgba(31, 78, 95, 0.06);
 	border-radius: 0 8px 8px 0;
 }
 
 .jdGapLabel {
 	font-weight: 700;
-	color: #fdfdff;
+	color: var(--ink);
 }
 
 .jdGapNote {
-	color: #c9c9d4;
+	color: var(--ink-body);
 	line-height: 1.55;
 	flex: 1;
 	min-width: 260px;
@@ -124,13 +128,13 @@
 	gap: 12px;
 	margin-top: 3rem;
 	padding-top: 2rem;
-	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid var(--rule);
 }
 
 .jdBtn {
 	display: inline-block;
-	background: #2b9fd4;
-	color: #04121a;
+	background: var(--accent);
+	color: #fff;
 	font-weight: 700;
 	border-radius: 8px;
 	padding: 0.75em 1.5em;
@@ -138,24 +142,24 @@
 }
 
 .jdBtn:hover {
-	background: #5ab4e0;
-	color: #04121a;
+	background: var(--accent-hover);
+	color: #fff;
 }
 
 .jdBtnGhost {
 	background: transparent;
-	color: #7fc4ff;
-	border: 1px solid rgba(127, 196, 255, 0.5);
+	color: var(--accent);
+	border: 1px solid rgba(31, 78, 95, 0.4);
 }
 
 .jdBtnGhost:hover {
-	background: rgba(127, 196, 255, 0.1);
-	color: #7fc4ff;
+	background: rgba(31, 78, 95, 0.08);
+	color: var(--accent);
 }
 
 .jdCtaLink {
 	margin-left: auto;
-	color: #8d8d99;
+	color: var(--ink-muted);
 }
 
 @media (max-width: 600px) {

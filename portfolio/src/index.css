@@ -42,19 +42,47 @@
 	font-display: swap;
 	src: url("/fonts/ibm-plex-mono-600.woff2") format("woff2");
 }
+/* Fraunces — the editorial display serif for the name, headings, and titles. */
+@font-face {
+	font-family: "Fraunces";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url("/fonts/fraunces-500.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Fraunces";
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url("/fonts/fraunces-600.woff2") format("woff2");
+}
 
 :root {
 	--font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto,
 		sans-serif;
 	--font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas,
 		monospace;
+	--font-display: "Fraunces", Georgia, "Times New Roman", serif;
+
+	/* Editorial-light palette. */
+	--paper: #f5f4f1;
+	--paper-card: #fffdf9;
+	--ink: #1f1d18;
+	--ink-soft: #3a382f;
+	--ink-body: #56534a;
+	--ink-muted: #6b6862;
+	--rule: #e4dfd4;
+	--accent: #1f4e5f;
+	--accent-hover: #2d6f86;
+
 	font-family: var(--font-sans);
 	line-height: 1.5;
 	font-weight: 400;
 
-	color-scheme: light dark;
-	color: rgba(255, 255, 255, 0.87);
-	background-color: #242424;
+	color-scheme: light;
+	color: var(--ink-soft);
+	background-color: var(--paper);
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -64,11 +92,11 @@
 
 a {
 	font-weight: 500;
-	color: #646cff;
+	color: var(--accent);
 	text-decoration: inherit;
 }
 a:hover {
-	color: #535bf2;
+	color: var(--accent-hover);
 }
 
 body {
@@ -91,27 +119,11 @@ button {
 	font-size: 1em;
 	font-weight: 500;
 	font-family: inherit;
-	background-color: #1a1a1a;
+	background-color: transparent;
 	cursor: pointer;
 	transition: border-color 0.25s;
-}
-button:hover {
-	border-color: #646cff;
 }
 button:focus,
 button:focus-visible {
 	outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-	:root {
-		color: #213547;
-		background-color: #ffffff;
-	}
-	a:hover {
-		color: #747bff;
-	}
-	button {
-		background-color: #f9f9f9;
-	}
 }

@@ -5,13 +5,14 @@
 }
 
 .csSectionHeading {
+	font-family: var(--font-display);
 	font-size: 2.5em;
-	color: #fdfdff;
+	color: var(--ink);
 	margin-bottom: 0.2em;
 }
 
 .csSectionBlurb {
-	color: #b9b9c2;
+	color: var(--ink-muted);
 	font-size: 1.1em;
 	line-height: 1.6;
 	max-width: 70ch;
@@ -43,28 +44,28 @@
 	   when it's alone in a row. */
 	flex: 1;
 	min-height: 260px;
-	border-radius: 10px;
+	border-radius: 6px;
 	padding: 24px;
-	color: #ffffff;
+	color: var(--ink-body);
 	text-align: left;
-	background-size: cover;
-	box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px
-		rgba(0, 0, 0, 0.05);
+	background-color: var(--paper-card);
+	border: 1px solid var(--rule);
+	box-shadow: 0 1px 2px rgba(40, 32, 20, 0.04);
 	transition: transform 300ms ease, box-shadow 300ms ease;
 }
 
 .csCard:hover {
 	transform: translateY(-6px);
-	box-shadow: 0px 18px 28px -6px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 14px 32px rgba(40, 32, 20, 0.12);
 }
 
 .csCardSector {
-	font-size: 0.85em;
-	letter-spacing: 0.08em;
+	font-family: var(--font-sans);
+	font-size: 0.7em;
+	font-weight: 600;
+	letter-spacing: 0.11em;
 	text-transform: uppercase;
-	background-color: rgba(0, 0, 0, 0.45);
-	border-radius: 999px;
-	padding: 0.3em 0.9em;
+	color: var(--ink-muted);
 }
 
 /* Multi-pill eyebrow for work cards (e.g. "Case Study · HVAC", "FOSS · Python"). */
@@ -75,12 +76,18 @@
 }
 
 .csCardPill {
-	font-size: 0.72em;
-	letter-spacing: 0.07em;
+	font-family: var(--font-sans);
+	font-size: 0.68em;
+	font-weight: 600;
+	letter-spacing: 0.11em;
 	text-transform: uppercase;
-	background-color: rgba(0, 0, 0, 0.42);
-	border-radius: 999px;
-	padding: 0.32em 0.7em;
+	color: var(--ink-muted);
+}
+
+.csCardPill + .csCardPill::before {
+	content: "/";
+	margin-right: 6px;
+	color: #c9bfa8;
 }
 
 /* --- Tag filter bar ------------------------------------------------------ */
@@ -93,10 +100,10 @@
 	position: sticky;
 	top: 0;
 	z-index: 5;
-	background: #121212;
+	background: var(--paper);
 	padding: 12px 0 14px;
 	margin-bottom: 20px;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	border-bottom: 1px solid var(--rule);
 }
 
 .workChip {
@@ -104,27 +111,27 @@
 	font-size: 0.86em;
 	letter-spacing: 0.02em;
 	cursor: pointer;
-	color: #e3e3e3;
-	background: #1e2530;
-	border: 1px solid rgba(255, 255, 255, 0.12);
+	color: var(--ink-soft);
+	background: #fff;
+	border: 1px solid var(--rule);
 	border-radius: 999px;
 	padding: 0.42em 1em;
 	transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 .workChip:hover {
-	border-color: rgba(255, 255, 255, 0.35);
+	border-color: #b9b1a1;
 }
 
 .workChip[aria-pressed="true"] {
-	background: #2b9fd4;
-	border-color: #2b9fd4;
-	color: #04121a;
+	background: var(--accent);
+	border-color: var(--accent);
+	color: #fff;
 	font-weight: 700;
 }
 
 .workChip:focus-visible {
-	outline: 2px solid #7fc4ff;
+	outline: 2px solid var(--accent);
 	outline-offset: 2px;
 }
 
@@ -135,35 +142,33 @@
 }
 
 .workCount {
-	color: #8d8d99;
+	color: var(--ink-muted);
 	font-size: 0.85em;
 	margin-left: auto;
 	font-variant-numeric: tabular-nums;
 }
 
 .csCardTitle {
+	font-family: var(--font-display);
 	font-size: 1.9em;
-	font-weight: 700;
+	font-weight: 600;
 	line-height: 1.15;
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	color: var(--ink);
 }
 
 .csCardClient {
 	font-size: 0.95em;
 	font-style: italic;
-	color: rgba(255, 255, 255, 0.85);
+	color: var(--ink-muted);
 }
 
 .csCardSummary {
 	font-size: 1em;
 	line-height: 1.5;
-	color: rgba(255, 255, 255, 0.92);
+	color: var(--ink-body);
 }
 
-/* Mono for the small technical labels — sector/tech pills, status, filter chips. */
-.csCardSector,
-.csCardPill,
-.csCardStatus,
+/* Mono is reserved for the filter controls — the technical, interactive bits. */
 .workChip,
 .workCount {
 	font-family: var(--font-mono);
@@ -171,12 +176,22 @@
 
 .csCardStatus {
 	margin-top: auto;
-	font-size: 0.85em;
+	font-family: var(--font-sans);
+	font-size: 0.78em;
 	font-weight: 600;
-	letter-spacing: 0.04em;
-	background-color: rgba(0, 0, 0, 0.55);
-	border-radius: 6px;
-	padding: 0.35em 0.8em;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	color: var(--accent);
+}
+
+.csCardStatus::before {
+	content: "";
+	display: inline-block;
+	width: 18px;
+	height: 1px;
+	background: var(--accent);
+	margin-right: 0.5em;
+	vertical-align: middle;
 }
 
 /* --- Detail page --------------------------------------------------------- */
@@ -194,14 +209,15 @@
 }
 
 .csArticle {
-	color: #e3e3e3;
+	color: var(--ink-soft);
 	font-size: 1.15em;
 	line-height: 1.7;
 }
 
 .csArticle h2 {
+	font-family: var(--font-display);
 	font-size: 1.6em;
-	color: #fdfdff;
+	color: var(--ink);
 	margin-top: 2.2rem;
 	margin-bottom: 0.4rem;
 }
@@ -211,31 +227,33 @@
 }
 
 .csHero {
-	border-radius: 10px;
-	padding: 2.5rem 2rem;
+	border-radius: 0;
+	padding: 1.5rem 0;
 	margin-top: 2rem;
-	color: #ffffff;
+	color: var(--ink);
+	border-bottom: 1px solid var(--rule);
 }
 
 .csHero h1 {
+	font-family: var(--font-display);
+	font-weight: 600;
 	font-size: 2.6em;
 	margin: 0.3em 0 0.2em;
-	text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.45);
 }
 
 .csHeroSector {
-	font-size: 0.8em;
-	letter-spacing: 0.08em;
+	font-family: var(--font-sans);
+	font-size: 0.75em;
+	font-weight: 600;
+	letter-spacing: 0.11em;
 	text-transform: uppercase;
-	background-color: rgba(0, 0, 0, 0.45);
-	border-radius: 999px;
-	padding: 0.3em 0.9em;
+	color: var(--ink-muted);
 }
 
 .csHeroMeta {
 	margin: 0;
 	font-size: 0.95em;
-	color: rgba(255, 255, 255, 0.9);
+	color: var(--ink-muted);
 	text-align: left;
 }
 
@@ -248,8 +266,8 @@
 }
 
 .csDecision {
-	border-left: 4px solid #4da6ff;
-	background-color: rgba(77, 166, 255, 0.07);
+	border-left: 4px solid var(--accent);
+	background-color: rgba(31, 78, 95, 0.06);
 	border-radius: 0 8px 8px 0;
 	padding: 0.5rem 1.5rem 1.2rem;
 	margin-top: 2.2rem;
@@ -257,7 +275,7 @@
 
 .csDecision h2 {
 	margin-top: 1rem;
-	color: #7fc4ff;
+	color: var(--accent);
 }
 
 .csStack {
@@ -269,8 +287,9 @@
 }
 
 .csStack li {
-	background-color: rgba(255, 255, 255, 0.08);
-	border: 1px solid rgba(255, 255, 255, 0.15);
+	background-color: #fff;
+	border: 1px solid var(--rule);
+	color: var(--ink-soft);
 	border-radius: 999px;
 	padding: 0.3em 0.9em;
 	font-size: 0.85em;
@@ -285,21 +304,21 @@
 }
 
 .csProtoLive {
-	background-color: rgba(45, 212, 191, 0.08);
-	border: 1px solid rgba(45, 212, 191, 0.3);
+	background-color: rgba(31, 78, 95, 0.06);
+	border: 1px solid rgba(31, 78, 95, 0.25);
 }
 
 .csProtoPlanned {
-	background-color: rgba(255, 255, 255, 0.04);
-	border: 1px dashed rgba(255, 255, 255, 0.2);
-	color: #b9b9c2;
+	background-color: rgba(40, 32, 20, 0.03);
+	border: 1px dashed #d8d2c6;
+	color: var(--ink-muted);
 }
 
 .csProtoLaunch {
 	display: inline-block;
 	margin-top: 0.5rem;
-	background-color: #2dd4bf;
-	color: #0b1b1a;
+	background-color: var(--accent);
+	color: #fff;
 	font-weight: 700;
 	border-radius: 8px;
 	padding: 0.7em 1.4em;
@@ -307,23 +326,23 @@
 }
 
 .csProtoLaunch:hover {
-	background-color: #5eead4;
-	color: #0b1b1a;
+	background-color: var(--accent-hover);
+	color: #fff;
 }
 
 /* --- Rights notice ------------------------------------------------------- */
 
 .csRights {
 	margin-top: 3rem;
-	border-top: 1px solid rgba(255, 255, 255, 0.15);
+	border-top: 1px solid var(--rule);
 	padding-top: 1.2rem;
-	color: #8d8d99;
+	color: var(--ink-muted);
 	font-size: 0.85em;
 	line-height: 1.6;
 }
 
 .csRights strong {
-	color: #c9c9d4;
+	color: var(--ink);
 }
 
 .csBack {

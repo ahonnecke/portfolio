@@ -3,7 +3,7 @@ import type { WorkItem } from "./work.data";
 
 function Face({ item }: { item: WorkItem }): JSX.Element {
 	return (
-		<span className="csCard" style={{ backgroundImage: item.accent }}>
+		<span className="csCard">
 			<span className="csCardEyebrow">
 				{item.eyebrow.map((e) => (
 					<span key={e} className="csCardPill">

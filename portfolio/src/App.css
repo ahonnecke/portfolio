@@ -2,8 +2,8 @@
 
 html,
 body {
-	background-color: #121212;
-	color: #e3e3e3;
+	background-color: var(--paper);
+	color: var(--ink-soft);
 	margin: 0;
 	padding: 0;
 }
@@ -124,34 +124,35 @@ body {
 #fullname {
 	text-align: center;
 	margin-bottom: 0;
-	font-family: var(--font-mono);
+	font-family: var(--font-display);
 	font-weight: 600;
-	letter-spacing: -0.02em;
+	letter-spacing: -0.015em;
 	font-size: 3.4em;
-	color: #fdfdff;
+	color: var(--ink);
 }
 
 #fullname a {
-	color: #fdfdff;
+	color: var(--ink);
 }
 
 #fullname .quickPdf {
 	font-size: 12px;
-	background: white;
+	background: var(--accent);
 	border-radius: 10px;
 	padding: 1em;
 	top: 4%;
 	margin-left: 1em;
-	color: black;
+	color: #fff;
 }
 
 .tagline {
 	text-align: center;
 	margin-top: 0.3em;
-	font-family: var(--font-mono);
-	font-size: 0.95em;
-	letter-spacing: 0.02em;
-	color: #9aa0aa;
+	font-family: var(--font-sans);
+	font-size: 0.8em;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--ink-muted);
 }
 
 .bigWheel {
@@ -244,12 +245,13 @@ body {
 	margin: 1.5rem 0;
 	padding-left: 0;
 	text-align: left;
-	color: #e3e3e3;
+	color: var(--ink-soft);
 }
 
 .content h2 {
+	font-family: var(--font-display);
 	font-size: 2em;
-	color: #fdfdff;
+	color: var(--ink);
 	margin-top: 0;
 }
 .content {
@@ -265,30 +267,31 @@ code {
 }
 
 a {
-	color: #4da6ff;
+	color: var(--accent);
 	text-decoration: none;
 	transition: color 0.3s ease;
 }
 
 a:hover {
-	color: #66b3ff;
+	color: var(--accent-hover);
 }
 
 .detailPage a {
-	color: #4da6ff;
+	color: var(--accent);
 }
 
 .detailPage a:hover {
-	color: #66b3ff;
+	color: var(--accent-hover);
 }
 
 /* Intro lead + site footer */
 .siteIntro {
 	max-width: 68ch;
 	margin: 1.4rem auto 0.5rem;
-	font-size: 1.18em;
+	font-family: var(--font-display);
+	font-size: 1.25em;
 	line-height: 1.7;
-	color: #c9c9d4;
+	color: var(--ink-soft);
 	text-align: center;
 	text-wrap: pretty;
 }
@@ -296,33 +299,33 @@ a:hover {
 .siteFooter {
 	margin-top: 4rem;
 	padding: 2rem 0 3rem;
-	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid var(--rule);
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
 	gap: 1rem;
-	color: #8d8d99;
+	color: var(--ink-muted);
 }
 
 .siteFooterName {
-	font-family: var(--font-mono);
-	color: #c9c9d4;
+	font-family: var(--font-sans);
+	color: var(--ink);
 }
 
 .siteFooterLinks {
 	display: flex;
 	gap: 1.5rem;
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 	font-size: 0.9em;
 }
 
 .siteFooterLinks a {
-	color: #8d8d99;
+	color: var(--ink-muted);
 }
 
 .siteFooterLinks a:hover {
-	color: #7fc4ff;
+	color: var(--accent);
 }
 
 /* Card entrance — a subtle fade/rise on load and when the filter changes.
