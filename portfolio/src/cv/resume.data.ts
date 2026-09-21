@@ -17,7 +17,7 @@ export const resume: Resume = {
 
 	tagline: {
 		cto: "Engineering Leader • CTO • Cloud Architecture • AI-Native SaaS",
-		ic: "Senior Software/Cloud Engineer • Python • AWS • DevOps",
+		ic: "Senior Full-Stack Engineer • Python • TypeScript/React • AWS • AI-Native (agents, MCP, vision)",
 	},
 
 	highlights: {
@@ -30,6 +30,8 @@ export const resume: Resume = {
 		],
 		ic: [
 			"~25 years shipping production systems across Python, TypeScript, and AWS — from Linux internals to cloud architecture.",
+			"Builds AI artifacts, not just AI usage: a Claude vision QC gate and a Model Context Protocol (MCP) server (Alt Vault), an email-negotiation agent (Hagglebot), and contract generation on a self-hosted LLM (Toy Contractor) — shipped tools, not demos.",
+			"Full-stack by default: Python/AWS backends and Next.js/React/TypeScript frontends, taken from design doc through shipped UI.",
 			"Ships solo and at team scale: greenfield AI-native SaaS, 7M+ rows/day ingest, 100 GB/night data platforms, and extremely high-scale public-facing web properties.",
 			"Speaker: PyColorado — Cleaning Up Your Python Environment: Superfund Site.",
 			"Speaker: PyDEN — The Value of Linting.",
@@ -239,7 +241,7 @@ export const resume: Resume = {
 		"Software development across multiple languages, frameworks, and stacks (~25 yrs).",
 		"Linux/Unix administration (~20 yrs); DevOps (cloud & colo) (~10 yrs).",
 		"Startups (founder & early-stage) (~15 yrs), including profitable exits or profitability (~10 yrs).",
-		"AI/LLM-native engineering (agentic extraction pipelines, agent-directed development, multi-provider orchestration) (~1 yr production, ongoing).",
+		"AI/LLM-native engineering (agentic extraction pipelines, Claude vision QC, MCP servers, agent-directed development, multi-provider orchestration) (~1 yr production, ongoing).",
 		"Blockchain (ETH/BTC nodes, data engineering) (~2 yrs).",
 	],
 
@@ -270,6 +272,29 @@ export const resume: Resume = {
 	],
 
 	projects: [
+		{
+			name: "Alt Vault",
+			url: "https://github.com/ahonnecke/alt.vault",
+			summary: [
+				"Event-sourced vault intake pipeline for a physical-asset marketplace, built around one metric: time from item received to live. Live demo + full source.",
+				"ScanGate — a Claude vision QC gate that catches glare, misalignment, blur, or a manifest mismatch before an item goes live.",
+				'VaultTrace — a Model Context Protocol (MCP) server over the event log, answering "where is this item and what happened to it" in one sentence. Next.js / TypeScript / Postgres.',
+			],
+		},
+		{
+			name: "Hagglebot",
+			url: "https://github.com/ahonnecke/hagglebot",
+			summary: [
+				"AI agent that negotiates car prices over email: FastAPI + async Postgres pulls dealer mail over JMAP, an LLM extracts offers, and it drafts counter-offers across dealerships. React frontend, Stripe billing, deploy-on-push CI.",
+			],
+		},
+		{
+			name: "Toy Contractor",
+			url: "https://github.com/ahonnecke/toy_contractor",
+			summary: [
+				"Generates and iteratively refines legal contracts from plain-English prompts on a fully self-hosted Mistral model via Ollama — no external API. FastAPI + Redis.",
+			],
+		},
 		{
 			name: "Consolo",
 			url: "https://pypi.org/project/consolo/",
