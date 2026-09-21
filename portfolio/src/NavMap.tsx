@@ -20,8 +20,10 @@ import SnifterCard from "../public/snifter_card.png";
 import TonalRecallCard from "../public/tonal_recall_card.png";
 import ToyContractorCard from "../public/toy_contractor_card.png"; // Temporarily using wayward_card.png as placeholder
 import WaywardCard from "../public/wayward_card.png";
+import AltVaultCard from "../public/alt_vault_card.png";
 import type { NavMap } from "./NavMapInterface";
 import {
+	AltVaultAbstract,
 	BigWheelAbstract,
 	ConsoloAbstract,
 	CvAbstract,
@@ -47,6 +49,13 @@ import {
 } from "./components/Abstracts";
 
 export const navMap: NavMap = {
+	alt_vault: {
+		link: "https://github.com/ahonnecke/alt.vault",
+		image: AltVaultCard,
+		text: "Alt Vault",
+		category: "AI",
+		detail: AltVaultAbstract,
+	},
 	big_wheel: {
 		link: "https://drive.google.com/file/d/0B2sPu-smnJTpX2hCc2JLWTNSN3M/view?resourcekey=0-76YjSJXAvs0IlX1lH6tkmw",
 		image: BigWheelCard,

@@ -1,3 +1,19 @@
+export const AltVaultAbstract: () => JSX.Element = () => {
+	return (
+		<span>
+			Alt Vault is an event-sourced intake pipeline for a physical-asset
+			marketplace, organized around one metric: time from item received to live.
+			Two named artifacts ride a shared append-only event log —{" "}
+			<b>ScanGate</b>, a Claude vision QC gate that fails a scan for glare,
+			misalignment, blur, or a label that doesn't match the manifest before the
+			item goes live; and <b>VaultTrace</b>, an MCP server that answers "where is
+			this item and what happened to it" in one sentence, live inside Claude Code.
+			Next.js, TypeScript, and Postgres, with a $0 mock path so the whole system
+			is demoable without an API key.
+		</span>
+	);
+};
+
 export const SatoshisWagerAbstract: () => JSX.Element = () => {
 	return (
 		<span>
