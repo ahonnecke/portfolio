@@ -50,7 +50,7 @@ import {
 
 export const navMap: NavMap = {
 	alt_vault: {
-		link: "https://github.com/ahonnecke/alt.vault",
+		link: "https://alt-vault-zeta.vercel.app",
 		image: AltVaultCard,
 		text: "Alt Vault",
 		category: "AI",
